@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "..\\Exercise"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "server"
+	}
+}

@@ -1,0 +1,20 @@
+
+--- main project part1 and part2
+
+ * use setters in private/protected scope for the methods or fields of entities
+ * use provided output or exception messages
+ * be careful of the business logic element
+ * be careful of the output elements - proper output messages of BL etc. - System.lineSeparator() etc.
+ * do not overcomplicate things
+ * prepare zip packages for part1, part2 and tests and at the end submit
+ * check your code carefully and go in details if needed.
+ * beware of mistaken class names either in doc or code.
+ 
+ 
+ 
+ --- test project
+ 
+ * provide complete test coverage
+ * do not forget to test the getters/setters of secondary class
+ * initialize before each test the needed objects.
+ 

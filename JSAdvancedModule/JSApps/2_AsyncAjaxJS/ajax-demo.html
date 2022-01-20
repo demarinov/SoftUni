@@ -1,0 +1,42 @@
+<html>
+
+<body>
+<button id="load"> Load Repos </button>
+<div id="res"></div>
+
+<script>
+    const button = document.querySelector('#load');
+
+    button.addEventListener('click', function (e) {
+
+        // const httpRequest = new XMLHttpRequest();
+
+         const url = "https://restcountries.com/v2/name/Italy?fields=name,capital,region,population";
+        // httpRequest.addEventListener('readystatechange', function(e) {
+
+        //     if (httpRequest.readyState === 4 && httpRequest.status === 200) {
+        //         document.querySelector('#res').textContent = "SUCCESS "+httpRequest.status
+        //         +"\n"+httpRequest.responseText;
+                
+        //     }
+        // });
+
+        // httpRequest.open("GET", url);
+        // httpRequest.send();
+
+        // using fetch
+        fetch(url)
+        .then((response) => {
+        
+                return response.json();
+        })
+        .then((data) => {
+            document.querySelector('#res').textContent = "SUCCESS 200\n"
+            + JSON.stringify(data);
+        })
+        .catch(error => alert(error));
+    });
+
+</script>    
+</body>
+</html>
