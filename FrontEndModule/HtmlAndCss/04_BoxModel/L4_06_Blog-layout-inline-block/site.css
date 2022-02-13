@@ -1,0 +1,39 @@
+body {
+    font-family: Helvetica, sans-serif;
+    background-color: rgb(238, 238, 238);
+    color: rgb(51, 51, 51);
+}
+
+article {
+    float: left;
+    width: 50%;
+    /* margin: auto; */
+    margin-left: 2%;
+    margin-bottom: 2%;
+}
+
+img {
+    width: 500px;
+    
+}
+
+a {
+    width: 5px;
+    padding-left: 10px;
+    text-align: right;
+}
+
+aside {
+    float: left;
+}
+
+ul {
+    max-width:100%; 
+    height:auto;
+    list-style-type: square;
+    list-style-position: inside;
+}
+
+ul li {
+    width: 285px;
+}

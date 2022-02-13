@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+
+    <form name="form" action="http://localhost:8181/file/upload" method="post" enctype="multipart/form-data">
+        <label for="file">Filename:</label>
+        <input type="text" name="email" value="mail" />
+        <input type="file" name="file" id="file" />
+        <input type="submit" name="submit" value="Submit" />
+    </form>
+
+    <script>
+
+        document.querySelector("form").addEventListener("submit", async (ev) => {
+
+            ev.preventDefault();
+
+            formData = new FormData(document.querySelector("form"));
+
+            formData.append("file", document.forms["form"].file.files[0]);
+            formData.append('properties', new Blob([JSON.stringify({
+                "name": "root",
+                "password": "root"
+            })], {
+                type: "application/json"
+            }));
+
+            const response = await fetch("http://localhost:8181/file/upload", {
+
+                method: "POST",
+                body: formData
+            });
+
+            document.querySelector("body").innerHTML = await response.json();
+        })
+    </script>
+</body>
+
+</html>

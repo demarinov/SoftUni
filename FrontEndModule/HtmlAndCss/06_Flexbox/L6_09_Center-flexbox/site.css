@@ -1,0 +1,30 @@
+body {
+    background-color:  rgb(238, 238, 238);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    border: 1px solid black;
+}
+
+div.card {
+    background-color: rgb(255, 255, 255);
+    flex-basis: 25em;
+    height: 8em;
+    border-radius: 5px;
+    box-shadow: 2px 2px 20px lightgrey, 2px -2px 20px  lightgrey, -2px -2px 20px  lightgrey;
+    
+}
+
+.card p, h2 {
+    margin-left: 3%;
+    margin-top: 3%;
+}
+
+.card p {
+    margin-top: 0%;
+}
+
+.card h2 {
+    margin-bottom: 1%;
+}

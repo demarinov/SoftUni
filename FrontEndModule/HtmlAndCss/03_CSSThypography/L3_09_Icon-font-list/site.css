@@ -1,0 +1,18 @@
+@import "https://use.fontawesome.com/releases/v5.10.2/css/all.css";
+
+
+
+main {
+    margin-top: 5%;
+    margin-left: 5%;
+    font-family: Helvetica, sans-serif;
+}
+
+ul {
+    list-style-type: none;
+    margin-bottom: 1.5%;
+}
+
+main ul li span{
+    margin-left: 5px;
+}

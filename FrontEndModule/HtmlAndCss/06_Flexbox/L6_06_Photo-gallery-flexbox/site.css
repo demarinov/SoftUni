@@ -1,0 +1,60 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *::after,*::before {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: rgb(234,234,234);
+}
+
+body, ul, li {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul {
+    justify-content: space-between;
+    width: 44em;
+    height: 57em;
+    align-content: space-between;
+}
+
+ul li {
+    flex-basis: 12em;
+    height: 18em;
+    border: 7px solid black;
+    align-content: center;
+    background-color: white;
+}
+
+ul li img {
+    display: block;
+    width: 12em;
+    height: 17em;
+    padding: 2em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+ul li:nth-child(2) img, 
+ul li:nth-child(5) img,
+ul li:nth-child(9) img {
+    height: 12em;
+    
+}
+
+ul li:nth-child(3) img, 
+ul li:nth-child(6) img,
+ul li:nth-child(7) img,
+ul li:nth-child(8) img {
+    height: 19em;
+    
+}
+
+ul li:nth-child(4) img {
+    height: 15em;
+    
+}

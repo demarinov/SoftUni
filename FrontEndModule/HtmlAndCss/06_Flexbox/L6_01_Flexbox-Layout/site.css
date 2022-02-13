@@ -1,0 +1,50 @@
+html {
+    font-size: 18px;
+    font-family: Calibri, serif;
+}
+
+
+body {
+    display: flex;
+    background-color: rgb(238,238,238);
+    flex-wrap: wrap;
+
+    padding: 4em;
+
+}
+
+header, footer,main,aside {
+    background-color: white;
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding: 1em;
+    margin: 0.5em;
+
+    border-radius: 0.5em;
+    box-shadow: 0 0 0.3em black;
+}
+
+main, aside {
+    padding-bottom: 12em;
+}
+
+main {
+    flex-basis: 57%;
+}
+
+aside {
+    flex-basis: 32%;
+}
+
+header, footer {
+    flex-basis: 100%;
+    
+}
+
+header {
+    padding-bottom: 5em;
+}
+
+footer {
+    padding-bottom: 3em;
+}

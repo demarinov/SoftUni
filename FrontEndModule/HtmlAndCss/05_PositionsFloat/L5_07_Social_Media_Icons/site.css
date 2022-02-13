@@ -1,0 +1,42 @@
+@import 'https://use.fontawesome.com/releases/v5.10.2/css/all.css';
+
+ul {
+    display:inline-block;
+    height: 500px;
+}
+
+ul li {
+    list-style-type: none;
+    display:inline-block;
+    height: 500px;
+}
+
+ul li a {
+    position: relative;
+    display: inline-block;
+    background-color: rgb(238, 238, 238) ;
+    border-radius: 50%;
+    text-decoration: none;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    margin-right: 15px;
+}
+
+i {
+    position: absolute;
+    display: inline-block;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+i:hover {
+    color: blue;
+}
+
+ul li:nth-child(3)>a>i:hover {
+    color: red;
+}
+

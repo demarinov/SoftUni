@@ -1,0 +1,67 @@
+body {
+    background-color: rgb(238, 238, 238);
+    width: 90%;
+    margin: auto;
+}
+
+
+.card, img {
+    width: 12em;
+}
+
+.group-one, .group-two, .group-three {
+    display: inline-block;
+    /* height: 50em; */
+    
+    vertical-align:top;
+    margin-left: 0.5em;
+}
+
+.card {
+    margin-bottom: 1em;
+    /* border: 1px solid black; */
+    background-color: white;
+    border-radius: 5px;
+}
+
+.card p, .card h2, .card footer {
+    padding: 0 10%;
+}
+
+.masonry {
+    width: 50%;
+}
+
+footer {
+    border-top: 1px solid grey;
+}
+
+.cards-flex {
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: left;
+    width:45%;
+}
+
+.card-flex {
+    margin-left: 0.8em;
+    padding-bottom: 0;
+    display: grid;
+}
+
+.card-flex article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-flex footer {
+    /* padding-bottom: 2px; */
+    padding: 1em;
+
+}
+
+/* adjust space with flex on card and adjusted img for flex */
+.card-flex h2, .card-flex p, .card-flex footer {
+    margin: 0px;
+}

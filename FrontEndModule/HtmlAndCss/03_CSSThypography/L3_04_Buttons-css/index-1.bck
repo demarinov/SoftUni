@@ -1,0 +1,25 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Unknown </title></head><body>
+<h1 id="04-buttons-css">04 - Buttons CSS</h1>
+<hr />
+<p>Problems for in-class lab for the <a href="https://softuni.bg/trainings/2375/html-and-css-may-2019">�HTML &amp; CSS�</a> course @ <strong>SoftUni</strong>.</p>
+<p>Submit your solutions in the <a href="https://judge.softuni.bg/Contests/1234/CSS-Typography">SoftUni Judge System</a>.</p>
+<h2 id="tasks">Tasks</h2>
+<ul>
+<li>Create an <strong>"index.html"</strong> file with title - <strong>"Buttons CSS"</strong></li>
+<li>Use <strong>h2</strong> tag for headings</li>
+<li>Create nine buttons on three rows with class <strong>button</strong><ul>
+<li>For the first button in each row use <strong>a</strong> tag </li>
+<li>For the next two buttons in the row use <strong>button</strong> tags</li>
+<li>The buttons in the second and the third row should have class - <strong>fill</strong></li>
+<li>Every last button in the row should have class - <strong>hover</strong></li>
+</ul>
+</li>
+<li>You must use the following three colors: green(<strong>rgb(0, 102, 0)</strong>), white(<strong>rgb(251, 251, 251)</strong>) and gray(<strong>rgb(51, 51, 51)</strong>)</li>
+<li>Use <em>fontawesome</em> for this task. Import it in your css, with the <strong>@import</strong> rule</li>
+</ul>
+<h2 id="constraints">Constraints</h2>
+<ul>
+<li>Change the <strong>cursor</strong> property to <a href="https://www.w3schools.com/cssref/pr_class_cursor.asp">pointer</a></li>
+<li>Change the <strong>outline</strong> property to <a href="https://www.w3schools.com/Css/css_outline.asp">none</a></li>
+</ul>
+</body></html>

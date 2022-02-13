@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styling Tables</title>
+
+    <style>
+
+        table {
+            margin-left:auto;
+            margin-right:auto;
+            margin-top: 5%;
+            width: 80%;
+            font-family: 'Helvetica', Times, sans-serif;
+        }
+
+        table, td,th {
+            border-width: 0.5px;
+            border-color: rgb(221, 221, 221);
+            border-style: solid; 
+
+        }
+
+        table td, th {
+            width: 30%;
+        }
+
+        table th {
+            background-color: rgb(211, 211, 211);
+            border-color:rgb(211, 211, 211);
+            text-align: left;
+        }
+
+        table tr:nth-child(2n+1) {
+            background-color: rgb(241, 241, 241)
+        }
+/* 
+        table tr:nth-child(2n+1)>td {
+            background-color: rgb(241, 241, 241)
+        } */
+
+        table tbody tr:hover {
+            background-color: rgb(0,0,0);
+            color: rgb(255, 255, 255);
+            border-color: black;
+        }
+
+        table tbody tr:hover td {
+            background-color: rgb(0,0,0);
+            color: rgb(255, 255, 255);
+            border-color: black;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <table cellspacing="0" cellpadding="0">
+        <thead>
+            <tr>
+                <th>Country</th>
+                <th>Population</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Somewhere</td>
+                <td>3M</td>
+                <td>25</td>
+            </tr>
+ 		
+            <tr>
+                <td>Somewhere else</td>
+                <td>12M</td>
+                <td>125</td>
+            </tr>
+            <tr>
+                <td>That place</td>
+                <td>23M</td>
+                <td>235</td>
+            </tr>
+            <tr>
+                <td>Somewhere</td>
+                <td>3M</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td>Somewhere else</td>
+                <td>12M</td>
+                <td>125</td>
+            </tr>
+
+            <tr>
+                <td>That place</td>
+                <td>23M</td>
+                <td>235</td>
+            </tr>
+            <tr>
+                <td>Somewhere</td>
+                <td>3M</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td>Somewhere else</td>
+                <td>12M</td>
+                <td>125</td>
+            </tr>
+            <tr>
+                <td>That place</td>
+                <td>23M</td>
+                <td>235</td>
+            </tr>
+
+        </tbody>
+    </table>
+</body>
+
+</html>

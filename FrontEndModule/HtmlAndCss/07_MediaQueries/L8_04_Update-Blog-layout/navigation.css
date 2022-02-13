@@ -1,0 +1,28 @@
+.nav-large ul {
+    list-style-type: none;
+    background-color: white;
+    padding: 0.5em 0em;
+    
+}
+
+.nav-large ul li {
+    background-color: black;
+    color: white;
+    padding: 0.5em;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.nav-list-small {
+    list-style-type: none;
+    background-color: white;
+    padding: 0.5em 0;
+}
+
+.nav-list-small li {
+    background-color: black;
+    color: white;
+    padding: 0.5em;
+
+    /* text-align: center; */
+}

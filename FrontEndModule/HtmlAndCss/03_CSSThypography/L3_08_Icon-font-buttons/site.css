@@ -1,0 +1,41 @@
+@import "https://use.fontawesome.com/releases/v5.10.2/css/all.css"; 
+
+main {
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
+.click {
+    background-color: green;
+    width:105px;
+    height: 30px;
+}
+
+ i {
+    margin-left: 5px;
+    color:white;
+}
+
+.mail {
+    background-color: orange;
+    width:110px;
+    height: 30px;
+}
+
+.click, .mail {
+    border-radius: 5px;
+}
+
+span {
+    margin-left:5px;
+    color:white;
+}
+
+p {
+    display: grid;
+}
+
+a {
+    margin: auto;
+}
+

@@ -1,0 +1,113 @@
+body {
+    margin: 1em;
+}
+
+
+form {
+    width: 35%;
+    margin:0 auto;
+    /* border: 2px solid black; */
+}
+
+form fieldset {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: rgb(238,238,238);
+    margin: 3%;
+    box-shadow: rgb(238,238,238) 1px 1px 1px 2px;
+    border-radius: 5px;
+}
+
+p {
+    display: inline-block;
+    padding-right: 0.5em;
+
+}
+
+button {
+    display: block;
+    /* margin-top: 1.5em; */
+    margin-top: 1em;
+}
+
+.fields {
+    flex: 1 0 100%;
+    position:relative;
+    display:inline-block;
+}
+
+
+.fields input {
+    width: 70%;
+    height: 1.5em;
+    text-align:center;
+}
+
+.fields i {
+    position: absolute;
+    left: 20%;
+    top: 36%;
+}
+
+.fields input:focus {
+    background-color: grey;
+    outline: none;
+}
+
+.fields input:focus + i {
+    color: yellow;
+}
+
+legend {
+    border: 1.5px solid black;
+    width: 7em;
+    padding: 0.5em;
+    background-color: rgb(238,238,238);
+    box-shadow: rgb(238,238,238) 1px 1px 1px 2px;
+    border-radius: 5px;
+}
+
+.login button {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 1400px) {
+    form {
+        width: 35%;
+    }
+
+    .fields i {
+        left: 25%;
+        top: 36%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+
+    .fields p,input {
+        display: block;
+    }
+
+    form {
+        width: 60%;
+    }
+
+    .fields i {
+        left: 2%;
+        top: 72%;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+
+    form {
+        width: 90%;
+    }
+
+}

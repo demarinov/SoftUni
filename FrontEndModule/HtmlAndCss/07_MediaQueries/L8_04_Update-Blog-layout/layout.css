@@ -1,0 +1,177 @@
+body {
+    background-color: rgb(238, 238, 238);
+    padding: 3em;
+}
+
+/* layout */
+div.page {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.page header {
+    flex-basis: 100%;
+}
+
+.page main {
+    flex-basis: 65%;
+}
+
+.page aside {
+    flex-basis: 25%;
+}
+
+.float-right {
+    float: right;
+}
+
+.float-left {
+    float: left;
+    margin-top: 0;
+    margin-left: 0;
+}
+
+/* end of layout */
+
+/* styling */
+img {
+    background-color: rgb(255, 255, 255);
+
+    padding: 0.5em;
+    margin: 1em;
+    margin-top: 0.2em;
+    border-style: solid;
+    border-width: 0.20em;
+    border-color: black;
+    box-shadow: 0 0 10px black;
+}
+
+
+
+.blockquote {
+    font-family: Georgia, serif;
+    width: 50%;
+    float: right;
+    box-sizing: border-box;
+    border-left-style: solid;
+    border-left-width: 0.15em;
+    border-left-color: slategray;
+    padding-left: 1em;
+    font-style: italic;
+    margin-left: 0.8em;
+}
+
+.blockquote cite {
+    float:right;
+}
+
+a {
+    color: rgb(0, 153, 0);
+    text-decoration: none;
+}
+
+h1, h2 {
+    font-family: Georgia, serif;
+}
+
+h1 {
+    text-transform: uppercase;
+    padding: 0.5em 0;
+}
+
+
+ul {
+    padding-left: 0;
+    width: auto;
+}
+
+main article img:nth-child(1) {
+    height: 13em;
+}
+
+/* end of styling */
+
+nav {
+    float:right;
+    margin-top: -5em;
+}
+
+.nav-large ul {
+    display: flex;
+    justify-content: space-evenly;
+    width: 26em;
+}
+
+.nav-large ul li {
+    flex-basis: 3.5em;
+}
+
+.nav-list-small {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-basis: 100%;
+}
+
+.nav-list-small li {
+    flex: 1 0 70%;
+    margin: 0.2em;
+    height: 1.5em;
+}
+
+@media screen and (min-width: 750px) {
+    .nav-list-small {
+        display: none;
+    }
+
+    aside {
+        flex-basis: 25%;
+    }
+
+    header {
+        border-bottom: 2px solid black;
+    }
+
+    .nav-container p {
+        display: none;
+    }
+
+    .nav-large {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .nav-list-small {
+        display: flex;
+        border-bottom: 3px solid black;
+        border-top: 3px solid black;
+    }
+
+    aside {
+        align-self: flex-end;
+        margin: 0em 5em;
+    }
+
+
+    header {
+        border-bottom: none;
+    }
+
+    .nav-container p {
+        display: block;
+        margin:0 auto;
+        width: 4em;
+    }
+
+    .nav-large {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+}
+
+

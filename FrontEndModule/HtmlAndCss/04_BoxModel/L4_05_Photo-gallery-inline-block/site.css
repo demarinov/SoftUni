@@ -1,0 +1,42 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+.gallery li  img {
+    border: 0.4rem solid black;
+    width: 200px;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.gallery li {
+    width: 630px;
+    list-style-type: none;
+    /* border: 1px solid red; */
+    margin-bottom: 5px;
+    margin: auto;
+}   
+
+.gallery {
+    width: 70%;
+    margin: auto;
+    border: 2px solid black;
+    color: rgb(238, 238, 238)
+}
+
+.gallery li:nth-child(1) {
+    margin-top: 50px;
+
+}
+
+.gallery li:nth-child(4) {
+    margin-bottom: 50px;
+
+}
+
