@@ -1,0 +1,93 @@
+@media screen and (max-width: 600px) {
+
+    .banner {
+        padding-top: 10%;
+        padding-bottom: 5%;
+    }
+
+    .banner h2 {
+        width: 90%;
+        
+    }
+
+    .banner h2, .banner p {
+        font-size: 1.2em;
+    }
+
+    .inner header {
+        font-size: 0.8em;
+    }
+
+    header.major {
+        margin-bottom: 5%;
+    }
+
+    .feature p, .feature h3 {
+        font-size: 0.8em;
+    }
+
+    .banner .actions {
+        width:100%;
+    }
+
+    .banner .actions li {
+        width:100%;
+    }
+
+    .banner .button.special {
+        width:90%;
+    }
+
+    .wrapper .inner {
+        width: 90%;
+    }
+
+    .feature {
+        width: 100%;
+    }
+
+    .wrapper .inner.narrow {
+        width: 100%;
+    }
+
+    .grid-form .form-control.narrow {
+        width: 100%;
+    }
+
+    .wrapper .inner.narrow .grid-form {
+        width: 90%;
+        margin: auto;
+    }
+
+    .wrapper .inner.narrow .grid-form .actions {
+        width: 100%;
+    }
+
+    .wrapper .inner.narrow .grid-form .actions li{
+        width: 100%;
+    }
+
+    .wrapper .inner.narrow .grid-form .actions li input[type="submit"] {
+        width: 100%;
+    }
+
+    .wrapper.special {
+        padding-bottom: 0em;
+        padding-top: 5%;
+    }
+
+    .footer {
+        padding-top: 2em;
+        padding-bottom: 1em;
+    }
+
+    .footer:before {
+        width: 80%;
+        left: 10%;
+    }
+
+    .wrapper.style2{
+        padding-bottom: 2em;
+        padding-top: 2em;
+    }
+}

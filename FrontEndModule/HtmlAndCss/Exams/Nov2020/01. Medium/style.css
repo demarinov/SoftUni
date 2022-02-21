@@ -1,0 +1,36 @@
+body {
+    border: 2px solid black;
+    line-height: 1.5;
+}
+
+footer div {
+    border-top: 1px solid gray;
+    width: 30%;
+}
+
+h1 {
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
+button {
+    background-color: green;
+    color: white;
+    width: 13em;
+    height: 2.2em;
+    border-radius: 2px;
+    padding-bottom: 1.5em;
+    padding-top: 0.3em;
+}
+
+.right > p {
+    border-spacing: 1px;
+}
+
+.right h3 {
+    font-weight: bold;
+}
+
+span {
+    background-color: greenyellow;
+}

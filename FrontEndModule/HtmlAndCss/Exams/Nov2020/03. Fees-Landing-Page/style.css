@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@400;700&display=swap');
+@import url('https://use.fontawesome.com/releases/v5.15.3/css/all.css');
+@import "layout.css";
+@import "typography.css";
+
+
+.header a {
+    text-decoration: none;
+    color: #9999A3;
+}
+
+li {
+    list-style: none;
+}
+
+.payments-title {
+    flex: 1 1 100%;
+    color: white;
+    text-align: center;
+    padding-bottom: 10px;
+    font-weight: normal;
+}
+
+
+.payments-prof {
+    margin-right: 0px;
+}
+
+.payments-basics-title,
+.payments-basics-content,
+.payments-fund-title,
+.payments-fund-content,
+.payments-prof-title,
+.payments-prof-content {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+
+.payments h3 {
+    color: #54546D;
+    text-align: center;
+}
+
+.payments-basics-content,
+.payments-fund-content,
+.payments-prof-content {
+    text-align: center;
+}
+
+.p-color-grey {
+    color: #54546D;
+}
+
+.payments-basics-content button {
+    background: #9A5DC6;
+    border-radius: 30px;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 10px 35px;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.46);
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.payments-basics-footer {
+    background: rgb(3, 154, 61);
+    background: linear-gradient(90deg, rgba(3, 154, 61, 1) 0%, rgba(44, 189, 99, 1) 35%, rgba(71, 205, 123, 1) 100%);
+    padding: 0px;
+    padding-bottom: 19px;
+}
+
+.payments-basics-footer h3 {
+    padding-top: 20px;
+    color: white;
+}
+
+.payments-basics-footer p {
+    padding-bottom: 0px;
+}
+
+.payments-fund-footer,
+.payments-prof-footer {
+    padding: 0px;
+    display: flex;
+    height: 16.5vh;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.payments-fund-footer h3,
+.payments-prof-footer h3 {
+    color: white;
+}
+
+.payments-fund-footer h3:nth-child(1),
+.payments-prof-footer h3:nth-child(1) {
+    padding-right: 10px;
+}
+
+.payments-fund-footer-text,
+.payments-prof-footer-text {
+    font-size: 14px;
+    margin-right: 19px;
+}
+
+.payments-fund-footer div:nth-child(1),
+.payments-prof-footer div:nth-child(1) {
+    border-right: 1px solid white;
+    padding-left: 10px;
+}
+
+.payments-fund-footer {
+    background: rgb(76, 108, 137);
+    background: linear-gradient(90deg, rgba(76, 108, 137, 1) 0%, rgba(87, 131, 172, 1) 35%, rgba(97, 154, 206, 1) 100%);
+}
+
+.payments-prof-footer {
+    background: rgb(75, 57, 166);
+    background: linear-gradient(90deg, rgba(75, 57, 166, 1) 0%, rgba(109, 92, 197, 1) 35%, rgba(139, 124, 225, 1) 100%);
+}
+
+.education {
+    margin-top: 320px;
+    padding-left: 100px;
+    padding-right: 200px;
+}
+
+.education h2,
+.bank-title {
+    color: #54546D;
+    padding-left: 39px;
+}
+
+.education p {
+    padding-left: 40px;
+    margin-bottom: 50px;
+}
+
+.education li:nth-child(1) {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.education li:nth-child(6) {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.education li {
+    font-size: 18px;
+    border: 1px solid lightgray;
+    padding: 10px;
+    position: relative;
+}
+
+.education li:nth-child(odd) {
+    background: #E6E6E6;
+}
+
+.education li:nth-child(even) {
+    background: #F8F8F8;
+}
+
+.education-icons img {
+    margin-right: 150px;
+}
+
+.bank-title {
+    flex: 1 1 100%;
+    padding-left: 0px;
+}
+
+.bank-content {
+    flex: 1 1 60%;
+}
+
+.bank-logo {
+    flex: 1 1 35%;
+    margin-left: 60px;
+}
+
+.footer {
+    background: #54546D;
+    color: #8F8FAA;
+    height: 10vh;
+}
