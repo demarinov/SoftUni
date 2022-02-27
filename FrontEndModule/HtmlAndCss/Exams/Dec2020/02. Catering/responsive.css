@@ -1,0 +1,31 @@
+/* TODO: Add the responsive styles here */
+
+
+@media screen and (max-width: 600px) {
+    .w3-hide-small {
+        display: none;
+    }
+
+    .w3-top>article>a{
+        font-weight: bold;
+    }
+
+    main {
+        width: 100%;
+        margin: auto;
+        /* border: 1px solid black; */
+    }
+
+    .w3-col.m6 {
+        width: 100%;
+        margin: auto;
+        /* border: 1px solid green; */
+    }
+
+    .w3-col.l6 {
+        width: 100%;
+        margin: auto;
+    }
+
+
+}
