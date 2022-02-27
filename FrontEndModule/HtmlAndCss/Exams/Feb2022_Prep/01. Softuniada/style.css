@@ -1,0 +1,68 @@
+@import "https://use.fontawesome.com/releases/v5.10.2/css/all.css";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+@import "reset.css";
+
+
+
+html {
+    font-family: "Lato",sans-serif;
+    padding: 1rem;
+}
+
+h1,h2,h3 {
+    font-family: "Montserat", sans-serif;
+}
+
+.calendar {
+    max-width: 800px;
+    margin-inline:auto;
+    border-radius: 4px;
+    overflow: hidden;
+    -webkit-box-shadow: 3px 2px 25px 5px rgba(0,0,0,0.32); 
+    box-shadow: 3px 2px 25px 5px rgba(0,0,0,0.32);
+}
+
+.calendar-topbar {
+    background-color: #ff50d1;
+    padding: 0.75rem;
+    color: white;
+}
+
+.calendar-topbar span {
+    margin-left: .5rem;
+    font-size: 14px;
+}
+
+.event {
+    padding: 1rem 1rem 2rem;
+    
+}
+
+.event:first-child {
+    border-bottom: 1px solid gray;
+}
+
+.event .event-time {
+    font-size: 12px;
+    color: gray;
+    margin-bottom: .5rem;
+    display: block;
+}
+
+.event a {
+    text-decoration: none;
+    color: black;
+}
+
+.event .event-title {
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.event .event-description {
+    line-height: 1.5;
+}
+
+
+
+

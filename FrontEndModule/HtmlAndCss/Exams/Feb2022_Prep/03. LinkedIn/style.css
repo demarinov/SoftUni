@@ -1,0 +1,159 @@
+@import "https://use.fontawesome.com/releases/v5.10.2/css/all.css";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+@import "reset.css";
+
+
+
+:root {
+    --color-blue: #0072b1;
+
+    --color-beige: #dcdcc6;
+    --color-beige-white: #f5f5dc;
+    --color-gray-white: #D8D8D8;
+    --color-orange:  #f5522f;
+    --section-padding: 38px 120px;
+    --section-padding-x: 180px;
+}
+
+html {
+    font-family: "Roboto", sans-serif;
+}
+
+.login {
+    padding: var(--section-padding);
+    position: relative;
+}
+
+.login .content {
+    width: 60%;
+}
+
+.login h2 {
+    color: var(--color-blue);
+    font-weight: bold;
+    font-size: 76px;
+    line-height: 1.1;
+    margin-bottom: 21px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+}
+
+.login .content input {
+    padding: 10px 6px;
+}
+
+.login .content form input {
+    margin-bottom: 12px;
+}
+
+.login .content form a {
+    text-decoration: none;
+    margin-bottom: 24px;
+}
+
+.btn {
+    padding: 10px 6px;
+    border-radius: 20px;
+    border: 1px solid var(--color-blue);
+    cursor: pointer;
+    background-color: white;
+    color: var(--color-blue);
+}
+
+.btn-primary {
+    background-color: var(--color-blue);
+    color: white;
+}
+
+.login-img {
+    position: absolute;
+    top:5%;
+    right:0;
+    width: 39%;
+}
+
+.section {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.jobs, .job-posts, .join {
+    padding: 160px var(--section-padding-x);
+    background-color: var(--color-beige-white);
+    
+}
+
+.job-posts {
+    background-color: var(--color-beige);
+}
+
+.subtitle {
+    font-size: 50px;
+    width: 400px;
+}
+
+/* tags */
+.tag {
+    padding: 20px 10px;
+    border-radius: 20px;
+    background-color: var(--color-gray-white);
+    color: gray;
+    font-weight: bold;
+}
+
+.jobs .options h3 {
+    color: gray;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.options {
+    margin-left: 100px;
+    width: 35%;
+}
+
+.post-btn {
+    background-color: var(--color-beige-white);
+}
+
+.job-posts .subtitle {
+    color: var(--color-orange);
+    font-size: 40px;
+}
+
+.job-posts {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.join {
+    height: 80vh;
+    background-image: url("./images/background.svg");
+    padding-top: 20px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-left: 355px;
+}
+
+.join .title {
+    color: var(--color-blue);
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 1.1;
+    
+    /* margin-bottom: 21px; */
+}
