@@ -1,0 +1,88 @@
+@import "https://use.fontawesome.com/releases/v5.10.2/css/all.css";
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
+@import "reset.css";
+
+
+
+html {
+    font-family: "PT Serif", sans-serif;
+    padding: 1rem;
+}
+
+body {
+    padding: 1rem;
+}
+
+table, th, td {
+    border: 1px solid green;
+}
+
+main {
+    background-image: url("./image/image1.png");
+    background-repeat: repeat-y;
+    /* background-size: cover; */
+    /* border: 1px solid black; */
+    width: 1000px;
+    padding: 1.5rem;
+    -webkit-box-shadow: -1px 2px 25px -4px rgba(0,0,0,0.77); 
+    box-shadow: -1px 2px 25px -4px rgba(0,0,0,0.77);
+}
+
+.kiwi {
+    display: flex;
+}
+
+.kiwi-description {
+    width: 500px;
+    line-height: 1.5;
+}
+
+img {
+    width: 500px;
+    padding-left: 1rem;
+}
+
+.title {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #D0D3D4;
+}
+
+.main-desc {
+    padding-top: 0.5rem;
+    font-style: italic;
+
+}
+
+.right {
+    margin-left: 220px;
+}
+
+.short-desc {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.long-desc {
+    padding-bottom: 3rem;
+}
+
+table th {
+    font-weight: bold;
+}
+
+table td {
+    text-align: center;
+}
+
+table th, td {
+    padding: 0.2rem 3.2rem;
+}
+
+.left {
+    color: green;
+    font-weight: bold;
+}
+

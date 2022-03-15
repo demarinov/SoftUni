@@ -1,0 +1,274 @@
+@import "https://use.fontawesome.com/releases/v5.10.2/css/all.css";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+@import "reset.css";
+
+:root {
+    --color-blue: #0072b1;
+    --color-gray-white: #E5E7E9;
+
+    --color-black-lighter: #273746;
+    
+    --color-black-light: #566573;
+    --color-blue-light: #85C1E9 ;
+}
+
+html {
+    font-family: "Helvetica",sans-serif;
+    padding: 1rem;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+    padding: 1.5rem 2rem;
+}
+
+.menu-nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.menu h2 {
+    font-size: 25px;
+}
+
+.h-color-blue {
+    color: var(--color-blue);
+}
+
+.menu-nav li:first-child {
+    border-bottom: 3px solid var(--color-blue);
+}
+
+.started-img {
+    background-image: url("./images/slide2.jpg");
+    height: 80vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.started-promote {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 25%;
+    position: absolute;
+    top: 40%;
+    left: 20%;
+}
+
+.started-promote h2 {
+    font-size: 30px;
+    color: white;
+    line-height: 1.2;
+    margin: 1rem 1rem;
+    padding-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.started-promote button {
+    margin: 1rem 1rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    background-color: var(--color-blue);
+    border-radius: 20px;
+    padding: 0.5rem 1.5rem;
+    color: white;
+    border: unset;
+}
+
+.started {
+    position: relative;
+}
+
+.welcome {
+    text-align: center;
+    line-height: 1.5;
+    height: 30vh;
+    width: 90%;
+    margin: auto;
+    margin-top: 1.5%;
+    
+}
+
+.welcome h2 {
+    font-size: 30px;
+}
+
+.welcome .border {
+    border-bottom: 3px solid var(--color-blue);
+    width: 8%;
+    margin: auto;
+    margin-bottom: 1rem;
+}
+
+.read-more-btn {
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    margin-top: 3%;
+}
+
+.services {
+    background-color: var(--color-gray-white);
+    height: 70vh;
+}
+
+.services h2 {
+    font-size: 25px;
+    padding-top: 2rem;
+    /* padding-bottom: 2rem; */
+    margin: auto;
+    text-align: center;
+}
+
+.services .border {
+    border-bottom: 3px solid black;
+    width: 5%;
+    margin: auto;
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.services .articles {
+    display: flex;
+    width: 70%;
+    /* justify-content: space-between; */
+    gap: 1.5rem;
+    margin-left: 17%;
+}
+
+.articles article {
+    width: 30%;
+    background-color: white;
+    line-height: 1.2;
+}
+
+.articles img {
+    display: block;
+    width: 100%;
+}
+
+.articles{
+    text-align: center;
+    margin: auto;
+}
+
+.articles .article-content {
+    width: 80%;
+    margin: auto;
+}
+
+.article-content h3 {
+    font-size: 18px;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+
+.article-content button {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 0px;
+}
+
+.subscribe {
+    height: 20vh;
+    width: 100%;
+    background-color: var(--color-black-lighter);
+    color: white;
+}
+
+.subscribe-content {
+    width: 80%;
+    /* margin: 0 40%; */
+    margin: auto;
+    text-align: center;
+    font-size: 11px;
+}
+
+.subscribe h2 {
+    font-size: 20px;
+    margin: 0 40%;
+    width: 100%;
+    padding-top: 1.5rem;
+}
+
+.subscribe .border {
+    border-bottom: 2px solid white;
+    width: 4.5%;
+    margin: 0 48%;
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.subscribe .subscribe-content h3{
+    padding-bottom: 1rem;
+}
+
+.subscribe-content input {
+    padding: 0.3rem 0.5rem;
+    width: 25%;
+    background-color: var(--color-black-light);
+    
+}
+
+.subscribe-content button {
+    padding: 0.3rem 2rem;
+    border-radius: 5px;
+    background-color: var(--color-blue-light);
+    color: white;
+    margin-left: 0.5rem;
+    text-transform:uppercase;
+    border: unset;
+}
+
+/* .subscribe-content input[type="text"]::placeholder {
+    text-align: left;
+} */
+
+footer {
+    background-color: black;
+    height: 5vh;
+    color: white;
+}
+
+footer p {
+    margin: auto;
+    width: 80%;
+    text-align: center;
+    padding-top: 0.5rem;
+}
+
+.links {
+    display: flex;
+    height: 30vh;
+    justify-content: space-around;
+    gap: 1rem;
+    color: white;
+    background-color: #1C2833;
+}
+
+.links div {
+    margin-top: 2rem;
+}
+
+.links ul {
+    text-decoration: none;
+}
+
+.links div ul li {
+    margin-top: 1rem;
+}
+
+.links .address ul li:nth-child(2) {
+    margin-top: 2rem;
+}
+
+.follow ul {
+    display: flex;
+    gap: 0.5rem;
+}
+
+
+
+
+
