@@ -1,1 +1,0 @@
-{"version":3,"sources":["user.ts"],"names":[],"mappings":"","file":"user.js","sourcesContent":["import {IBase} from \"./base\";\r\n\r\nexport interface IUser extends IBase{\r\n\r\n        themes : string[];\r\n        posts: string[];\r\n        tel: string;\r\n        email: string;\r\n        username: string;\r\n        password: string;\r\n        __v: number; \r\n}"]}
