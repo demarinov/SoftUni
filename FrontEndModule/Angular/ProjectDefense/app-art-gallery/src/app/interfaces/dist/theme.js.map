@@ -1,0 +1,1 @@
+{"version":3,"sources":["theme.ts"],"names":[],"mappings":"","file":"theme.js","sourcesContent":["import { IUser } from \"./user\";\r\nimport {IBase} from \"./base\";\r\n\r\nexport interface ITheme extends IBase{\r\n\r\n    subscribers : string[];\r\n    posts: any[];\r\n    themeName : string;\r\n    userId: IUser;\r\n}"]}

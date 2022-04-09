@@ -1,0 +1,28 @@
+footer {
+    background: rgb(0, 212, 255);
+    margin-top: 1em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    max-width: 1366px;
+}
+
+footer div {
+    
+    margin-left: 0;
+    padding-left: 0;
+    width: 80%;
+    margin:auto;
+}
+
+footer p {
+    margin: 0;
+    padding: 0;
+    font-size: 0.7em;
+    text-align: center;
+    color: black;
+}
+
+footer span {
+    font-size: 1.5em;
+}

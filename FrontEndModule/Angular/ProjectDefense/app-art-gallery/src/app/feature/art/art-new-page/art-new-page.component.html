@@ -1,0 +1,52 @@
+<div class="new-art-border">
+    <div class="header-background">
+        <span>New Artwork</span>
+    </div>
+    <form #newArtForm="ngForm" (ngSubmit)="submitNewArt(newArtForm)">
+        <div class="new-art-title">
+            <label for="name">Title <span class="red">*</span></label>
+            <input required minlength="5" #artName="ngModel" ngModel type="text" name="name" id="name">
+
+            <ng-container *ngIf="artName.touched && artName.invalid">
+                <p *ngIf="artName.errors?.['required']" class="error">
+                    Artwork name is required.
+                </p>
+                <p *ngIf="artName.errors?.['minlength']" class="error">
+                    Artwork name must be at least 5 characters long.
+                </p>
+
+            </ng-container>
+
+
+        </div>
+        <div class="new-art-content">
+
+            <label for="imageUrl">Image Url <span class="red">*</span></label>
+             <input required #imageUrl="ngModel" ngModel type="text" name="imageUrl" id="imageUrl">
+
+            <ng-container *ngIf="imageUrl.touched && imageUrl.invalid">
+                <p *ngIf="imageUrl.errors?.['required']" class="error">
+                    The field with your image url is required.
+                </p>
+            </ng-container>
+        </div>
+
+        <div class="new-art-content">
+
+            <label for="price">Price <span class="red">*</span></label>
+             <input required #price="ngModel" ngModel type="text" name="price" id="price">
+
+            <ng-container *ngIf="price.touched && price.invalid">
+                <p *ngIf="price.errors?.['required']" class="error">
+                    The field with your price is required.
+                </p>
+            </ng-container>
+        </div>
+
+        <div class="new-art-buttons">
+            <button type="button" (click)="navigateToHome()" class="cancel">Cancel</button>
+            <button [disabled]="newArtForm.invalid" class="public">Post</button>
+        </div>
+
+    </form>
+</div>

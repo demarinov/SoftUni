@@ -1,0 +1,6 @@
+:host {
+    display: flex;
+
+    max-width: 1360px;
+    flex-wrap: wrap;
+}

@@ -1,0 +1,1 @@
+{"version":3,"sources":["art.ts"],"names":[],"mappings":"","file":"art.js","sourcesContent":["import { IBase } from \"./base\";\r\nimport { IUser } from \"./user\";\r\n\r\nexport interface IArt extends IBase{\r\n    name: string,\r\n    userId: IUser,\r\n    imageUrl: string,\r\n    price: string,\r\n}"]}

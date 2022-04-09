@@ -1,0 +1,67 @@
+/* welcome component */
+.welcome {
+    padding: 0.3em 4em;
+    border: 1px solid #999;
+    border-radius: 0.3em;
+    font-size: 0.8em;
+    margin-top: 1em;
+    color: white;
+    width: 100%;
+}
+
+.welcome h3 {
+    background-color: #4ebced;
+    border-radius: 0.3em;
+    width: 95%;
+    padding: 0.3em 1em;
+    text-align: center;
+    color: white;
+    font-size: 1.5em;
+}
+
+.welcome p {
+    padding: 1em;
+    border-bottom: 1px solid #999;
+    font-style: normal;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.welcome a {
+    color: white;
+    text-decoration: none;
+    background-color: #4ebced;
+    border: none;
+    border-radius: 0.3em;
+    padding: 0.5em 5.2em;
+    margin: 1em;
+}
+
+.welcome a:hover {
+    cursor: pointer;
+}
+
+.welcome ul {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0;
+    margin: 1em;
+}
+
+.welcome li {
+    list-style: none;
+}
+
+.images {
+    display: flex;
+    justify-content: space-around;
+}
+.images img {
+    width: 20em;
+    height: 20em;
+}
+
+.logged {
+    border-top: 1px solid #999;
+    margin-top: 1em;
+}
