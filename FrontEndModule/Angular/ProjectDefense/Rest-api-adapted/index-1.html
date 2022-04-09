@@ -1,0 +1,301 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Unknown </title></head><body>
+<h1 id="rest-api-for-angular-course-in-softuni">REST-api for Angular course in SoftUni</h1>
+<h2 id="getting-started">Getting started</h2>
+<p>Let's make our first API request to the REST-api!</p>
+<p>In the example below, we're trying to get information about the REST-api:</p>
+<p><code>https://localhost:3000/api/test</code></p>
+<p>Here is the response we get:</p>
+<p><code>{
+    "name": "rest-api",
+    "version": "1.0.0",
+    "description": "REST-api for back-end of Angular course workshop in SoftUni",
+    "main": "index.js",
+}</code></p>
+<p>If your response looks slightly different don't panic. This is probably because more data has been added to the API since I made this documentation.</p>
+<h2 id="base-url">Base URL</h2>
+<p>The Base URL is the root URL for all of the API, if you ever make a request to the API and you get back a 404 NOT FOUND response then check the Base URL first.</p>
+<p>The Base URL for the API is:</p>
+<p><code>https://localhost:3000/api</code></p>
+<p>The documentation below assumes you are prepending the Base URL to the endpoints in order to make requests.</p>
+<h2 id="authentication">Authentication</h2>
+<p>This API isn't open API. Authentication is required to store and get data. You can use the connected REACT-app to make registration and sign in. This also means that I've limited what you can do. If you find a mistake, then just write an issue.</p>
+<h1 id="endpoints-users">Endpoints: Users</h1>
+<ul>
+<li><code>/users/register</code> -- signing up;</li>
+<li><code>/users/login</code> -- signing in;</li>
+<li><code>/users/logout</code> -- logging out;</li>
+</ul>
+<h2 id="register-user">Register User</h2>
+<p>Signs up user and returns the registered data as json.</p>
+<h3 id="url-usersregister">URL --&gt; <code>/users/register</code></h3>
+<h3 id="method-post">Method --&gt; <code>POST</code></h3>
+<h3 id="body-">Body --&gt;</h3>
+<p><code>{
+    "name":"John Doe",
+    "email":"john@email.com",
+    "username":"Johny",
+    "password":"12345",
+    "rePassword":"12345"
+}</code></p>
+<p>Required:</p>
+<p><code>email</code> : [string] -- The email of the person is required and must be unique;</p>
+<p><code>username</code> : [string] -- The username of the person is required and must be unique, also there is a minimum length of 5 chars, allowed are latin letters and numbers;</p>
+<p><code>password</code> : [string] -- The password of the person is required and must be unique, also there is a minimum length of 5 chars, allowed are latin letters and numbers;</p>
+<p>Not Required</p>
+<p><code>tel</code> : [string] -- Optional;</p>
+<h3 id="success-response">Success Response:</h3>
+<p>Code: 200</p>
+<p>Content: 
+<code>{
+    "themes": [],
+    "posts": [],
+    "_id": "5f1875690916010017964978",
+    "name": "John Doe",
+    "email": "john@email.com",
+    "username": "Johny",
+    "created_at": "2020-10-14T08:04:12.196Z",
+    "updatedAt": "2020-10-14T08:58:53.589Z"
+}</code></p>
+<h3 id="error-response">Error Response:</h3>
+<p>Code: 409 CONFLICT</p>
+<p>Content: 
+<code>{
+    "message": "This email/username is already registered!"
+}</code></p>
+<h2 id="login-user">Login User</h2>
+<p>Signs in user and returns the registered data as json.</p>
+<h3 id="url-userslogin">URL --&gt; <code>/users/login</code></h3>
+<h3 id="method-post_1">Method --&gt; <code>POST</code></h3>
+<h3 id="body-_1">Body --&gt;</h3>
+<p><code>{
+    "username":"Johny",
+    "password":"12345"
+}</code></p>
+<p>Required:</p>
+<p><code>username</code> : [string] -- The username of the person </p>
+<p><code>password</code> : [string] -- The password of the person </p>
+<h3 id="success-response_1">Success Response:</h3>
+<p>Code: 200</p>
+<p>Content: 
+<code>{
+    "themes": ["5f85c51996b5601b2406e5b7"],
+    "posts": ["5f86bdcde012743fe4f5b324"],
+    "_id": "5f1875690916010017964978",
+    "name": "John Doe",
+    "email": "john@email.com",
+    "username": "Johny",
+    "created_at": "2020-10-14T08:04:12.196Z",
+    "updatedAt": "2020-10-14T08:58:53.589Z"
+}</code></p>
+<h3 id="error-response_1">Error Response:</h3>
+<p>Code: 401 Unauthorized</p>
+<p>Content: 
+<code>{ 
+    "message": "Wrong username or password"
+}</code></p>
+<h2 id="logout-user">Logout User</h2>
+<p>Logout user.</p>
+<h3 id="url-userslogout">URL --&gt; <code>/users/logout</code></h3>
+<h3 id="method-post_2">Method --&gt; <code>POST</code></h3>
+<h3 id="success-response_2">Success Response:</h3>
+<p>Code: 401 Unauthorized</p>
+<p>Content: 
+<code>{ 
+    "message": "Logged out!"
+}</code></p>
+<h1 id="endpoints-themes">Endpoints: Themes</h1>
+<ul>
+<li><code>/themes</code></li>
+<li><code>/themes/:themeId</code></li>
+</ul>
+<h2 id="get-themes">Get Themes</h2>
+<p>Returns all themes as json.</p>
+<h3 id="url-themes">URL --&gt; <code>/themes</code></h3>
+<h3 id="method-get">Method --&gt; <code>GET</code></h3>
+<h3 id="success-response_3">Success Response:</h3>
+<p>Code: 200</p>
+<p>Content: 
+<code>[
+    {
+        "subscribers": ["5f8580d25d1da62568dd38fd"],
+        "posts": ["5f858dd2d895ad23602db9d5"],
+        "_id": "5f858dd2d895ad23602db9d4",
+        "themeName": "Some Theme",
+        "userId": "5f8580d25d1da62568dd38fd",
+        "created_at": "2020-10-13T11:21:54.863Z",
+        "updatedAt": "2020-10-13T11:21:54.898Z",
+        "__v": 0
+    }
+]</code></p>
+<h3 id="error-response_2">Error Response:</h3>
+<p>Code: 500 Internal Server Error</p>
+<p>Content: 
+<code>{
+    message: "Something went wrong!"
+}</code></p>
+<h2 id="post-theme">Post Theme</h2>
+<p>Creates new Theme with the first post of the author and returns the theme as json.</p>
+<h3 id="url-themes_1">URL --&gt; <code>/themes</code></h3>
+<h3 id="method-post_3">Method --&gt; <code>POST</code></h3>
+<h3 id="body-_2">Body --&gt;</h3>
+<p><code>{
+    "themeName": "Some Theme Title",
+    "postText": "Some Post text"
+}</code></p>
+<p>Required:</p>
+<p><code>themeName</code> : [string] -- The Title of your new Theme, which you want to create
+<code>postText</code> : [string] -- The text of your post. This post will be append as first comment on your Theme.</p>
+<h3 id="success-response_4">Success Response:</h3>
+<p>Code: 200</p>
+<p>Content: 
+<code>{
+    "subscribers": ["5f86c1f0a112c130e89964af"],
+    "posts": ["5f86c38abfa44331a0ff0094"],
+    "_id": "5f86c38abfa44331a0ff0093",
+    "themeName": "Some Theme Title",
+    "userId": "5f86c1f0a112c130e89964af",
+    "created_at": "2020-10-14T09:23:22.102Z",
+    "updatedAt": "2020-10-14T09:23:22.114Z",
+    "__v": 0
+}</code></p>
+<h3 id="error-response_3">Error Response:</h3>
+<p>Code: 500 Internal Server Error</p>
+<p>Content: 
+<code>{
+    message: "Something went wrong!"
+}</code></p>
+<h2 id="create-post">Create Post</h2>
+<p>Creates new Post of the author and returns the theme as json.</p>
+<h3 id="url-themesthemeid">URL --&gt; <code>/themes/:themeId</code></h3>
+<h3 id="method-post_4">Method --&gt; <code>POST</code></h3>
+<h3 id="body-_3">Body --&gt;</h3>
+<p><code>{
+    "postText": "Some Post text"
+}</code></p>
+<h3 id="success-response_5">Success Response:</h3>
+<p>Code: 200</p>
+<p>Content: 
+<code>{
+"subscribers": ["5f8580d25d1da62568dd38fd"],
+"posts": [
+    "5f85ad8f1141b13a04a9139c",
+    "5f85b2501141b13a04a9139d"
+],
+"_id": "5f858dd2d895ad23602db9d4",
+"themeName": "Some Theme",
+"userId": "5f8580d25d1da62568dd38fd",
+"created_at": "2020-10-13T11:21:54.863Z",
+"updatedAt": "2020-10-13T13:57:36.466Z",
+"__v": 0
+}</code></p>
+<h3 id="error-response_4">Error Response:</h3>
+<p>Code: 500 Internal Server Error</p>
+<p>Content: 
+<code>{
+    message: "Something went wrong!"
+}</code></p>
+<h1 id="endpoints-posts">Endpoints: Posts</h1>
+<ul>
+<li><code>/themes/:themeId/posts/:postId</code></li>
+</ul>
+<h2 id="edit-post">Edit Post</h2>
+<p>Edit Post if the user is the author of the post and returns the changed post.</p>
+<h3 id="url-themesthemeidpostspostid">URL --&gt; <code>/themes/:themeId/posts/:postId</code></h3>
+<h3 id="method-put">Method --&gt; <code>PUT</code></h3>
+<h3 id="body-_4">Body --&gt;</h3>
+<p><code>{
+    "postText": "Changed text"
+}</code></p>
+<h3 id="success-response_6">Success Response:</h3>
+<p>Code: 200</p>
+<p>Content: 
+<code>{
+    "likes": [],
+    "_id": "5f86c3fcbfa44331a0ff0095",
+    "text": "Changed text",
+    "userId": "5f86c1f0a112c130e89964af",
+    "themeId": "5f85c51996b5601b2406e5b7",
+    "created_at": "2020-10-14T09:25:16.203Z",
+    "updatedAt": "2020-10-14T09:31:45.021Z",
+    "__v": 0
+}</code></p>
+<h3 id="error-response_5">Error Response:</h3>
+<p>Code: 401 Unauthorized</p>
+<p>Content: 
+<code>{
+    message: "Not allowed!"
+}</code></p>
+<p>Code: 500 Internal Server Error</p>
+<p>Content: 
+<code>{
+    message: "Something went wrong!"
+}</code></p>
+<h2 id="delete-post">Delete Post</h2>
+<p>Deletes Post if the user is the author of the post and returns the deleted post.</p>
+<h3 id="url-themesthemeidpostspostid_1">URL --&gt; <code>/themes/:themeId/posts/:postId</code></h3>
+<h3 id="method-delete">Method --&gt; <code>DELETE</code></h3>
+<h3 id="success-response_7">Success Response:</h3>
+<p>Code: 200</p>
+<p>Content: 
+<code>{
+    "likes": [],
+    "_id": "5f86c3fcbfa44331a0ff0095",
+    "text": "Changed text",
+    "userId": "5f86c1f0a112c130e89964af",
+    "themeId": "5f85c51996b5601b2406e5b7",
+    "created_at": "2020-10-14T09:25:16.203Z",
+    "updatedAt": "2020-10-14T09:33:56.595Z",
+    "__v": 0
+}</code></p>
+<h3 id="error-response_6">Error Response:</h3>
+<p>Code: 401 Unauthorized</p>
+<p>Content: 
+<code>{
+    message: "Not allowed!"
+}</code></p>
+<p>Code: 500 Internal Server Error</p>
+<p>Content: 
+<code>{
+    message: "Something went wrong!"
+}</code></p>
+<h2 id="like-post">Like Post</h2>
+<p>Adds like to the post.</p>
+<h3 id="url-likespostid">URL --&gt; <code>/likes/:postId</code></h3>
+<h3 id="method-put_1">Method --&gt; <code>PUT</code></h3>
+<h3 id="success-response_8">Success Response:</h3>
+<p>Code: 200</p>
+<p>Content: 
+<code>{
+    message: "Liked successful!"
+}</code></p>
+<h3 id="error-response_7">Error Response:</h3>
+<p>Code: 500 Internal Server Error</p>
+<p>Content: 
+<code>{
+    message: "Something went wrong!"
+}</code></p>
+<!-- users
+.post /register - register new user
+.post /login - login user
+.post /logout - logout user
+
+.get /profile - get user info
+.post /profile - post user info
+.put /profile - edit user info
+
+themes
+.get /themes - lists all themes
+.post /themes - create new theme only for registered users
+
+posts:
+.get themes/id - get all posts for theme
+.post themes/id - create post in theme by id only for registered users
+.put themes/id/posts/id - edit post only possible for author
+.delete themes/id/posts/id - delete post only possible for author -->
+
+<!-- http://localhost:3000/api/users/register --  {"name":"SomeName","email":"some@email.com","username":"someUsername","password":"12345","rePassword":"12345"} -->
+
+<!--http://localhost:3000/api/themes -- {"themeName":"Some Theme", "userId":"5f85bf709a517d36f4abe656", "post": "Some Post" } -->
+
+<!-- http://localhost:3000/api/themes/5f858dd2d895ad23602db9d4  -- {"userId":"5f8580d25d1da62568dd38fd", "postText": "Some Post textsdfasdf" } -->
+</body></html>
