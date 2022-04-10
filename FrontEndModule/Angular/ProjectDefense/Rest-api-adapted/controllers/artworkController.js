@@ -7,17 +7,12 @@ function getArtworks(req, res, next) {
         .catch(next);
 }
 
-function getTheme(req, res, next) {
-    const { themeId } = req.params;
+function getArt(req, res, next) {
+    const { artId } = req.params;
 
-    themeModel.findById(themeId)
-        .populate({
-            path : 'posts',
-            populate : {
-              path : 'userId'
-            }
-          })
-        .then(theme => res.json(theme))
+    artworkModel.findById(artId)
+        .populate( 'userId')
+        .then(art => res.json(art))
         .catch(next);
 }
 
@@ -32,19 +27,8 @@ function createArt(req, res, next) {
         .catch(next);
 }
 
-function subscribe(req, res, next) {
-    const themeId = req.params.themeId;
-    const { _id: userId } = req.user;
-    themeModel.findByIdAndUpdate({ _id: themeId }, { $addToSet: { subscribers: userId } }, { new: true })
-        .then(updatedTheme => {
-            res.status(200).json(updatedTheme)
-        })
-        .catch(next);
-}
-
 module.exports = {
     createArt,
-    getTheme,
-    subscribe,
+    getArt,
     getArtworks,
 }
