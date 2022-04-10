@@ -37,12 +37,13 @@ export class ProfileComponent implements OnInit {
     this.inEditMode = true;
 
     setTimeout(() => {
+
       this.editProfileForm.form.patchValue({
         email: this.currentUser.email,
         username: this.currentUser.username,
-        'select-tel': this.currentUser.tel && this.currentUser.tel.length > 4 
+        'select-tel': this.currentUser.tel && this.currentUser.tel.length > 6 
         ? this.currentUser.tel.substring(0,4) : '',
-        tel: this.currentUser.tel && this.currentUser.tel.length > 4 
+        tel: this.currentUser.tel && this.currentUser.tel.length > 6 
         ? this.currentUser.tel.substring(4) : this.currentUser.tel
       })
     })
@@ -51,6 +52,18 @@ export class ProfileComponent implements OnInit {
   updateProfile() : void {
     console.log(this.editProfileForm.value);
     this.inEditMode = false;
+    // make put request
+
+    this.userService.editProfile$(this.editProfileForm.value).subscribe({
+      next: user => {
+        this.currentUser = user;
+        console.log(user);
+      },
+      error: error => {
+        console.log(error);
+        this.router.navigate(['/home']);
+      }
+    });
 
   }
 }

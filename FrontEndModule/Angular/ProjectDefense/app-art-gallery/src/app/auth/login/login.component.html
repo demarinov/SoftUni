@@ -30,7 +30,7 @@
             <input formControlName="password" type="password" name="password" id="password" placeholder="******">
         </p>
         
-        {{loginFormGroup.controls['password'].errors | json}}
+        <!-- {{loginFormGroup.controls['password'].errors | json}} -->
         <ng-container *ngIf="loginFormGroup.controls['password'].touched 
         && loginFormGroup.controls['password'].invalid">
         <p *ngIf="loginFormGroup.controls['password'].errors?.['required']" class="error">
