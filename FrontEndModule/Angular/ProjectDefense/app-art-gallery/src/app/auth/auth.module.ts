@@ -3,9 +3,9 @@ import { CommonModule } from '@angular/common';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
-import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EmailValidatorDirective } from './email-validator.directive';
+import { RoutingModule } from './routing/routing.module';
 
 
 
@@ -18,7 +18,7 @@ import { EmailValidatorDirective } from './email-validator.directive';
   ],
   imports: [
     CommonModule,
-    RouterModule,
+    RoutingModule,
     ReactiveFormsModule,
     FormsModule,
   ]

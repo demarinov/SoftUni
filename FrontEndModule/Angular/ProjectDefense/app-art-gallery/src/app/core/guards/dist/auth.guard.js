@@ -16,7 +16,7 @@ var AuthGuard = /** @class */ (function () {
         if (this.userService.isUserLogged) {
             return true;
         }
-        return this.router.createUrlTree(['/login']);
+        return this.router.createUrlTree(['/user/login']);
     };
     AuthGuard = __decorate([
         core_1.Injectable({

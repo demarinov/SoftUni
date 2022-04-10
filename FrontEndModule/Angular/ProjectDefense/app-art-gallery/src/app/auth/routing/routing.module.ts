@@ -8,12 +8,12 @@ import { AuthGuard } from 'src/app/core/guards/auth.guard';
 const routes:Routes = [
   {
     path:"register",
-    pathMatch: "full",
+    // pathMatch: "full",
     component: RegisterComponent
   },
   {
     path: "login",
-    pathMatch: "full",
+    // pathMatch: "full",
     component: LoginComponent
   },
   {

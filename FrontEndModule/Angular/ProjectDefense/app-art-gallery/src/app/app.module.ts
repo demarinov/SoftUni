@@ -20,7 +20,6 @@ import { ArtModule } from './feature/art/art.module';
     BrowserModule,
     SharedModule,
     PagesModule,
-    AuthModule,
     ArtModule,
     AppRoutingModule,
     HttpClientModule,

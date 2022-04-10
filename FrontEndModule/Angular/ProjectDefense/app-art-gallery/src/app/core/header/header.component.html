@@ -6,17 +6,17 @@
         <div class="mini-navbar" *ngIf="!userService.isUserLogged">
             <ul>
                 <li>
-                    <a routerLink="/login">Login</a>
+                    <a routerLink="/user/login">Login</a>
                 </li>
                 <li>
-                    <a routerLink="/register">Register</a>
+                    <a routerLink="/user/register">Register</a>
                 </li>
             </ul>
         </div>
         <div class="mini-navbar" *ngIf="userService.isUserLogged">
             <ul>
                 <li>
-                    <a routerLink="/profile" >{{currentUser.username}}</a>
+                    <a routerLink="/user/profile" >{{currentUser.username}}</a>
                 </li>
                 <li>
                     <a href="#" (click)="logoutHandler()">Logout</a>

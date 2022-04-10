@@ -39,6 +39,11 @@ var UserService = /** @class */ (function () {
         return this.httpClient.
             get(environment_1.environment.apiUrl + "/users/profile", { withCredentials: true }).pipe(rxjs_1.tap(function (user) { return _this.currentUser = user; }));
     };
+    UserService.prototype.editProfile$ = function (userData) {
+        var _this = this;
+        return this.httpClient.
+            put(environment_1.environment.apiUrl + "/users/profile", userData, { withCredentials: true }).pipe(rxjs_1.tap(function (user) { return _this.currentUser = user; }));
+    };
     UserService = __decorate([
         core_1.Injectable({
             providedIn: 'root'

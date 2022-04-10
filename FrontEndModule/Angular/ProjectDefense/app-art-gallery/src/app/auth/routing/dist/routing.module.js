@@ -15,12 +15,12 @@ var auth_guard_1 = require("src/app/core/guards/auth.guard");
 var routes = [
     {
         path: "register",
-        pathMatch: "full",
+        // pathMatch: "full",
         component: register_component_1.RegisterComponent
     },
     {
         path: "login",
-        pathMatch: "full",
+        // pathMatch: "full",
         component: login_component_1.LoginComponent
     },
     {

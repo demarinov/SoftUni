@@ -1,0 +1,1 @@
+{"version":3,"sources":["base.ts"],"names":[],"mappings":"","file":"base.js","sourcesContent":["export interface IBase {\r\n    _id: string;\r\n    created_at: string;\r\n    updatedAt: string;    \r\n}"]}
