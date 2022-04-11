@@ -7,7 +7,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { ArtworkPageComponent } from './artwork-page/artwork-page.component';
 import { ArtRoutingModule } from './art-routing/art-routing.module';
 import { ArtNewPageComponent } from './art-new-page/art-new-page.component';
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -22,6 +22,7 @@ import { ArtNewPageComponent } from './art-new-page/art-new-page.component';
     ArtRoutingModule,
     SharedModule,
     FormsModule,
+    MatProgressSpinnerModule,
   ],
   exports: [
     ArtListComponent,

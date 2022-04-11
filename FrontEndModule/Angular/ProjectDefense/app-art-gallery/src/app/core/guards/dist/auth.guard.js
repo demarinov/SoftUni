@@ -7,16 +7,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 exports.__esModule = true;
 var core_1 = require("@angular/core");
+var rxjs_1 = require("rxjs");
 var AuthGuard = /** @class */ (function () {
-    function AuthGuard(userService, router) {
-        this.userService = userService;
+    function AuthGuard(authService, router) {
+        this.authService = authService;
         this.router = router;
     }
     AuthGuard.prototype.canActivate = function (route, state) {
-        if (this.userService.isUserLogged) {
-            return true;
-        }
-        return this.router.createUrlTree(['/user/login']);
+        var _this = this;
+        return this.authService.isLoggedIn$.pipe(rxjs_1.take(1), rxjs_1.map(function (loggedIn) {
+            if (loggedIn) {
+                return true;
+            }
+            return _this.router.createUrlTree(['/user/login']);
+        }));
     };
     AuthGuard = __decorate([
         core_1.Injectable({

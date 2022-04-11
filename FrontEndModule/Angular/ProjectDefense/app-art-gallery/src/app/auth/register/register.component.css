@@ -83,3 +83,8 @@ p.error {
 .register .input-error {
     border-left-color: red;
 }
+
+p.error-http {
+    border: 2px solid red;
+    padding: 1em;
+}

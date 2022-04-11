@@ -1,9 +1,12 @@
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+
 /* You can add global styles to this file, and also import other style files */
 body {
     background-color: black;
 }
 
 /* You can add global styles to this file, and also import other style files */
+
 @import url('./assets/reset.css');
 @import url('./assets/layout.css');
 @import url('./assets/typography.css');
@@ -58,7 +61,5 @@ app-theme-list {
 }
 
 /* theme list item */
-
-
 
 

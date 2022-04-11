@@ -3,7 +3,7 @@
     <fieldset>
         <h2>Login Form</h2>
 
-        <p *ngIf="errorMessage" class="error">{{errorMessage}}</p>
+        <p *ngIf="errorMessage" class="error error-http">{{errorMessage}}</p>
         <p class="field field-icon">
             <label for="email"><span><i class="fas fa-envelope"></i></span></label>
             <input formControlName="email" class="input-error" type="email" name="email" id="email" placeholder="john.doe@gmail.com">

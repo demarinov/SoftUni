@@ -80,6 +80,11 @@ p.error {
     padding-top: 0;
 }
 
+p.error-http {
+    border: 2px solid red;
+    padding: 1em;
+}
+
 .input-error {
     border-left-color: red;
 }

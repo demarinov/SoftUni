@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { AuthService } from 'src/app/core/auth.service';
 import { UserService } from 'src/app/core/user.service';
 
 @Component({
@@ -8,12 +10,12 @@ import { UserService } from 'src/app/core/user.service';
 })
 export class WelcomeComponent implements OnInit {
 
-  isLoggedIn!: boolean;
+  isLoggedIn$!: Observable<boolean>;
 
-  constructor(private userService: UserService) { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
-    this.isLoggedIn = this.userService.isUserLogged;
+    this.isLoggedIn$ = this.authService.isLoggedIn$;
   }
 
 }

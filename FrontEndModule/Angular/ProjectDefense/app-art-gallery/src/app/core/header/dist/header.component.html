@@ -3,7 +3,7 @@
         <div class="logo-wrap">
             <p class="logo"><span class="logo">Art Gallery</span></p>
         </div>
-        <div class="mini-navbar" *ngIf="!userService.isUserLogged">
+        <div class="mini-navbar" *ngIf="!(isLoggedIn$ | async)">
             <ul>
                 <li>
                     <a routerLink="/user/login">Login</a>
@@ -13,10 +13,11 @@
                 </li>
             </ul>
         </div>
-        <div class="mini-navbar" *ngIf="userService.isUserLogged">
+
+        <div class="mini-navbar" *ngIf="isLoggedIn$ | async">
             <ul>
                 <li>
-                    <a routerLink="/user/profile" >{{currentUser.username}}</a>
+                    <a routerLink="/user/profile" >{{(currentUser$ | async).username}}</a>
                 </li>
                 <li>
                     <a href="#" (click)="logoutHandler()">Logout</a>

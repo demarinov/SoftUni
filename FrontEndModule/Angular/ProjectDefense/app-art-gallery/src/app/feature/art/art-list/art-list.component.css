@@ -1,6 +1,16 @@
-:host {
-    display: flex;
 
+:host {
     max-width: 1360px;
+}
+
+.art-container {
+    display: flex;
+    
     flex-wrap: wrap;
+    color:white;
+}
+
+:host p {
+    border: 2px solid red;
+    padding: 1em;
 }

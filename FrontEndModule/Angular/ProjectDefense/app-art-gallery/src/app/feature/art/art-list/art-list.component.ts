@@ -10,13 +10,19 @@ import { IArt } from 'src/app/interfaces/art';
 export class ArtListComponent implements OnInit {
 
   artList: IArt[];
+  errorMessage:string;
 
   constructor(private artService: ArtService) { }
 
   ngOnInit(): void {
-    this.artService.loadArtList().subscribe(arts => {
+    this.artService.loadArtList().subscribe({
+      next: (arts) => {
       console.log(arts);
       this.artList= arts;
+      },
+      error: (err) => {
+        this.errorMessage = err.message;
+      }
     })
   }
 

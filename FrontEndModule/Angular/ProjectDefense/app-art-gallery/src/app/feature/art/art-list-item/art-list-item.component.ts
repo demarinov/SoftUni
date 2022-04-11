@@ -20,8 +20,4 @@ export class ArtListItemComponent implements OnInit {
   
   }
 
-  handleSubscriber() {
-
-  }
-
 }

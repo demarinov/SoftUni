@@ -8,20 +8,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 exports.__esModule = true;
 var core_1 = require("@angular/core");
 var HeaderComponent = /** @class */ (function () {
-    function HeaderComponent(userService) {
-        this.userService = userService;
+    function HeaderComponent(authService, router) {
+        this.authService = authService;
+        this.router = router;
+        this.currentUser$ = this.authService.currentUser$;
+        this.isLoggedIn$ = this.authService.isLoggedIn$;
     }
-    Object.defineProperty(HeaderComponent.prototype, "currentUser", {
-        get: function () {
-            return this.userService.currentUser;
-        },
-        enumerable: true,
-        configurable: true
-    });
     HeaderComponent.prototype.ngOnInit = function () {
     };
     HeaderComponent.prototype.logoutHandler = function () {
-        this.userService.logout();
+        var _this = this;
+        this.authService.logout$().subscribe(function () {
+            return _this.router.navigate(['/home']);
+        });
     };
     HeaderComponent = __decorate([
         core_1.Component({

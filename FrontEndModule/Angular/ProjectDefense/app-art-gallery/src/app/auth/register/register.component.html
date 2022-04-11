@@ -3,6 +3,7 @@
     <fieldset>
         <h2>Registration Form</h2>
 
+        <p *ngIf="errorMessage" class="error error-http">{{errorMessage}}</p>
         <!-- username -->
         <p class="field field-icon">
             <label for="username"><span><i class="fas fa-user"></i></span></label>
