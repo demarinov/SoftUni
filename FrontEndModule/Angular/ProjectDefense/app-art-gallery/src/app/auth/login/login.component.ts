@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/auth.service';
-import { emailValidator } from 'src/app/utils';
+import { emailValidator, SERVICE_UNAVAILABLE_ERROR } from 'src/app/utils';
 
 @Component({
   selector: 'app-login',
@@ -46,8 +46,8 @@ export class LoginComponent implements OnInit {
         console.log('complete');
       },
       error: (error) => {
-        console.log(error);
-        this.errorMessage = error.message;
+        console.error(error);
+        this.errorMessage = SERVICE_UNAVAILABLE_ERROR;
       } 
     })
   }

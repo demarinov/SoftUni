@@ -1,0 +1,15 @@
+:host {
+    color: white;
+}
+
+:host .art-item img{
+    width: 400px;
+    height: 400px;
+}
+
+:host .art-item .title {
+    text-align: center;
+    padding-bottom: 1em;
+    font-size: 2em;
+    border-bottom: 2px solid gray;
+}

@@ -3,7 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/auth.service';
 import { CreateUserDto, UserService } from 'src/app/core/user.service';
-import { emailValidator, passwordMatch } from 'src/app/utils';
+import { emailValidator, passwordMatch, SERVICE_UNAVAILABLE_ERROR } from 'src/app/utils';
 
 @Component({
   selector: 'app-register',
@@ -62,7 +62,8 @@ export class RegisterComponent implements OnInit {
 
         next: (data) => this.router.navigate(['/home']),
         error: (err) => {
-          this.errorMessage = err.message;
+          console.error(err);
+          this.errorMessage = SERVICE_UNAVAILABLE_ERROR;
         }
       })
   }

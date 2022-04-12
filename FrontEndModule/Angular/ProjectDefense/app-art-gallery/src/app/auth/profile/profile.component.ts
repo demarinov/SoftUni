@@ -54,6 +54,7 @@ export class ProfileComponent implements OnInit {
     this.inEditMode = false;
     // make put request
 
+    this.editProfileForm.value.tel = this.editProfileForm.value['select-tel'] + this.editProfileForm.value.tel;
     this.userService.editProfile$(this.editProfileForm.value).subscribe({
       next: user => {
         this.currentUser = user;

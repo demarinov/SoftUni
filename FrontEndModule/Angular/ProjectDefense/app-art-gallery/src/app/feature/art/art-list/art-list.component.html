@@ -1,5 +1,5 @@
 
-<!-- <p *ngIf="errorMessage" class="error">{{errorMessage}}</p> -->
+<p *ngIf="errorMessage" class="error">{{errorMessage}}</p>
 
 <div [ngClass]="'art-container'" *ngIf="artList || errorMessage; else loading">
     <div *ngFor="let art of artList">

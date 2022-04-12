@@ -55,3 +55,6 @@ export function passwordMatch2(passwordControl: AbstractControl) : ValidationErr
     return null;
     
 }
+
+export const INTERNAL_SERVER_ERROR = "Internal Server Error";
+export const SERVICE_UNAVAILABLE_ERROR = "Service Unavailable";

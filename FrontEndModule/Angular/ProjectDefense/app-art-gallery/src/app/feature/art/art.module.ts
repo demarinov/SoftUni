@@ -8,6 +8,7 @@ import { ArtworkPageComponent } from './artwork-page/artwork-page.component';
 import { ArtRoutingModule } from './art-routing/art-routing.module';
 import { ArtNewPageComponent } from './art-new-page/art-new-page.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { ArtDetailPageComponent } from './art-detail-page/art-detail-page.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     ArtListItemComponent,
     ArtListComponent,
     ArtworkPageComponent,
-    ArtNewPageComponent
+    ArtNewPageComponent,
+    ArtDetailPageComponent
   ],
   imports: [
     CommonModule,
@@ -28,6 +30,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     ArtListComponent,
     ArtListItemComponent,
     ArtworkPageComponent,
+    ArtDetailPageComponent
   ]
 })
 export class ArtModule { }
