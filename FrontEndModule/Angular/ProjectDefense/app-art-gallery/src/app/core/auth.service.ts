@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, tap, map, BehaviorSubject } from 'rxjs';
+import { Observable, tap, map, BehaviorSubject, catchError, EMPTY } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { CreateUserDto } from './user.service';
 import { IUser } from '../interfaces';
@@ -35,6 +35,18 @@ export class AuthService {
     .pipe(
       tap(response => console.log(response)),
       map(response => response.body),
+      );
+  }
+
+  authenticate$() : Observable<IUser> {
+    // localStorage.setItem('isLogged', "false");
+    return this.httpClient.
+    get<IUser>(`${environment.apiUrl}/users/profile`, {withCredentials: true})
+    .pipe(
+      tap(currentProfile => this.handleLogin(currentProfile)),
+      catchError(err => {
+        return EMPTY;
+      }),
       );
   }
 
