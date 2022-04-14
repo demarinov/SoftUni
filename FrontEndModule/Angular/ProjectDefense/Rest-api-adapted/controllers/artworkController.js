@@ -16,10 +16,25 @@ function getArt(req, res, next) {
         .catch(next);
 }
 
+function getArtsByUserId(req, res, next) {
+    const {userId } = req.params;
+
+    artworkModel.find()
+        .populate( 'userId')
+        .then(arts => {
+            arts = arts.filter(art => {
+                return art.userId._id == userId
+            });
+            return res.json(arts);
+        })
+        .catch(next);
+}
+
 function createArt(req, res, next) {
     const { name, imageUrl, price} = req.body;
     const { _id: userId } = req.user;
 
+    console.log(userId);
     artworkModel.create({ name, userId, imageUrl, price})
         .then(art => {
             res.status(200).json(art);
@@ -31,4 +46,5 @@ module.exports = {
     createArt,
     getArt,
     getArtworks,
+    getArtsByUserId
 }

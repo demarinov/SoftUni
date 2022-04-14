@@ -9,15 +9,20 @@ function getArtworks(req, res, next) {
   })["catch"](next);
 }
 
-function getTheme(req, res, next) {
-  var themeId = req.params.themeId;
-  themeModel.findById(themeId).populate({
-    path: 'posts',
-    populate: {
-      path: 'userId'
-    }
-  }).then(function (theme) {
-    return res.json(theme);
+function getArt(req, res, next) {
+  var artId = req.params.artId;
+  artworkModel.findById(artId).populate('userId').then(function (art) {
+    return res.json(art);
+  })["catch"](next);
+}
+
+function getArtsByUserId(req, res, next) {
+  var userId = req.params.userId;
+  artworkModel.find().populate('userId').then(function (arts) {
+    arts = arts.filter(function (art) {
+      return art.userId._id == userId;
+    });
+    return res.json(arts);
   })["catch"](next);
 }
 
@@ -27,6 +32,7 @@ function createArt(req, res, next) {
       imageUrl = _req$body.imageUrl,
       price = _req$body.price;
   var userId = req.user._id;
+  console.log(userId);
   artworkModel.create({
     name: name,
     userId: userId,
@@ -37,26 +43,10 @@ function createArt(req, res, next) {
   })["catch"](next);
 }
 
-function subscribe(req, res, next) {
-  var themeId = req.params.themeId;
-  var userId = req.user._id;
-  themeModel.findByIdAndUpdate({
-    _id: themeId
-  }, {
-    $addToSet: {
-      subscribers: userId
-    }
-  }, {
-    "new": true
-  }).then(function (updatedTheme) {
-    res.status(200).json(updatedTheme);
-  })["catch"](next);
-}
-
 module.exports = {
   createArt: createArt,
-  getTheme: getTheme,
-  subscribe: subscribe,
-  getArtworks: getArtworks
+  getArt: getArt,
+  getArtworks: getArtworks,
+  getArtsByUserId: getArtsByUserId
 };
 //# sourceMappingURL=artworkController.dev.js.map
