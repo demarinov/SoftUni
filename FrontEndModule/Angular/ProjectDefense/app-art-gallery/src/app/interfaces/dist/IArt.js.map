@@ -1,0 +1,1 @@
+{"version":3,"sources":["IArt.ts"],"names":[],"mappings":"","file":"IArt.js","sourcesContent":["\r\nexport interface IArt {\r\n    name: string,\r\n    userId: Object,\r\n    imageUrl: string,\r\n    price: string,\r\n    created_at: Date,\r\n}"]}

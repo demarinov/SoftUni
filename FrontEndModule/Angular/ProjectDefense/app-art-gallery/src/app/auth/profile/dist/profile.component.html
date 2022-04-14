@@ -1,0 +1,48 @@
+<div class="profile"><img src="/assets/profile.png" alt="default user">
+    <h3>User Info:</h3>
+    
+    <ng-container *ngIf="!!currentUser">
+        <ng-container *ngIf="!inEditMode">  
+            <div class="flex">
+                <p>Username: </p>
+                <p>{{this.currentUser.username}}</p>
+            </div>
+            <div class="flex">
+                <p>Email: </p>
+                <p>{{this.currentUser.email}}</p>
+            </div>
+            <div class="flex">
+                <p>Phone: </p>
+                <p>{{this.currentUser.tel}}</p>
+            </div>
+            <button (click)="enterEditMode()" class="edit-button">Edit</button>
+    
+        </ng-container>
+        
+        <ng-container *ngIf="inEditMode">
+            <form #editProfileForm="ngForm" (ngSubmit)="updateProfile()">
+                <div class="flex">
+                    <p>Username: </p>
+                    <input required minlength="5" ngModel type="text" name="username" id="username" value="Johny">
+                </div>
+                <div class="flex">
+                    <p>Email: </p>
+                    <input emailValidator #email="ngModel" [class.input-error]="email.touched && email.invalid" ngModel required type="email" name="email" id="email" value="john.doe@gmail.com">
+                </div>
+                <div class="flex">
+                    <p>Phone: </p>
+                    <div>
+                        <select ngModel  name="select-tel" id="select-tel" class="tel">
+                            <option value="00359">+359</option>
+                        </select>
+                        <input ngModel type="text" name="tel" id="tel" value="885 888 888">
+                    </div>
+                </div>
+                <button type="button" (click)="inEditMode = false" class="red-button">Cancel</button>
+                <button [disabled]="editProfileForm.invalid" class="green-button">Save</button>
+            </form>
+        </ng-container>
+    </ng-container>
+    
+    
+</div>

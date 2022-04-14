@@ -18,8 +18,8 @@ export class ArtNewPageComponent implements OnInit {
     console.log(newArtForm.value);
     this.artService.addArt$(newArtForm.value).subscribe({
 
-      next: theme => {
-        console.log(theme);
+      next: art => {
+        console.log(art);
         this.router.navigate(['/artworks']);
       },
       error: error => {

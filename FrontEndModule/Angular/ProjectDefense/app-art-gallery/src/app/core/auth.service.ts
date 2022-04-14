@@ -4,32 +4,30 @@ import { Observable, tap, map, BehaviorSubject, catchError, EMPTY } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { CreateUserDto } from './user.service';
 import { IUser } from '../interfaces';
+import { Store } from '@ngrx/store';
+import { IRootState, login, logout } from '../+store';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  private _currentUser = new BehaviorSubject<IUser>(undefined);
-
-  currentUser$ = this._currentUser.asObservable();
+  currentUser$ = this.store.select(globalState => globalState.currentUser);
 
   isLoggedIn$ = this.currentUser$.pipe(map(user => !!user));
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private store: Store<IRootState>) { }
 
   handleLogin(newUser: IUser) {
-    console.log(newUser+"new");
-    this._currentUser.next(newUser);
+    this.store.dispatch(login({user: newUser}));
   }
 
   handleLogout(newUser: IUser) {
-    console.log('logout');
-    this._currentUser.next(newUser);
+    this.store.dispatch(logout());
   }
 
   login$(userData : {email: string, password: string}) : Observable<IUser> {
-    // localStorage.setItem('isLogged', "false");
+
     return this.httpClient.
     post<IUser>(`${environment.apiUrl}/login`,userData, {withCredentials: true, observe: 'response'})
     .pipe(
@@ -39,7 +37,7 @@ export class AuthService {
   }
 
   authenticate$() : Observable<IUser> {
-    // localStorage.setItem('isLogged', "false");
+
     return this.httpClient.
     get<IUser>(`${environment.apiUrl}/users/profile`, {withCredentials: true})
     .pipe(
@@ -51,7 +49,7 @@ export class AuthService {
   }
 
   logout$() : Observable<void> {
-    // localStorage.setItem('isLogged', "false");
+
     console.log('logout called');
     return this.httpClient.
     post<void>(`${environment.apiUrl}/logout`, {}, {withCredentials: true});

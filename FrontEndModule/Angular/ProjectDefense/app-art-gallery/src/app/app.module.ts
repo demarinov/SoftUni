@@ -12,6 +12,8 @@ import { FooterComponent } from './core/footer/footer.component';
 import { CoreModule } from './core/core.module';
 import { ArtModule } from './feature/art/art.module';
 import { AuthService } from './core/auth.service';
+import { StoreModule } from '@ngrx/store';
+import { IRootState, currentUserReducer } from './+store';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,9 @@ import { AuthService } from './core/auth.service';
     AppRoutingModule,
     HttpClientModule,
     CoreModule,
+    StoreModule.forRoot<IRootState>({
+      currentUser: currentUserReducer,
+  })
   ],
   providers: [
     {

@@ -1,0 +1,10 @@
+
+<div class="art-item" *ngIf="!!art">
+    <p class="title">{{art.name}}</p>
+    <img [src]="art.imageUrl"/>
+    <p>Artist: {{art.userId.username}}</p>
+    <p>Email: {{art.userId.email}}</p>
+    <p>Tel: {{art.userId.tel}}</p>
+    <p>Price: {{art.price}}</p>
+</div>
+

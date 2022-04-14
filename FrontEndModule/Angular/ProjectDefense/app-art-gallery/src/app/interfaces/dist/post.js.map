@@ -1,0 +1,1 @@
+{"version":3,"sources":["post.ts"],"names":[],"mappings":"","file":"post.js","sourcesContent":["import {IUser, ITheme} from \"../interfaces\"; \r\nimport {IBase} from \"./base\";\r\n\r\nexport interface IPost extends IBase{\r\n        likes: string[];\r\n        text: string;\r\n        userId: IUser;\r\n        themeId: ITheme;\r\n        __v: 0\r\n}"]}

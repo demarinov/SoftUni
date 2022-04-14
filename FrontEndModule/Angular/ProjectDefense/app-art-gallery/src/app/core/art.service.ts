@@ -22,6 +22,10 @@ export class ArtService {
     return this.http.get<IArt> (`${apiUrl}/artworks/${artId}`);
   }
 
+  loadArtsByUserId(userId : string): Observable<IArt[]> {
+    return this.http.get<IArt[]> (`${apiUrl}/user/artworks/${userId}`, {withCredentials: true});
+  }
+
   addArt$(body: {name:string, imageUrl: string, price: string}) : Observable<IArt> {
     return this.http.post<IArt> (`${apiUrl}/artworks`,body, {withCredentials: true});
   }

@@ -18,8 +18,8 @@ var ArtNewPageComponent = /** @class */ (function () {
         var _this = this;
         console.log(newArtForm.value);
         this.artService.addArt$(newArtForm.value).subscribe({
-            next: function (theme) {
-                console.log(theme);
+            next: function (art) {
+                console.log(art);
                 _this.router.navigate(['/artworks']);
             },
             error: function (error) {

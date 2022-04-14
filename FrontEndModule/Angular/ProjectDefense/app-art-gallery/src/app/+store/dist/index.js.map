@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.ts"],"names":[],"mappings":";;;;;AAEA,+BAA0B;AAC1B,+BAA0B","file":"index.js","sourcesContent":["import { IUser } from '../interfaces';\r\n\r\nexport * from './reducer';\r\nexport * from './actions';\r\n\r\nexport interface IRootState {\r\n    currentUser: IUser;\r\n}"]}

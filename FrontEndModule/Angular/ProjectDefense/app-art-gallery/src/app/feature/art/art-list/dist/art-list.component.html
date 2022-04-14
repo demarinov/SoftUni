@@ -1,0 +1,11 @@
+
+<p *ngIf="errorMessage" class="error">{{errorMessage}}</p>
+
+<div [ngClass]="'art-container'" *ngIf="artList || errorMessage; else loading">
+    <div *ngFor="let art of artList">
+        <app-art-list-item [art] = "art"></app-art-list-item>
+    </div>
+</div>
+<ng-template #loading>
+    <mat-spinner></mat-spinner>
+</ng-template>
