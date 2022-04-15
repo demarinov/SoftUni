@@ -23,6 +23,7 @@ var routes = [
     },
     {
         path: "user/artworks",
+        canActivate: [auth_guard_1.AuthGuard],
         component: artist_catalog_page_component_1.ArtistCatalogPageComponent
     },
 ];

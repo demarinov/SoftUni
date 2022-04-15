@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SharedModule } from './shared/shared.module';
 import {PagesModule} from './feature/pages/pages.module';
 import { AuthModule } from './auth/auth.module';
 import { HttpClientModule } from '@angular/common/http';
@@ -21,7 +20,6 @@ import { IRootState, currentUserReducer } from './+store';
   ],
   imports: [
     BrowserModule,
-    SharedModule,
     PagesModule,
     ArtModule,
     AppRoutingModule,

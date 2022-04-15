@@ -11,7 +11,6 @@ var common_1 = require("@angular/common");
 var art_list_item_component_1 = require("./art-list-item/art-list-item.component");
 var art_list_component_1 = require("./art-list/art-list.component");
 var forms_1 = require("@angular/forms");
-var shared_module_1 = require("src/app/shared/shared.module");
 var artwork_page_component_1 = require("./artwork-page/artwork-page.component");
 var art_routing_module_1 = require("./art-routing/art-routing.module");
 var art_new_page_component_1 = require("./art-new-page/art-new-page.component");
@@ -34,7 +33,6 @@ var ArtModule = /** @class */ (function () {
             imports: [
                 common_1.CommonModule,
                 art_routing_module_1.ArtRoutingModule,
-                shared_module_1.SharedModule,
                 forms_1.FormsModule,
                 progress_spinner_1.MatProgressSpinnerModule,
                 forms_1.ReactiveFormsModule

@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { ArtListItemComponent } from './art-list-item/art-list-item.component';
 import { ArtListComponent } from './art-list/art-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SharedModule } from 'src/app/shared/shared.module';
 import { ArtworkPageComponent } from './artwork-page/artwork-page.component';
 import { ArtRoutingModule } from './art-routing/art-routing.module';
 import { ArtNewPageComponent } from './art-new-page/art-new-page.component';
@@ -24,7 +23,6 @@ import { ArtistCatalogPageComponent } from './artist-catalog-page/artist-catalog
   imports: [
     CommonModule,
     ArtRoutingModule,
-    SharedModule,
     FormsModule,
     MatProgressSpinnerModule,
     ReactiveFormsModule

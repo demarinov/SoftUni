@@ -47,7 +47,11 @@ export class LoginComponent implements OnInit {
       },
       error: (error) => {
         console.error(error);
-        this.errorMessage = SERVICE_UNAVAILABLE_ERROR;
+        if (error.status >= 500) {
+          this.errorMessage = SERVICE_UNAVAILABLE_ERROR;
+        } else {
+          this.errorMessage = error.error.message;
+        }
       } 
     })
   }

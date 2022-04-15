@@ -9,7 +9,6 @@ exports.__esModule = true;
 var core_1 = require("@angular/core");
 var common_1 = require("@angular/common");
 var home_component_1 = require("./home/home.component");
-var shared_module_1 = require("src/app/shared/shared.module");
 var page_not_found_component_1 = require("./page-not-found/page-not-found.component");
 var router_1 = require("@angular/router");
 var PagesModule = /** @class */ (function () {
@@ -23,7 +22,6 @@ var PagesModule = /** @class */ (function () {
             ],
             imports: [
                 common_1.CommonModule,
-                shared_module_1.SharedModule,
                 router_1.RouterModule
             ],
             exports: [home_component_1.HomeComponent]

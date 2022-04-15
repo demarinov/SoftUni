@@ -7,22 +7,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 exports.__esModule = true;
 var core_1 = require("@angular/core");
-var WelcomeComponent = /** @class */ (function () {
-    function WelcomeComponent(authService) {
+var HomeComponent = /** @class */ (function () {
+    function HomeComponent(authService) {
         this.authService = authService;
     }
-    WelcomeComponent.prototype.ngOnInit = function () {
+    HomeComponent.prototype.ngOnInit = function () {
         this.isLoggedIn$ = this.authService.isLoggedIn$;
     };
-    WelcomeComponent = __decorate([
+    HomeComponent = __decorate([
         core_1.Component({
-            selector: 'app-welcome',
-            templateUrl: './welcome.component.html',
-            styleUrls: ['./welcome.component.css']
+            selector: 'app-home',
+            templateUrl: './home.component.html',
+            styleUrls: ['./home.component.css']
         })
-    ], WelcomeComponent);
-    return WelcomeComponent;
+    ], HomeComponent);
+    return HomeComponent;
 }());
-exports.WelcomeComponent = WelcomeComponent;
+exports.HomeComponent = HomeComponent;
 
-//# sourceMappingURL=welcome.component.js.map
+//# sourceMappingURL=home.component.js.map
