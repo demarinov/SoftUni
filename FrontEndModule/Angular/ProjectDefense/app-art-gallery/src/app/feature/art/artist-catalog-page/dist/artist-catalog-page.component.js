@@ -24,7 +24,7 @@ var ArtistCatalogPageComponent = /** @class */ (function () {
             },
             error: function (error) {
                 console.log(error);
-                _this.errorMessage = utils_1.SERVICE_UNAVAILABLE_ERROR;
+                _this.errorMessage = utils_1.SERVICE_ERROR;
                 _this.router.navigate(['/login']);
             }
         });
@@ -39,7 +39,7 @@ var ArtistCatalogPageComponent = /** @class */ (function () {
             },
             error: function (err) {
                 console.error(err);
-                _this.errorMessage = utils_1.SERVICE_UNAVAILABLE_ERROR;
+                _this.errorMessage = utils_1.SERVICE_ERROR;
             }
         });
     };

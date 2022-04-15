@@ -40,11 +40,11 @@ var LoginComponent = /** @class */ (function () {
             },
             error: function (error) {
                 console.error(error);
-                if (error.status >= 500) {
-                    _this.errorMessage = utils_1.SERVICE_UNAVAILABLE_ERROR;
+                if (error.status >= 400 && error.status <= 499) {
+                    _this.errorMessage = error.error.message;
                 }
                 else {
-                    _this.errorMessage = error.error.message;
+                    _this.errorMessage = utils_1.SERVICE_ERROR;
                 }
             }
         });

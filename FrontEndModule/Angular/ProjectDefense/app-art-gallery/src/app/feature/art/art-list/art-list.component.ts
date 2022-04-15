@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ArtService } from 'src/app/core/art.service';
 import { IArt } from 'src/app/interfaces/art';
-import { INTERNAL_SERVER_ERROR, SERVICE_UNAVAILABLE_ERROR } from 'src/app/utils';
+import { SERVICE_ERROR, SERVICE_UNAVAILABLE_ERROR } from 'src/app/utils';
 
 @Component({
   selector: 'app-art-list',
@@ -23,7 +23,7 @@ export class ArtListComponent implements OnInit {
       },
       error: (err) => {
         console.error(err);
-        this.errorMessage = SERVICE_UNAVAILABLE_ERROR;
+        this.errorMessage = SERVICE_ERROR;
       }
     })
   }

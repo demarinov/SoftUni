@@ -21,7 +21,7 @@ var ArtListComponent = /** @class */ (function () {
             },
             error: function (err) {
                 console.error(err);
-                _this.errorMessage = utils_1.SERVICE_UNAVAILABLE_ERROR;
+                _this.errorMessage = utils_1.SERVICE_ERROR;
             }
         });
     };

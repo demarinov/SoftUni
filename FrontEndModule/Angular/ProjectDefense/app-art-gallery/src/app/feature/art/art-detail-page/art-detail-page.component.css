@@ -13,3 +13,9 @@
     font-size: 2em;
     border-bottom: 2px solid gray;
 }
+
+:host .error {
+    border: 2px solid red;
+    padding: 1em;
+    color: red;
+}

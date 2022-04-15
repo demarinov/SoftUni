@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/auth.service';
-import { emailValidator, SERVICE_UNAVAILABLE_ERROR } from 'src/app/utils';
+import { emailValidator, SERVICE_ERROR } from 'src/app/utils';
 
 @Component({
   selector: 'app-login',
@@ -47,10 +47,10 @@ export class LoginComponent implements OnInit {
       },
       error: (error) => {
         console.error(error);
-        if (error.status >= 500) {
-          this.errorMessage = SERVICE_UNAVAILABLE_ERROR;
-        } else {
+        if (error.status >= 400 && error.status <= 499) {
           this.errorMessage = error.error.message;
+        } else {
+          this.errorMessage = SERVICE_ERROR;
         }
       } 
     })

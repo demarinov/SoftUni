@@ -52,7 +52,7 @@ var RegisterComponent = /** @class */ (function () {
             next: function (data) { return _this.router.navigate(['/home']); },
             error: function (err) {
                 console.error(err);
-                _this.errorMessage = utils_1.SERVICE_UNAVAILABLE_ERROR;
+                _this.errorMessage = utils_1.SERVICE_ERROR;
             }
         });
     };

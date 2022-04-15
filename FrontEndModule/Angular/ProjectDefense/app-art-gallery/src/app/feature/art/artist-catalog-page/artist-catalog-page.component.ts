@@ -4,7 +4,7 @@ import { ArtService } from 'src/app/core/art.service';
 import { UserService } from 'src/app/core/user.service';
 import { IUser } from 'src/app/interfaces';
 import { IArt } from 'src/app/interfaces/art';
-import { SERVICE_UNAVAILABLE_ERROR } from 'src/app/utils';
+import { SERVICE_ERROR } from 'src/app/utils';
 
 @Component({
   selector: 'app-artist-catalog-page',
@@ -32,7 +32,7 @@ export class ArtistCatalogPageComponent implements OnInit {
       },
       error: error => {
         console.log(error);
-        this.errorMessage = SERVICE_UNAVAILABLE_ERROR;
+        this.errorMessage = SERVICE_ERROR;
         this.router.navigate(['/login']);
       }
     })
@@ -47,7 +47,7 @@ export class ArtistCatalogPageComponent implements OnInit {
       },
       error: (err) => {
         console.error(err);
-        this.errorMessage = SERVICE_UNAVAILABLE_ERROR;
+        this.errorMessage = SERVICE_ERROR;
       }
     })
   }

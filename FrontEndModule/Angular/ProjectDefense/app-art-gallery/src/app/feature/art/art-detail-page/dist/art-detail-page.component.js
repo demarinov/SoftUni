@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 exports.__esModule = true;
 var core_1 = require("@angular/core");
+var utils_1 = require("src/app/utils");
 var ArtDetailPageComponent = /** @class */ (function () {
     function ArtDetailPageComponent(artService, activatedRoute) {
         this.artService = artService;
@@ -15,9 +16,16 @@ var ArtDetailPageComponent = /** @class */ (function () {
     ArtDetailPageComponent.prototype.ngOnInit = function () {
         var _this = this;
         var artId = this.activatedRoute.snapshot.params["artId"];
-        this.artService.loadArtById(artId).subscribe(function (art) {
-            _this.art = art;
-            console.log(_this.art);
+        console.log(artId);
+        this.artService.loadArtById(artId).subscribe({
+            next: function (art) {
+                _this.art = art;
+                console.log(_this.art);
+            },
+            error: function (err) {
+                console.log(err);
+                _this.errorMessage = utils_1.SERVICE_ERROR;
+            }
         });
     };
     ArtDetailPageComponent = __decorate([
