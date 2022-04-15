@@ -24,6 +24,7 @@ const routes:Routes = [
     },
     {
         path: "user/artworks",
+        canActivate: [AuthGuard],
         component: ArtistCatalogPageComponent
     },
     
