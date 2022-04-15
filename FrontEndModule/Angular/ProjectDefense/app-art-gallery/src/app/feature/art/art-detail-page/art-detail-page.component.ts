@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ArtService } from 'src/app/core/art.service';
+import { AuthService } from 'src/app/core/auth.service';
 import { IArt } from 'src/app/interfaces/art';
 import { SERVICE_ERROR } from 'src/app/utils';
 
@@ -14,9 +15,11 @@ export class ArtDetailPageComponent implements OnInit {
 
   art: IArt;
 
+  isLoggedIn$: Observable<boolean> = this.authService.isLoggedIn$;
   errorMessage:string;
 
-  constructor(private artService: ArtService, private activatedRoute: ActivatedRoute) { }
+  constructor(private artService: ArtService, private activatedRoute: ActivatedRoute,
+    private authService: AuthService) { }
 
   ngOnInit(): void {
 

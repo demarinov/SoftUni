@@ -7,7 +7,7 @@
         <img [src]="art.imageUrl"/>
         <p>Artist: {{art.userId.username}}</p>
         <p>Email: {{art.userId.email}}</p>
-        <p>Tel: {{art.userId.tel}}</p>
+        <p *ngIf="(isLoggedIn$ | async)">Tel: {{art.userId.tel}}</p>
         <p>Price: {{art.price}}</p>
     </div>
 </ng-container>
