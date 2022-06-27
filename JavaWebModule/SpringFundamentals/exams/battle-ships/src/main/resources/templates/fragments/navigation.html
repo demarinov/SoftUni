@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<nav th:fragment="navi" class="navbar navbar-expand-md navbar-dark fixed-top rounded">
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <th:block th:if="${@currentUser.isLoggedIn}">
+        <li th:classappend="${#request.getServletPath() == '/home'} ? 'active'" class="nav-item">
+          <a class="nav-link" th:href="@{/home}">Home</a>
+        </li>
+      </th:block>
+      <th:block th:if="!${@currentUser.isLoggedIn}">
+        <li th:classappend="${#request.getServletPath() == '/'} ? 'active'" class="nav-item">
+          <a class="nav-link" th:href="@{/}">Home</a>
+        </li>
+      </th:block>
+
+      <th:block th:if="!${@currentUser.isLoggedIn}">
+        <li th:classappend="${#request.getServletPath() == '/user/login'} ? 'active'"  class="nav-item">
+          <a class="nav-link" th:href="@{/user/login}">Login</a>
+        </li>
+        <li th:classappend="${#request.getServletPath() == '/user/register'} ? 'active'" class="nav-item">
+          <a class="nav-link" th:href="@{/user/register}">Register</a>
+        </li>
+      </th:block>
+
+      <th:block th:if="${@currentUser.isLoggedIn}">
+        <li th:classappend="${#request.getServletPath() == '/ship/add'} ? 'active'" class="nav-item">
+          <a class="nav-link" th:href="@{/ship/add}">Add Ship</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/user/logout}">Logout</a>
+        </li>
+      </th:block>
+
+
+    </ul>
+    <img width="50px" src="/images/ufo.png" alt="Ufo image">
+  </div>
+</nav>
+</body>
+</html>
