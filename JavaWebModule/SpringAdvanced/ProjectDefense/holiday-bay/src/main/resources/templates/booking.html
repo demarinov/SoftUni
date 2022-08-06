@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="fragments/head::head"></head>
+
+<body>
+
+<div th:replace="fragments/navbar :: navbar">
+  Navbar
+</div>
+
+<div class="booking-container container-fluid" th:if="!${bookingList.isEmpty()}">
+  <h2 class="text-center text-white" th:text="${past}  ? 'Your Past Bookings' : 'Your Bookings'">Your Past Bookings</h2>
+  <div class="bookings">
+    <div class="booking-header">
+      <div class="booking-item"><h5 class="text-white">Booking Id</h5></div>
+      <div class="booking-item"><h5 class="text-white">Room</h5></div>
+      <div class="booking-item"><h5 class="text-white">Hotel</h5></div>
+      <div class="booking-item"><h5 class="text-white">Price/Night</h5></div>
+      <div class="booking-item"><h5 class="text-white">Start Date</h5></div>
+      <div class="booking-item"><h5 class="text-white">Duration</h5></div>
+    </div>
+    <div th:each="booking : ${bookingList}" th:object="${booking}" class="booking">
+      <div class="booking-item"><p class="text-white" th:text="*{id}"></p></div>
+      <div class="booking-item"><img class="booking-img" th:src="*{imageUrl}" alt="Hotel image"></div>
+      <div class="booking-item"><p class="hotel text-white" th:text="*{roomId}"></p></div>
+      <div class="booking-item"><p class="text-white" th:text="|*{#numbers.formatDecimal(price,1,0)} leva|"></p></div>
+      <div class="booking-item"><p class="text-white" th:text="*{startDate}"></p></div>
+      <div class="booking-item"><p class="text-white" th:text="|*{durationInNights} nights|"></p></div>
+
+    </div>
+  </div>
+
+  <div class="voucher-nav container-fluid row justify-content-center">
+    <nav>
+      <ul class="pagination">
+        <li class="page-item" th:classappend="${bookingList.isFirst()} ? 'disabled' : ''">
+          <a th:unless="${bookingList.isFirst()}"
+             th:href="@{/booking(size=${bookingList.getSize()},page=0)}"
+             class="page-link" href="#">First</a>
+          <a th:if="${bookingList.isFirst()}"
+             class="page-link" href="#">First</a>
+        </li>
+      </ul>
+    </nav>
+    <nav>
+      <ul class="pagination">
+        <li class="page-item" th:classappend="${bookingList.hasPrevious() ? '' : 'disabled'}">
+          <a th:if="${bookingList.hasPrevious()}"
+             th:href="@{/booking(size=${bookingList.getSize()},page=${bookingList.getNumber() - 1})}"
+             class="page-link" href="#">Previous</a>
+          <a th:unless="${bookingList.hasPrevious()}"
+             class="page-link" href="#">Previous</a>
+        </li>
+      </ul>
+    </nav>
+    <nav>
+      <ul class="pagination">
+        <li class="page-item" th:classappend="${bookingList.hasNext() ? '' : 'disabled'}">
+          <a th:if="${bookingList.hasNext()}"
+             th:href="@{/booking(size=${bookingList.getSize()},page=${bookingList.getNumber() + 1})}"
+             class="page-link" href="#">Next</a>
+          <a th:unless="${bookingList.hasNext()}"
+             class="page-link" href="#">Next</a>
+        </li>
+      </ul>
+    </nav>
+    <nav>
+      <ul class="pagination">
+        <li class="page-item" th:classappend="${bookingList.isLast()} ? 'disabled' : ''">
+          <a th:unless="${bookingList.isLast()}"
+             th:href="@{/booking(size=${bookingList.getSize()},page=${bookingList.getTotalPages() - 1})}"
+             class="page-link" href="#">Last</a>
+          <a th:if="${bookingList.isLast()}"
+             class="page-link" href="#">Last</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+</div>
+
+<div class="no-bookings-container container-fluid" th:if="${bookingList.isEmpty()}">
+  <h2 class="no-bookings text-center text-white">No Bookings</h2>
+  <div class="booking-link-container text-center"><a class="booking-link text-white" th:href="@{/booking/add}">Book a room</a></div>
+</div>
+
+<div th:replace="fragments/footer">Footer</div>
+
+<script type="module">
+
+  import {getHotelByRoomId} from "/js/utils.js";
+
+  let hotels = document.querySelectorAll(".hotel");
+
+  console.log(hotels);
+  window.addEventListener("load", async (event) => {
+
+    console.log("load");
+    let e = event.target;
+
+    for (let hotel of hotels) {
+      let roomId = hotel.textContent;
+
+      let hotelData = await getHotelByRoomId(roomId);
+      hotel.textContent = hotelData.name;
+      console.log(hotelData);
+      console.log(hotel.textContent);
+    }
+
+
+  })
+
+</script>
+</body>
+</html>

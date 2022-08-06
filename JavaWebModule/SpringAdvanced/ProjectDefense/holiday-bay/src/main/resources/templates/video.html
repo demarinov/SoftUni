@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="fragments/head::head"></head>
+<body>
+
+<div th:replace="fragments/navbar :: navbar">
+    Navbar
+</div>
+
+<div class="video-container  container-fluid">
+    <h2 class="text-center text-white">Popular tourist destinations videos</h2>
+    <div class="d-flex justify-content-between">
+        <iframe th:each="video : ${videos}" width="420" height="315"
+                th:src="${video.videoUrl}">
+        </iframe>
+
+
+<!--        // https://www.youtube.com/embed/ls_pyhwO2xk-->
+<!--        <iframe width="420" height="315"-->
+<!--                src="https://www.youtube.com/embed/DCDD2kaPIio">-->
+<!--        </iframe>-->
+
+<!--        <iframe width="420" height="315"-->
+<!--                src="https://www.youtube.com/embed/pqqIi3GOTmo">-->
+<!--        </iframe>-->
+    </div>
+
+
+
+</div>
+
+<div th:replace="fragments/footer">Footer</div>
+</body>
+</html>

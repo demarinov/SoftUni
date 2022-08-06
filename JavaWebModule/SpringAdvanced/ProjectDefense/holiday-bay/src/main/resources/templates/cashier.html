@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head::head"></head>
+
+<body>
+
+<div th:replace="fragments/navbar :: navbar">
+    Navbar
+</div>
+
+<div class="cashier-container container-fluid d-flex justify-content-center">
+
+    <div class="cashier-body text-center bg-image">
+
+        <form th:action="@{/banking/deposit}" th:method="POST" th:object="${depositModel}"
+              class="main-form mx-auto col-md-9 d-flex flex-column justify-content-center">
+            <div class="row justify-content-center">
+                <h2 class="text-center text-white" th:text="|Available funds: ${funds} lv.|">Available funds:</h2>
+
+                <div class="form-group col-md-6 mb-3">
+                    <label for="depositAmount" class="text-white font-weight-bold">Deposit Amount</label>
+                    <input id="depositAmount" name="depositAmount" th:field="*{depositAmount}" type="number" min="1" class="form-control"
+                           placeholder="Suggested Amount"/>
+
+                    <p th:if="${#fields.hasErrors('depositAmount')}" class="errors alert alert-danger">
+                        Amount is invalid
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col col-md-6">
+                    <div class="button-holder d-flex">
+                        <img class="cash-img" src="/img/u-s-dollar-index--600.png">
+                        <input type="submit" class="btn btn-info btn-lg col-8" value="Deposit"/>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <form th:action="@{/banking/withdraw}" th:method="POST" th:object="${withdrawModel}"
+              class="main-form mx-auto col-md-9 d-flex flex-column justify-content-center">
+            <div class="row justify-content-center">
+                <div class="form-group col-md-6 mb-3">
+                    <label for="withdrawAmount" class="text-white font-weight-bold">Withdraw Amount</label>
+                    <input id="withdrawAmount" name="withdrawAmount" min="1" th:field="*{withdrawAmount}" type="number" class="form-control"
+                           placeholder="Suggested Amount in leva"/>
+
+                    <p th:if="${#fields.hasErrors('withdrawAmount')}" class="errors alert alert-danger">
+                        Amount is invalid
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col col-md-6">
+                    <div class="button-holder d-flex">
+                        <input type="submit" class="btn btn-info btn-lg" value="Withdraw"/>
+                        <img class="cash-img" src="/img/u-s-dollar-index--600.png">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+<div th:replace="fragments/footer">Footer</div>
+</body>
+</html>

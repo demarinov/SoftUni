@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="fragments/head::head"></head>
+<body>
+<div th:replace="fragments/navbar :: navbar">
+    Navbar
+</div>
+
+<div class="attraction-container container-fluid" th:object="${attractionModel}">
+    <h2 class="text-center text-white" th:text="*{name}"></h2>
+    <div class="attraction-body text-white" >
+        <div class="attraction-see">
+            <h4 style="color: gold"> THINGS TO SEE</h4>
+            <div>
+                <p th:text="*{content}"></p>
+                <img src="/img/Church_of_Christ_Pantocrator_Nesebar.jpg" alt="No Image">
+            </div>
+
+        </div>
+
+        <div class="attraction-do">
+            <div>
+                <img src="/img/nesebar-diving.jpg" alt="No Image">
+                <div>
+                    <h4 style="color: gold"> THINGS TO DO</h4>
+                    <p th:text="*{additionalInfo}"></p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div th:replace="fragments/footer">Footer</div>
+</body>
+</html>

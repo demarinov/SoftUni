@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head::head"></head>
+
+
+<body>
+
+<div th:replace="fragments/navbar :: navbar">
+    Navbar
+</div>
+
+<div class="voucher-container container-fluid" th:if="!${voucherList.isEmpty()}">
+
+    <div class="vouchers row mx-auto flex-column justify-content-center">
+        <div th:each="voucher : ${voucherList}" th:object="${voucher}"
+             class="voucher card m-1 p-0">
+            <div class="voucher-sub-container">
+                <div class="voucher-header">
+                    <!--            <img class="card-img-top" th:src="*{imageUrl}" alt="Hotel image">-->
+                    <div class="voucher-dates">
+                        <h4>Valid from</h4>
+                        <h4 th:text="|*{#temporals.format(booking.startDate, 'dd')} *{#temporals.monthNameShort(booking.startDate)}
+                        - *{#temporals.format(endDate,'dd')} *{#temporals.monthNameShort(endDate)}|">25 Nov - 30 Dec</h4>
+                    </div>
+                    <div class="voucher-names">
+                        <h2 class="voucher-name text-right" th:text="|Holiday Voucher|"></h2>
+                    </div>
+
+                </div>
+                <div class="voucher-body">
+                    <div class="voucher-img">
+                        <img class="card-img-top" th:src="*{imageUrl}" alt="Hotel image">
+                    </div>
+                    <div class="voucher-value">
+                        <h3 class="voucher-val-text">Value</h3>
+                        <h3 class="voucher-val-num" th:text="|${'&#36;'}*{#numbers.formatDecimal(booking.price,1,0)}|">
+                            $50</h3>
+                    </div>
+                </div>
+                <div class="voucher-footer text-center">
+
+                    <div class="voucher-booking">
+                        <span>booking-id:</span>
+                        <p th:text="*{booking.id}"></p>
+                    </div>
+                    <div class="voucher-hotel">
+                        <span>voucher-id:</span>
+                        <p th:text="*{name}"></p>
+                    </div>
+
+                    <div class="voucher-hotel-stay">
+                        <span>hotel-stay:</span>
+                        <p th:text="|*{booking.durationInNights} nights|"></p>
+                    </div>
+                    <div>
+                        <svg id="barcode"></svg>
+                    </div>
+
+
+                    <!--                    <div class="voucher-status">-->
+                    <!--                        <span>voucher-status:</span>-->
+                    <!--                        <p th:text="${voucher.hasExpired} ? 'inactive' : 'active'"></p>-->
+                    <!--                    </div>-->
+
+                </div>
+
+                <!--                    <ul>-->
+                <!--                        <li>-->
+                <!--                            <p th:text="|Stay: *{booking.durationInNights}|"></p>-->
+                <!--                        </li>-->
+                <!--                        <li>-->
+                <!--                            <p th:text="| *{booking.price} leva|"></p>-->
+                <!--                        </li>-->
+                <!--                        <li>-->
+                <!--                            <div class="card-body">-->
+                <!--                                <a class="card-link" th:href="@{/vouchers/details(id=*{id})}">Details</a>-->
+                <!--                            </div>-->
+                <!--                        </li>-->
+                <!--                    </ul>-->
+            </div>
+        </div>
+    </div>
+
+    <div class="voucher-nav container-fluid row justify-content-center">
+        <nav>
+            <ul class="pagination">
+                <li class="page-item" th:classappend="${voucherList.isFirst()} ? 'disabled' : ''">
+                    <a th:unless="${voucherList.isFirst()}"
+                       th:href="@{/vouchers/all(size=${voucherList.getSize()},page=0)}"
+                       class="page-link" href="#">First</a>
+                    <a th:if="${voucherList.isFirst()}"
+                       class="page-link" href="#">First</a>
+                </li>
+            </ul>
+        </nav>
+        <nav>
+            <ul class="pagination">
+                <li class="page-item" th:classappend="${voucherList.hasPrevious() ? '' : 'disabled'}">
+                    <a th:if="${voucherList.hasPrevious()}"
+                       th:href="@{/vouchers/all(size=${voucherList.getSize()},page=${voucherList.getNumber() - 1})}"
+                       class="page-link" href="#">Previous</a>
+                    <a th:unless="${voucherList.hasPrevious()}"
+                       class="page-link" href="#">Previous</a>
+                </li>
+            </ul>
+        </nav>
+        <nav>
+            <ul class="pagination">
+                <li class="page-item" th:classappend="${voucherList.hasNext() ? '' : 'disabled'}">
+                    <a th:if="${voucherList.hasNext()}"
+                       th:href="@{/vouchers/all(size=${voucherList.getSize()},page=${voucherList.getNumber() + 1})}"
+                       class="page-link" href="#">Next</a>
+                    <a th:unless="${voucherList.hasNext()}"
+                       class="page-link" href="#">Next</a>
+                </li>
+            </ul>
+        </nav>
+        <nav>
+            <ul class="pagination">
+                <li class="page-item" th:classappend="${voucherList.isLast()} ? 'disabled' : ''">
+                    <a th:unless="${voucherList.isLast()}"
+                       th:href="@{/vouchers/all(size=${voucherList.getSize()},page=${voucherList.getTotalPages() - 1})}"
+                       class="page-link" href="#">Last</a>
+                    <a th:if="${voucherList.isLast()}"
+                       class="page-link" href="#">Last</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+</div>
+
+<div class="container-fluid" th:if="${voucherList.isEmpty()}">
+    <h2 class="no-vouchers text-center text-white">No Vouchers yet</h2>
+    <div class="booking-link-container text-center"><a class="booking-link text-white" th:href="@{/booking/add}">Book a
+        room</a></div>
+</div>
+
+
+<div th:replace="fragments/footer">Footer</div>
+
+<script>
+    JsBarcode("#barcode", "voucher");
+</script>
+</body>
+</html>

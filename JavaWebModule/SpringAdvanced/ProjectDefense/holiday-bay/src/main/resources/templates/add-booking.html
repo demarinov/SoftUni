@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="fragments/head::head"></head>
+
+
+<body>
+
+<div th:replace="fragments/navbar :: navbar">
+    Navbar
+</div>
+
+<div class="container">
+    <h2 class="text-center text-white">Add Booking</h2>
+    <form th:action="@{/booking/add}" th:method="POST" th:object="${bookingModel}"
+          class="main-form mx-auto col-md-8 d-flex flex-column justify-content-center">
+        <div class="row">
+
+            <div class="form-group col-md-6 mb-3">
+                <label class="text-center text-white font-weight-bold" for="roomId">Hotel Room</label>
+                <select id="roomId" name="roomId"
+                        class="form-control">
+                    <option value="0">- Select a free hotel room -</option>
+                    <optgroup th:each="hotel : ${hotels}" th:label="${hotel.name}">
+                        <option th:each="room : ${hotel.rooms}"
+                                th:value="${room.id}"
+                                th:text="|${room.roomType}|"
+                                th:selected="*{roomId} == ${room.id} and *{roomId} != null">Room
+                        </option>
+                    </optgroup>
+                </select>
+                <p th:if="${#fields.hasErrors('roomId')}" class="errors alert alert-danger">
+                    Room is required.
+                </p>
+            </div>
+            <div class="form-group col-md-6 mb-3">
+                <label for="price" class="text-white font-weight-bold">Price</label>
+                <input id="price" name="price" th:field="*{price}" type="number" class="form-control"
+                       placeholder="Suggested price in leva" readonly/>
+            </div>
+
+            <div class="form-group col-md-6 mb-3">
+                <label for="startDate" class="text-white font-weight-bold">Start Date</label>
+                <input class="form-control" id="startDate" name="startDate"
+                       th:field="*{startDate}"
+                       type="date"
+                       placeholder="start date"/>
+
+                <p th:if="${#fields.hasErrors('startDate')}" th:text="${#fields.errors('startDate').get(0)}"
+                   class="errors alert alert-danger">
+                    Date is required.
+                </p>
+            </div>
+
+            <div class="form-group col-md-6 mb-3">
+                <label for="durationInNights" class="text-white font-weight-bold">Stay</label>
+                <input id="durationInNights" name="durationInNights" th:field="*{durationInNights}" type="number"
+                       min="1" step="1" class="form-control"
+                       placeholder="duration in nights"/>
+                <p th:if="${#fields.hasErrors('durationInNights')}" class="errors alert alert-danger">
+                    Stay period is required.
+                </p>
+            </div>
+
+            <div class="form-group col-md-6 mb-3">
+                <label for="totalPrice" class="text-white font-weight-bold">Total Price</label>
+                <input class="form-control" id="totalPrice" name="totalPrice" type="number"
+                       placeholder="total price" readonly/>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col col-md-4">
+                <div class="button-holder d-flex">
+                    <input type="submit" class="btn btn-info btn-lg" value="Submit Booking"/>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div th:replace="fragments/footer::footer">Footer</div>
+
+<script>
+    let selector = document.querySelector("#roomId");
+    let stay = document.querySelector("#durationInNights");
+    let priceObj = document.querySelector("#price");
+
+    async function getRoomData(hotelName,roomType) {
+
+        let response = await fetch("http://localhost:7777/rooms?type=" + roomType+"&hotel="+hotelName);
+
+        if (response.status === 200) {
+            let data = await response.json();
+
+            console.log(data);
+            return data;
+        } else {
+            console.log(response.status);
+        }
+
+        return null;
+    }
+
+    stay, addEventListener("change", (event) => {
+        let totalPrice = stay.value * priceObj.value;
+        document.querySelector("#totalPrice").value = totalPrice;
+        console.log(totalPrice);
+    })
+
+    selector.addEventListener("change", async (event) => {
+        let e = event.target;
+        console.log("selected " + e.options[e.selectedIndex].value);
+        console.log("selected " + e.options[e.selectedIndex].text);
+
+        console.log("selected value " + e.options[e.selectedIndex].value);
+
+        if (e.options[e.selectedIndex].value === '0') {
+            priceObj.value = 0.0;
+            document.querySelector("#totalPrice").value = 0.0;
+            return;
+        }
+
+        console.log(e.options[e.selectedIndex].closest('optgroup').getAttribute("label"));
+
+        let roomData = await getRoomData(e.options[e.selectedIndex]
+                .closest('optgroup').getAttribute("label"),
+            e.options[e.selectedIndex].text);
+
+        if (roomData != null) {
+            priceObj.value = roomData.price;
+            let totalPrice = stay.value * priceObj.value;
+            console.log(totalPrice);
+            document.querySelector("#totalPrice").value = totalPrice;
+            e.options[e.selectedIndex].value = roomData.id;
+        }
+    });
+</script>
+</body>
+</html>

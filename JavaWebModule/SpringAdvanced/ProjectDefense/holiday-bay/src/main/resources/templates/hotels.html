@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="fragments/head::head"></head>
+
+
+<body>
+
+<div th:replace="fragments/navbar :: navbar">
+    Navbar
+</div>
+
+<div class="hotels-container container-fluid">
+    <h2 class="text-center text-white mt-5">Hotels to rest</h2>
+    <div  class="hotels row mx-auto d-flex flex-row justify-content-center">
+        <div th:each="hotel : ${hotels}" th:object="${hotel}" class="hotel card col-sm-6 col-md-3  col-lg-2 m-1 p-0">
+            <div class="card-img-top-wrapper">
+                <img class="card-img-top" th:src="*{imageUrl}" alt="Hotel image">
+            </div>
+            <div>
+                <h2 class="text-center" th:text="*{name}"></h2>
+            </div>
+            <div class="text-center card-body">
+                <a class="card-link" th:href="@{/hotels/details(id=*{id})}">Details</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div th:replace="fragments/footer">Footer</div>
+</body>
+</html>

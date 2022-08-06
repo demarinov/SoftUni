@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="fragments/head::head"></head>
+
+
+<body>
+
+<div th:replace="fragments/navbar :: navbar">
+    Navbar
+</div>
+
+<div class="admin-container container-fluid">
+    <div class="admin-panel card">
+        <img src="/img/Settings1.png">
+        <h2 class="text-center text-white">Admin Panel</h2>
+        <div class="admin-content-container container-fluid">
+            <div class="user-roles-form-container" sec:authorize="hasRole('ADMIN')">
+                <form th:action="@{/users/change-role}" th:method="POST" th:object="${adminModel}"
+                      class="main-form mx-auto col-md-8 d-flex flex-column justify-content-center">
+                    <fieldset>
+
+                        <legend class="text-white text-center">User Role Change</legend>
+                        <div class="test form-group col-md-6 mb-3">
+                            <label class="text-center text-white font-weight-bold" for="userId">Users</label>
+                            <select id="userId" name="userId"
+                                    class="form-control">
+                                <option value="">- Select a user -</option>
+                                <option th:each="user : ${users}"
+                                        th:value="${user.id}"
+                                        th:text="|${user.userName}|"
+                                        th:selected="*{userId} == ${user.id} and *{userId} != null">User
+                                </option>
+                            </select>
+
+
+                            <p th:if="${#fields.hasErrors('userId')}" class="errors alert alert-danger">
+                                User is required.
+                            </p>
+                        </div>
+                        <div class="form-group col-md-6 mb-3">
+                            <label class="text-center text-white font-weight-bold" for="roleType">User Roles</label>
+                            <select id="roleType" name="roleType"
+                                    class="form-control">
+                                <option value="">- Select a user role -</option>
+                                <option th:each="roleType : ${T(com.dido.holidaybay.model.enums.RoleEnum).values()}"
+                                        th:value="${roleType}"
+                                        th:text="|${roleType}|"
+                                        th:selected="*{roleType} == ${roleType} and *{roleType} != null">User Role
+                                </option>
+                            </select>
+
+                            <p th:if="${#fields.hasErrors('roleType')} or ${bad_user_roles}" class="errors alert alert-danger">
+                                Role is required.
+                            </p>
+                        </div>
+
+                        <input class="btn btn-outline-primary px-4 ml-3" type="submit" value="Change">
+                    </fieldset>
+                </form>
+            </div>
+
+            <div class="voucher-revoke-container">
+                <form th:action="@{/users/voucher-deactivate}" th:method="POST" th:object="${voucherModel}"
+                      class="main-form mx-auto col-md-8 d-flex flex-column justify-content-center">
+                    <fieldset>
+
+                        <legend class="text-white text-center">Voucher Deactivate</legend>
+                        <div class="form-group col-md-6 mb-3">
+                            <label class="text-center text-white font-weight-bold" for="voucherId">Vouchers</label>
+                            <select id="voucherId" name="voucherId"
+                                    class="form-control">
+                                <option value="">- Select a Voucher -</option>
+                                <option th:each="voucher : ${vouchers}"
+                                        th:value="${voucher.id}"
+                                        th:text="|${voucher.name}|"
+                                        th:selected="*{voucherId} == ${voucher.id} and *{voucherId} != null">Voucher
+                                </option>
+                            </select>
+                            <p th:if="${#fields.hasErrors('voucherId')}" class="errors alert alert-danger">
+                                Voucher is required.
+                            </p>
+                        </div>
+
+                        <input class="btn btn-outline-primary px-4 ml-3" type="submit" value="Deactivate">
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:include="fragments/footer::footer">Footer</div>
+</body>
+</html>

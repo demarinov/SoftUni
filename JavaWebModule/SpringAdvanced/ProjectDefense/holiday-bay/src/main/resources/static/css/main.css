@@ -1,0 +1,435 @@
+html,body {
+    height: 100%;
+}
+
+body {
+    background-image: url('/img/maldives-ile-beach-sun-38238.jpeg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #464646;
+}
+
+.navbar .logo {
+    max-height: 50px;
+    padding-right: 100px;
+}
+
+.container, .container-fluid {
+    padding-top: 90px;
+}
+
+.navbar {
+    display: flex;
+}
+
+.bg-text {
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+}
+
+.brand-section {
+    background-image: linear-gradient(to bottom right, rgba(220, 220, 220, 0.9), rgba(255, 255, 255, 0.9));
+}
+
+td, th {
+    padding: 3px 8px;
+}
+
+.card.hotel, .hotel-details .list-group-item {
+    background-image: linear-gradient(to bottom right, rgba(220, 220, 220, 0.9), rgba(255, 255, 255, 0.9));
+}
+.card-img-top-wrapper {
+    height: 150px;
+    overflow:hidden;
+}
+
+.card-img-top {
+    height: 100%;
+}
+
+.hotel-details {
+    border: 2px solid yellow;
+    border-radius: 2px;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+}
+
+.hotel-main {
+    width: 50%;
+}
+
+.hotel-details {
+    background-color: black;
+}
+
+.hotel-details .hotel-main img {
+    width: 80%;
+    height: 300px;
+    border: 2px solid gold;
+}
+
+.hotel-img-logo img {
+    width: 100px;
+    height: 100px;
+}
+
+.hotel-details div {
+    margin-bottom: 2em;
+}
+
+.hotel-details div a {
+    background-color: #0b2e13;
+    border-radius: 5px;
+    padding: 0.5em;
+    color: gold;
+}
+
+.hotel-description {
+    margin: 6em 2em 2em;
+    width: 250px;
+    text-align: left;
+    color: gold;
+    font-family: Verdana;
+}
+
+.hotel-click {
+    margin-top: 6em;
+}
+
+.hotel-content {
+    display: flex;
+}
+
+.hotel-rooms-img {
+    display: block;
+    width: 200px;
+    height: 150px;
+}
+
+form.main-form {
+    background-image: linear-gradient(to bottom right, rgba(70, 70, 70, 0.8), rgba(10, 10, 10, 0.8));
+    padding:10px 30px;
+    border-radius: 20px;
+}
+
+.field-error {
+    background: white url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="red" d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/></svg> ') no-repeat top right/30px 30px;
+}
+
+.logged-user {
+    color: white;
+}
+
+/* footer styling */
+
+.footer-container {
+    position: fixed;
+    bottom: -3em;
+    text-align: center;
+    /*border: 3px solid red;*/
+    width: 100%;
+    /*position: absolute;*/
+    height: 200px;
+
+}
+
+footer div {
+    width: 100%;
+    /*border: 2px solid green;*/
+}
+
+footer {
+    margin-bottom: 0;
+    /*border: 2px solid yellow;*/
+}
+
+footer div div {
+    margin-right: 90%;
+    /*border: 1px solid red;*/
+}
+
+/* booking styling */
+.booking-container {
+    width:100%;
+}
+
+.bookings {
+    display: flex;
+    /*flex-direction: row;*/
+    flex-wrap: wrap;
+    border-top: 2px solid gold;
+    border-right: 2px solid gold;
+    border-left: 2px solid gold;
+    border-radius: 5px;
+    width: 70%;
+    margin: auto;
+    background-color: black;
+}
+
+.booking, .booking-header {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 65%;
+    flex-basis: 100%;
+    /*height: 100%;*/
+    border-bottom: 2px solid gold;
+}
+
+.booking-img {
+    width:60px;
+    border: 5px solid green;
+
+    /*margin-left: 5em;*/
+}
+
+.booking-item {
+    width: 8%;
+}
+
+/* voucher styling */
+.voucher-container {
+    width: 80%;
+    /*border: 2px solid green;*/
+    height: 100%;
+}
+
+.vouchers {
+    width: 80%;
+    /*border: 2px solid black;*/
+}
+
+.voucher, .voucher-sub-container {
+    width: 100%;
+}
+
+.voucher {
+    background-color: #623030;
+}
+
+.voucher-header, .voucher-body, .voucher-value, .voucher-footer {
+    display: flex;
+}
+
+.voucher-header {
+    /*border: 2px solid green;*/
+    justify-content: space-between;
+}
+
+.voucher-body {
+    justify-content: space-between;
+    /*height: 250px;*/
+    /*border: 2px solid mediumvioletred;*/
+    height: 120px;
+}
+
+.voucher-img, .voucher-value {
+    width: 49%;
+    border: 2px solid gold;
+    /*height: 100%;*/
+}
+
+.voucher-value {
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    background-color: #493333;
+    /*height: 50%;*/
+}
+
+.voucher-val-text {
+    color: #c09240;
+    border-top: 2px solid #c09240;
+    height: 50px;
+    margin-top: 2em;
+    text-align: end;
+}
+
+.voucher-val-num {
+    font-size: 6em;
+}
+
+.voucher-name {
+    color: #c09240;
+}
+
+.voucher-dates {
+    color: white;
+}
+
+.voucher-sub-container {
+    padding: 2em;
+    border: 2px solid sandybrown;
+}
+
+.voucher-footer {
+    color: orange;
+}
+
+.voucher-footer div {
+    justify-content: space-between;
+    height: 60px;
+    margin-top: 1em;
+    /*border: 2px solid black;*/
+    width: 100%;
+
+}
+
+.voucher-footer svg {
+    height: 60px;
+}
+
+.voucher-footer p, .voucher-footer span {
+    /*padding-left: 2em;*/
+}
+
+.pagination .page-item .page-link {
+    background-color: black;
+    color: gold;
+    /*border: 10px solid red;*/
+}
+
+.profile-card {
+    /*background-image: url("/img/photo-1534276866337-55723bdee569.jpg");*/
+    background-color: black;
+    border-radius: 20%;
+    border: 2px solid gold;
+}
+
+.profile-card h5,.profile-card span {
+    color: gold;
+}
+
+.no-bookings, .no-vouchers {
+    border-radius: 10%;
+    border: 2px solid gold;
+    width: 50%;
+    margin: auto;
+}
+
+.booking-link-container {
+    margin-top: 1em;
+}
+.booking-link {
+    background-color: black;
+    padding: 0.3em;
+
+}
+
+.admin-container {
+    width: 50%;
+}
+
+/*.user-roles-form-container *,*/
+/*.voucher-revoke-container * {*/
+/*    margin: auto;*/
+/*    border: 2px solid green;*/
+/*}*/
+
+/*.user-roles-form-container input[type="submit"],*/
+/*.voucher-revoke-container input[type="submit"] {*/
+/*    margin-left: 27%;*/
+/*    border: 2px solid yellow;*/
+/*}*/
+
+
+.admin-panel {
+    /*height: 600px;*/
+    background-color: black;
+    border: 2px solid white;
+    padding-bottom: 2%;
+}
+
+.admin-panel img {
+    width: 100px;
+    height:100px;
+    /*border: 2px solid red;*/
+}
+
+.admin-panel h2 {
+    margin: -2em;
+}
+
+
+/* cashier */
+.cashier-body {
+   /*background-image: url("/img/u-s-dollar-index--600.png");*/
+
+    width: 600px;
+    height: 550px;
+}
+
+.cash-img {
+    width: 50px;
+    height: 50px;
+}
+
+/* attractions */
+
+.attraction-body {
+    border: 2px solid gold;
+    border-radius: 5px;
+    background-color: black;
+}
+
+.attraction-see, .attraction-do {
+    width: 80%;
+}
+
+.attraction-see {
+    margin-left: 5%;
+    border: 2px solid green;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.attraction-see div {
+    display: flex;
+}
+
+.attraction-see img {
+    /*display: inline-block;*/
+    width: 20%;
+    margin-left: 5%;
+}
+
+.attraction-do {
+    border: 2px solid green;
+    margin-left: 15%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.attraction-do>div {
+    display: flex;
+}
+
+.attraction-do img {
+    width: 20%;
+    margin-right: 5%;
+}
+
+/* video content */
+.video-container {
+    background-color: black;
+}
+
+.video-container iframe {
+    border: 2px solid gold;
+    border-radius: 5px;
+}
+
+.video-container h2 {
+    margin-bottom: 1em;
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/head::head"></head>
+
+
+<body>
+
+<div th:replace="fragments/navbar :: navbar">
+    Navbar
+</div>
+
+<div class="container">
+    <h2 class="text-center text-white">Register User</h2>
+    <form
+            th:action="@{/users/register}"
+            th:method="post"
+            th:object="${userRegistrationModel}"
+            class="main-form mx-auto col-md-8 d-flex flex-column justify-content-center">
+        <div class="row">
+            <div class="form-group col-md-6 mb-3">
+                <label for="firstName" class="text-white font-weight-bold">First Name</label>
+                <input
+                        id="firstName"
+                        name="firstName"
+                        th:field="*{firstName}"
+                        type="text"
+                        class="form-control"
+                        placeholder="First name"/>
+
+                <p th:if="${#fields.hasErrors('firstName')}" class="errors alert alert-danger">
+                    FirstName is required
+                </p>
+            </div>
+            <div class="form-group col-md-6 mb-3">
+                <label for="lastName" class="text-white font-weight-bold">Last Name</label>
+                <input id="lastName"
+                       name="lastName"
+                       th:field="*{lastName}"
+                       type="text" min="2" max="20" class="form-control"
+                       placeholder="Last name"/>
+
+                <p th:if="${#fields.hasErrors('lastName')}" class="errors alert alert-danger">
+                    LastName is required
+                </p>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6 mb-3">
+                <label for="email" class="text-white font-weight-bold">Email</label>
+                <input id="email"
+                       name="email"
+                       th:field="*{email}"
+                       type="text" min="2" max="20" class="form-control"
+                       placeholder="Email"/>
+                <p th:if="${#fields.hasErrors('email')}" class="errors alert alert-danger">
+                    Email is invalid
+                </p>
+            </div>
+
+            <div class="form-group col-md-6 mb-3">
+                <label for="age" class="text-white font-weight-bold">Age</label>
+                <input id="age"
+                       name="age"
+                       th:field="*{age}"
+                       type="text" min="2" max="20" class="form-control"
+                       placeholder="Age"/>
+                <p th:if="${#fields.hasErrors('age')}" class="errors alert alert-danger">
+                    Age is invalid
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6 mb-3">
+                <label for="password" class="text-white font-weight-bold">Password</label>
+                <input id="password"
+                       name="password"
+                       th:field="*{password}"
+                       type="password" min="2" max="20" class="form-control"
+                       placeholder="Password"/>
+                <p th:if="${#fields.hasErrors('password')}" class="errors alert alert-danger">
+                    Password is invalid
+                </p>
+            </div>
+
+            <div class="form-group col-md-6 mb-3">
+                <label for="confirmPassword" class="text-white font-weight-bold">Confirm Password</label>
+                <input id="confirmPassword"
+                       name="confirmPassword"
+                       th:field="*{confirmPassword}"
+                       type="password" min="2" max="20" class="form-control"
+                       placeholder="Confirm your password"/>
+                <p th:if="${#fields.hasErrors('password')}" class=" errors alert alert-danger">
+                    Confirmation password is invalid
+                </p>
+                <p th:if="${wrong_passwords}" class=" errors alert alert-danger">
+                    Passwords differ
+                </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col col-md-4">
+                <div class="button-holder d-flex">
+                    <input type="submit" class="btn btn-info btn-lg" value="Create account"/>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div th:replace="fragments/footer">Footer</div>
+
+</body>
+</html>
