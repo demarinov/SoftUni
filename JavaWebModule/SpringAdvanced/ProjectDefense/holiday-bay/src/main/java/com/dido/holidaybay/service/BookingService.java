@@ -1,6 +1,8 @@
 package com.dido.holidaybay.service;
 
 import com.dido.holidaybay.client.RoomClient;
+import com.dido.holidaybay.event.BookingExpirationEvent;
+import com.dido.holidaybay.event.BonusDepositEvent;
 import com.dido.holidaybay.model.dto.BookingDto;
 import com.dido.holidaybay.model.dto.RoomDto;
 import com.dido.holidaybay.model.entity.BookingEntity;
@@ -8,6 +10,7 @@ import com.dido.holidaybay.model.entity.UserEntity;
 import com.dido.holidaybay.repository.BookingRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.event.EventListener;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -52,6 +55,7 @@ public class BookingService {
             }
 
             roomClient.updateRoomStatus(bookingDto.getRoomId(), false);
+            user.getBookings().add(bookingEntity);
             bookingDto.setId(bookingEntity.getId());
             return true;
         }
@@ -112,4 +116,21 @@ public class BookingService {
         return bookingRepository.findByActiveAndUserId(false, user.getId(),pageable)
                 .map(this::map);
     }
+
+    @EventListener(BookingExpirationEvent.class)
+    public boolean expiredBooking(BookingExpirationEvent bookingExpirationEvent) {
+
+        log.info("expiredBooking(): Event: {}", bookingExpirationEvent.getSource());
+        
+        for(Long bookingId : bookingExpirationEvent.getBookingIds()) {
+           BookingEntity bookingEntity = this.getBooking(bookingId);
+           bookingEntity.setActive(false);
+           log.info("Expired booking: {}", bookingId);
+           this.updateBooking(bookingEntity);
+        }
+        
+        return true;
+
+    }
+
 }

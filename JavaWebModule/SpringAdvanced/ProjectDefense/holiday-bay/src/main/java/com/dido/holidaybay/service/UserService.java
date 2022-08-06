@@ -69,6 +69,7 @@ public class UserService {
                 .firstName("Admin")
                 .lastName("Adminov")
                 .userName("admin")
+                .bonusEligible(true)
                 .created(LocalDateTime.now())
                 .modified(LocalDateTime.now())
                 .password(passwordEncoder.encode("topsecret"))
@@ -93,6 +94,7 @@ public class UserService {
                 .firstName("User")
                 .lastName("Userov")
                 .userName("user")
+                .bonusEligible(true)
                 .created(LocalDateTime.now())
                 .modified(LocalDateTime.now())
                 .password(passwordEncoder.encode("topsecret"))
@@ -127,6 +129,7 @@ public class UserService {
                 .firstName(userRegisterDto.getFirstName())
                 .lastName(userRegisterDto.getLastName())
                 .age(userRegisterDto.getAge())
+                .bonusEligible(true)
                 .bankAccount(bankAccount)
                 .password(passwordEncoder.encode(userRegisterDto.getPassword()))
                 .userRoles(Arrays.asList(userRoleEntity))
@@ -172,6 +175,20 @@ public class UserService {
             userRepository.save(user);
 
             return true;
+        }
+
+        return false;
+    }
+
+    public UserEntity getUserById(Long userId) {
+
+        return userRepository.findById(userId).orElse(null);
+    }
+
+    public boolean updateUser(UserEntity userEntity) {
+
+        if (userEntity != null) {
+            userRepository.save(userEntity);
         }
 
         return false;

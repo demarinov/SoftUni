@@ -11,9 +11,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -33,7 +31,15 @@ public class VoucherService {
     private static final String VOUCHER_NAME_PREFIX = "Holiday-Bay-";
 
     public List<VoucherDto> getVouchers() {
-        return voucherRepository.findAll().stream().filter(voucher -> !isVoucherExpired(voucher))
+        return voucherRepository.findAll().stream().filter(voucher -> !voucher.isHasExpired()
+                        && !isVoucherExpired(voucher))
+                .map(voucherEntity -> mapper.map(voucherEntity, VoucherDto.class))
+                .collect(Collectors.toList());
+    }
+
+    public List<VoucherDto> getExpiredVouchers() {
+        return voucherRepository.findAll().stream().filter(voucher -> !voucher.isHasExpired()
+                        && isVoucherExpired(voucher))
                 .map(voucherEntity -> mapper.map(voucherEntity, VoucherDto.class))
                 .collect(Collectors.toList());
     }
