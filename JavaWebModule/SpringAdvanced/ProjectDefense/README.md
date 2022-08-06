@@ -1,5 +1,12 @@
 # Getting Started with Holiday Bay Booking App
 Create holiday booking web app to view,add, book rooms in hotels.
+It should accept 2 types of users - regular users and admins.
+The app should be able to create coupons or vouchers that can be bought by users and can be used upon hotel checkin.
+Each user can view his/her own vouchers only.
+Vouchers can be revoked or cancelled by users.
+Expired/cancelled vouchers are deleted after certain amount of time from the system: Ex.1 month.
+User can view popular attractions and watch videos.
+Admins can change user roles.
 ...
 
 
@@ -7,6 +14,7 @@ Tech stack: frontend - html, js, css, lit-html/angular
 backend - java, spring boot, thymeleaf, spring-security etc.
 db - MySQL
 
+[Info about Project Pages](https://github.com/demarinov/softuni/edit/master/JavaWebModule/SpringAdvanced/ProjectDefense/pics)
 
 General Requirements
 
