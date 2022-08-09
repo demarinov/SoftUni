@@ -1,6 +1,6 @@
 package com.dido.holidaybay.model.dto;
 
-import com.dido.holidaybay.model.validation.DatePast;
+import com.dido.holidaybay.model.validation.PastDate;
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -36,7 +36,7 @@ public class BookingDto {
     private boolean active;
 
     @NotNull
-    @DatePast
+    @PastDate
     @DateTimeFormat(iso=DateTimeFormat.ISO.DATE)
     private LocalDate startDate;
 }

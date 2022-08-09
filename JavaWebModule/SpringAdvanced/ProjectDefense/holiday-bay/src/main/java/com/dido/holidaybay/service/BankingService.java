@@ -75,6 +75,7 @@ public class BankingService {
             bankAccount.setAmount(bankAccount.getAmount() - amount);
 
             bankingRepository.save(bankAccount);
+            user.setBankAccount(bankAccount);
 
             return true;
         }

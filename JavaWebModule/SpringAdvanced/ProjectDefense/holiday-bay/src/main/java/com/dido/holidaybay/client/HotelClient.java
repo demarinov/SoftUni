@@ -10,6 +10,8 @@ import java.util.List;
 @Component
 public class HotelClient {
 
+    private static final String BASE_HOTEL_URL = "http://localhost:7777/hotels/";
+
     public List<HotelDto> getHotels() {
 
         WebClient clientBlocking = WebClient.create();
@@ -17,7 +19,7 @@ public class HotelClient {
         WebClient.UriSpec<WebClient.RequestBodySpec> hotelRequest =
                 (WebClient.UriSpec<WebClient.RequestBodySpec>) clientBlocking.get();
         WebClient.RequestBodySpec requestUri =
-                hotelRequest.uri("http://localhost:7777/hotels/all");
+                hotelRequest.uri(BASE_HOTEL_URL+"all");
 
         return requestUri.retrieve()
                 .bodyToMono(new ParameterizedTypeReference<List<HotelDto>>() {
@@ -32,7 +34,7 @@ public class HotelClient {
         WebClient.UriSpec<WebClient.RequestBodySpec> hotelRequest =
                 (WebClient.UriSpec<WebClient.RequestBodySpec>) clientBlocking.get();
         WebClient.RequestBodySpec requestUri =
-                hotelRequest.uri("http://localhost:7777/hotels/all/free-rooms");
+                hotelRequest.uri(BASE_HOTEL_URL+"all/free-rooms");
 
         return requestUri.retrieve()
                 .bodyToMono(new ParameterizedTypeReference<List<HotelDto>>() {
@@ -47,7 +49,7 @@ public class HotelClient {
         WebClient.UriSpec<WebClient.RequestBodySpec> hotelRequest =
                 (WebClient.UriSpec<WebClient.RequestBodySpec>) clientBlocking.get();
         WebClient.RequestBodySpec requestUri =
-                hotelRequest.uri("http://localhost:7777/hotels/details?id="+id);
+                hotelRequest.uri(BASE_HOTEL_URL+"details?id="+id);
 
         return requestUri.retrieve()
                 .bodyToMono(HotelDto.class)

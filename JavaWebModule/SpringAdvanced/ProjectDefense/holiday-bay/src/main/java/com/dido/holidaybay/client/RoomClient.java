@@ -8,6 +8,8 @@ import org.springframework.web.reactive.function.client.WebClient;
 @Component
 public class RoomClient {
 
+    private static final String BASE_ROOMS_URL="http://localhost:7777/rooms/";
+
     public RoomDto getRoomById(Long id) {
 
         WebClient clientBlocking = WebClient.create();
@@ -15,7 +17,7 @@ public class RoomClient {
         WebClient.UriSpec<WebClient.RequestBodySpec> hotelRequest =
                 (WebClient.UriSpec<WebClient.RequestBodySpec>) clientBlocking.get();
         WebClient.RequestBodySpec requestUri =
-                hotelRequest.uri("http://localhost:7777/rooms/"+id);
+                hotelRequest.uri(BASE_ROOMS_URL+id);
 
         return requestUri.retrieve()
                 .bodyToMono(RoomDto.class)
@@ -29,7 +31,7 @@ public class RoomClient {
         WebClient.UriSpec<WebClient.RequestBodySpec> hotelRequest =
                 clientBlocking.post();
         WebClient.RequestBodySpec requestUri =
-                hotelRequest.uri("http://localhost:7777/rooms/update-status?id="+id+"&free="+isFree)
+                hotelRequest.uri(BASE_ROOMS_URL+"update-status?id="+id+"&free="+isFree)
                         .contentType(MediaType.APPLICATION_FORM_URLENCODED);
 
         return Boolean.TRUE.equals(requestUri.retrieve()

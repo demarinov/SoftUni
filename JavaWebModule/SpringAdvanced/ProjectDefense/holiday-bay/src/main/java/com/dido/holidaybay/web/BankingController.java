@@ -121,9 +121,13 @@ public class BankingController {
         UserEntity user = userService.getUserByUserName(principal.getName());
         boolean result = bankingService.withdraw(bankingDto.getWithdrawAmount(), user);
 
+        if (!result) {
+            redirectAttributes.addFlashAttribute("not_enough_money", true);
+        }
+
         model.addAttribute("funds", bankingService.getBankAccount(user).getAmount());
 
-        return result ? "redirect:/banking" : "redirect:/banking/deposit";
+        return "redirect:/banking";
     }
 
 }

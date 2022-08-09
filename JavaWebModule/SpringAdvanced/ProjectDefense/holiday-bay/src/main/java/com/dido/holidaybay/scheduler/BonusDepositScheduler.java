@@ -22,7 +22,7 @@ public class BonusDepositScheduler {
     private final UserService userService;
     private final ApplicationEventPublisher applicationEventPublisher;
 
-    // on every 10 bookings get 100 $ cash
+    // on every first 2000 $ booking or more get 100 $ cash
     @Scheduled(cron = "*/30 * * * * *")
     public void depositScheduler() {
         log.info("depositScheduler(): Scheduling event triggered");
