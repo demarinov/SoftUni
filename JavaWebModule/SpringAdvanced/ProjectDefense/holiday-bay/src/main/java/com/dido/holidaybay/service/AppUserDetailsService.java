@@ -29,15 +29,12 @@ public class AppUserDetailsService implements UserDetailsService {
     }
 
     private UserDetails map(UserEntity userEntity) {
-        UserDetails result =
-                User.builder()
+        return User.builder()
                         .username(userEntity.getUserName())
                         .password(userEntity.getPassword())
                         .authorities(userEntity.getUserRoles()
                                 .stream().map(this::map).collect(Collectors.toList()))
                         .build();
-
-        return result;
     }
 
     private GrantedAuthority map(UserRoleEntity userRoleEntity) {

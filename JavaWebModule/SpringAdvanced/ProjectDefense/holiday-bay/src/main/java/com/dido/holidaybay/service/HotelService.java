@@ -31,9 +31,14 @@ public class HotelService {
         Set<String> hotelDtoSet = new TreeSet<>();
 
         StringBuilder builder = new StringBuilder();
+
         for(HotelDto hotelDto : hotelDtos) {
             List<RoomDto> roomDtoList = new ArrayList<>();
             Map<String, Integer> roomTypeCountMap = new TreeMap<>();
+
+            if (hotelDto.getRooms() == null) {
+                continue;
+            }
 
             for(RoomDto roomDto : hotelDto.getRooms()) {
                 builder.append(hotelDto.getName());

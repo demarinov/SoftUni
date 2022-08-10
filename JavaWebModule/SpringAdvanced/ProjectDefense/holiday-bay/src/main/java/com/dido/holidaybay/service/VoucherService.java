@@ -30,13 +30,6 @@ public class VoucherService {
 
     private static final String VOUCHER_NAME_PREFIX = "Holiday-Bay-";
 
-    public List<VoucherDto> getVouchers() {
-        return voucherRepository.findAll().stream().filter(voucher -> !voucher.isHasExpired()
-                        && !isVoucherExpired(voucher))
-                .map(voucherEntity -> mapper.map(voucherEntity, VoucherDto.class))
-                .collect(Collectors.toList());
-    }
-
     public List<VoucherDto> getExpiredVouchers() {
         return voucherRepository.findAll().stream().filter(voucher -> !voucher.isHasExpired()
                         && isVoucherExpired(voucher))

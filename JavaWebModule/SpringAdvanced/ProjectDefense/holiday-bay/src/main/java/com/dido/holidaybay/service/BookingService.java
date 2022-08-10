@@ -2,7 +2,6 @@ package com.dido.holidaybay.service;
 
 import com.dido.holidaybay.client.RoomClient;
 import com.dido.holidaybay.event.BookingExpirationEvent;
-import com.dido.holidaybay.event.BonusDepositEvent;
 import com.dido.holidaybay.model.dto.BookingDto;
 import com.dido.holidaybay.model.dto.RoomDto;
 import com.dido.holidaybay.model.entity.BookingEntity;

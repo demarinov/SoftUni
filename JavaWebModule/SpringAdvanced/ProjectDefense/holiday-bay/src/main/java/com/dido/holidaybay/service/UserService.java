@@ -189,6 +189,8 @@ public class UserService {
 
         if (userEntity != null) {
             userRepository.save(userEntity);
+
+            return true;
         }
 
         return false;

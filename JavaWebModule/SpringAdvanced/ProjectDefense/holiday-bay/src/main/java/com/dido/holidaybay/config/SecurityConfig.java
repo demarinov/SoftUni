@@ -50,7 +50,6 @@ public class SecurityConfig {
                 .invalidateHttpSession(true)
                 .deleteCookies("JSESSIONID")
                 .and()
-                .csrf().disable()
                 .build();
     }
 
