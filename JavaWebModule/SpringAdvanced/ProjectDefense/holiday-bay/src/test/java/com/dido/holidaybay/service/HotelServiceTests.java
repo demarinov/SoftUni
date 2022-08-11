@@ -19,6 +19,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.anyLong;
+import static org.mockito.Mockito.verify;
 
 
 @SpringBootTest
@@ -41,6 +42,7 @@ public class HotelServiceTests {
         List<HotelDto> expectedHotels =  mockHotelDto();
         HotelDto actualHotel = hotelService.getHotelById(1L);
 
+        verify(hotelClient).getHotelById(anyLong());
         assertEquals(expectedHotels.get(0).getName(), actualHotel.getName());
         assertEquals(expectedHotels.get(0).getAddress(), actualHotel.getAddress());
     }
@@ -52,6 +54,7 @@ public class HotelServiceTests {
 
         List<HotelDto> expectedHotels =  mockHotelDto();
         List<HotelDto> actualHotels = hotelService.getHotels();
+        verify(this.hotelClient).getHotels();
 
         assertEquals(expectedHotels.size(), actualHotels.size());
         assertEquals(expectedHotels.get(0).getName(), actualHotels.get(0).getName());
@@ -67,6 +70,7 @@ public class HotelServiceTests {
         List<HotelDto> expectedHotels =  mockHotelDto();
         List<HotelDto> actualHotels = hotelService.getHotelsWithFreeRooms();
 
+        verify(hotelClient).getHotelsWithFreeRooms();
         assertEquals(expectedHotels.size(), actualHotels.size());
         assertEquals(expectedHotels.get(0).getName(), actualHotels.get(0).getName());
         assertEquals(expectedHotels.get(0).getAddress(), actualHotels.get(0).getAddress());

@@ -61,10 +61,6 @@ public class UserEntity extends BaseEntity {
             inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
     private List<UserRoleEntity> userRoles;
 
-
-    @OneToMany(mappedBy = "user")
-    private List<BonusEntity> bonuses;
-
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private BankAccount bankAccount;
 

@@ -118,7 +118,8 @@ public class UserService {
             return false;
         }
 
-        UserRoleEntity userRoleEntity = userRoleRepository.findById(2l).orElse(null);
+        UserRoleEntity userRoleEntity = userRoleRepository.findByRole(RoleEnum.BASIC_USER).orElse(null);
+
         BankAccount bankAccount = BankAccount.builder()
                 .amount(0d)
                 .created(LocalDateTime.now())

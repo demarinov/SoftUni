@@ -29,11 +29,6 @@ public class VoucherController {
     @GetMapping("/all")
     public String vouchers(Principal principal, Model model, @PageableDefault(value = 0, size=1) Pageable pageable) {
 
-        if (principal == null) {
-
-            return CommonConstants.LOGIN_REDIRECT;
-        }
-
         UserEntity user = userService.getUserByUserName(principal.getName());
         Page<VoucherDto> voucherDtoList = voucherService.getVouchers(user,pageable);
 
@@ -43,12 +38,8 @@ public class VoucherController {
     }
 
     @PostMapping("/create")
-    public String create(Principal principal, BookingDto bookingDto) {
-
-        if (principal == null) {
-
-            return CommonConstants.LOGIN_REDIRECT;
-        }
+    @CrossOrigin
+    public String create( BookingDto bookingDto) {
 
         voucherService.create(bookingDto);
 
@@ -56,12 +47,7 @@ public class VoucherController {
     }
 
     @RequestMapping(value="/deactivate", method={RequestMethod.DELETE, RequestMethod.GET})
-    public String deactivate(Principal principal, @ModelAttribute("voucherModel") VoucherDto voucherDto) {
-
-        if (principal == null) {
-
-            return CommonConstants.LOGIN_REDIRECT;
-        }
+    public String deactivate(@ModelAttribute("voucherModel") VoucherDto voucherDto) {
 
         voucherService.deactivateVoucher(voucherDto);
         return "redirect:/vouchers/all";

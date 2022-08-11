@@ -98,10 +98,6 @@ public class UserController {
     @GetMapping("/profile")
     public String profile(@AuthenticationPrincipal UserDetails userDetails, Model model) {
 
-        if (userDetails == null) {
-            return "redirect:/users/login";
-        }
-
         UserEntity user = userService.getUserByUserName(userDetails.getUsername());
 
         model.addAttribute("user", user);
@@ -111,10 +107,6 @@ public class UserController {
 
     @GetMapping("/admin")
     public String admin(Principal principal, Model model) {
-
-        if (principal == null) {
-            return "redirect:/users/login";
-        }
 
         if (model.getAttribute("adminModel") == null) {
             model.addAttribute("adminModel", AdminDto.builder().build());
@@ -136,12 +128,8 @@ public class UserController {
     }
 
     @PostMapping("/change-role")
-    public String adminUserRoleChange(Principal principal, @Valid
+    public String adminUserRoleChange( @Valid
             AdminDto userDto, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
-
-        if (principal == null) {
-            return "redirect:/users/login";
-        }
 
         if (bindingResult.hasErrors()) {
 
@@ -159,13 +147,9 @@ public class UserController {
     }
 
     @PostMapping("/voucher-deactivate")
-    public String adminDeactivate(Principal principal, @Valid VoucherAdminDto voucherDto,
+    public String adminDeactivate( @Valid VoucherAdminDto voucherDto,
                                   BindingResult bindingResult,
                                   RedirectAttributes redirectAttributes) {
-
-        if (principal == null) {
-            return "redirect:/users/login";
-        }
 
         redirectAttributes.addFlashAttribute("voucherModel", VoucherDto.builder()
                         .id(voucherDto.getVoucherId())

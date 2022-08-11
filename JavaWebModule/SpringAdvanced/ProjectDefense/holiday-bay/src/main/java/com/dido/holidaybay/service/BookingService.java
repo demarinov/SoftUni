@@ -15,8 +15,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -44,7 +42,7 @@ public class BookingService {
 
             double amount = bookingDto.getPrice() * bookingDto.getDurationInNights();
 
-            bookingRepository.save(bookingEntity);
+            bookingEntity = bookingRepository.save(bookingEntity);
 
             boolean result = bankingService.withdraw(amount, user);
 
@@ -60,13 +58,6 @@ public class BookingService {
         }
 
         return false;
-    }
-
-    public List<BookingDto> getUserBookings(UserEntity user) {
-
-        return bookingRepository.findAll().stream().filter(booking -> booking.isActive()
-                        && booking.getUser().getId().equals(user.getId()))
-                .map(this::map).collect(Collectors.toList());
     }
 
     public Page<BookingDto> getUserBookings(UserEntity user, Pageable pageable) {
@@ -105,12 +96,6 @@ public class BookingService {
         return false;
     }
 
-    public List<BookingDto> getUserBookingsHistory(UserEntity user) {
-        return bookingRepository.findAll().stream().filter(booking -> !booking.isActive()
-                        && booking.getUser().getId().equals(user.getId()))
-                .map(this::map).collect(Collectors.toList());
-    }
-
     public Page<BookingDto> getUserBookingsHistory(UserEntity user, Pageable pageable) {
         return bookingRepository.findByActiveAndUserId(false, user.getId(),pageable)
                 .map(this::map);
@@ -119,7 +104,7 @@ public class BookingService {
     @EventListener(BookingExpirationEvent.class)
     public boolean expiredBooking(BookingExpirationEvent bookingExpirationEvent) {
 
-        log.info("expiredBooking(): Event: {}", bookingExpirationEvent.getSource());
+        log.info("expiredBooking(): Event: {} date: {}", bookingExpirationEvent.getSource(), bookingExpirationEvent.getExpiredDate());
         
         for(Long bookingId : bookingExpirationEvent.getBookingIds()) {
            BookingEntity bookingEntity = this.getBooking(bookingId);

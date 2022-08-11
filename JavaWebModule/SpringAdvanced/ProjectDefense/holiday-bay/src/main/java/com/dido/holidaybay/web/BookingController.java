@@ -40,9 +40,6 @@ public class BookingController {
     @GetMapping("/add")
     public String booking(Model model, Principal principal) {
 
-        if (principal == null) {
-            return CommonConstants.LOGIN_REDIRECT;
-        }
 
         List<HotelDto> hotelDtoList = hotelService.getHotelsWithFreeRooms();
         model.addAttribute("hotels", hotelDtoList);
@@ -55,9 +52,6 @@ public class BookingController {
                              RedirectAttributes redirectAttributes,
                              Principal principal) {
 
-        if (principal == null) {
-            return CommonConstants.LOGIN_REDIRECT;
-        }
 
         if (bindingResult.hasErrors()) {
             redirectAttributes.addFlashAttribute("bookingModel", bookingDto);
@@ -81,9 +75,6 @@ public class BookingController {
     public String bookings(Principal principal, Model model,
                            @PageableDefault(value = 0, size=5) Pageable pageable) {
 
-        if (principal == null) {
-            return CommonConstants.LOGIN_REDIRECT;
-        }
 
         UserEntity user = userService.getUserByUserName(principal.getName());
 
@@ -99,10 +90,6 @@ public class BookingController {
     public String bookingsHistory(Principal principal, Model model,
                                   @PageableDefault(value = 0, size=5) Pageable pageable) {
 
-        if (principal == null) {
-            return CommonConstants.LOGIN_REDIRECT;
-        }
-
         UserEntity user = userService.getUserByUserName(principal.getName());
 
         Page<BookingDto> bookingDtoList = bookingService.getUserBookingsHistory(user, pageable);
@@ -113,13 +100,4 @@ public class BookingController {
         return "booking-history";
     }
 
-    @RequestMapping(value = "/cancel/{id}", method={RequestMethod.DELETE, RequestMethod.GET})
-    public String bookingCancel(@PathVariable("id") Long bookId, Principal principal) {
-
-        if (principal == null) {
-            return CommonConstants.LOGIN_REDIRECT;
-        }
-
-        return "redirect:/vouchers/deactivate";
-    }
 }

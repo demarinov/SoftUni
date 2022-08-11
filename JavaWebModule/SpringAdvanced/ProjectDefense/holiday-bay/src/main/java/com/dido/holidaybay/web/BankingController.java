@@ -1,12 +1,15 @@
 package com.dido.holidaybay.web;
 
 import com.dido.holidaybay.constants.CommonConstants;
+import com.dido.holidaybay.model.dto.BankingDto;
 import com.dido.holidaybay.model.dto.DepositDto;
 import com.dido.holidaybay.model.dto.WithdrawDto;
 import com.dido.holidaybay.model.entity.BankAccount;
 import com.dido.holidaybay.model.entity.UserEntity;
 import com.dido.holidaybay.service.BankingService;
 import com.dido.holidaybay.service.UserService;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -29,14 +32,10 @@ public class BankingController {
 
     private final UserService userService;
     private final BankingService bankingService;
+    private final ObjectMapper objectMapper;
 
     @GetMapping("")
     public String cashier(Principal principal, Model model) {
-
-        if (principal == null) {
-
-            return CommonConstants.LOGIN_REDIRECT;
-        }
 
         if (model.getAttribute("depositModel") == null) {
             model.addAttribute("depositModel", DepositDto.builder().build());
@@ -55,17 +54,17 @@ public class BankingController {
     }
 
     @GetMapping("/funds")
-    public @ResponseBody String getFunds(Principal principal) {
-
-        if (principal == null) {
-
-            return CommonConstants.LOGIN_REDIRECT;
-        }
+    public @ResponseBody String getFunds(Principal principal) throws JsonProcessingException {
 
         UserEntity user = userService.getUserByUserName(principal.getName());
         BankAccount bankAccount = bankingService.getBankAccount(user);
 
-        return bankAccount != null ? String.valueOf(bankAccount.getAmount()) : "0";
+        return bankAccount != null ? objectMapper
+                .writerWithDefaultPrettyPrinter()
+                .writeValueAsString(BankingDto.builder()
+                        .depositAmount(bankAccount.getAmount())
+                        .build()) :
+                objectMapper.writeValueAsString(BankingDto.builder().build());
     }
 
     @PostMapping("/deposit")
@@ -75,10 +74,6 @@ public class BankingController {
                           Model model,
                           Principal principal) {
 
-        if (principal == null) {
-
-            return CommonConstants.LOGIN_REDIRECT;
-        }
 
         if (bindingResult.hasErrors()) {
 
@@ -92,7 +87,7 @@ public class BankingController {
 
         bankingService.deposit(bankingDto.getDepositAmount(), user);
 
-        model.addAttribute("funds", bankingService.getBankAccount(user).getAmount());
+        redirectAttributes.addFlashAttribute("funds", bankingService.getBankAccount(user).getAmount());
 
         return "redirect:/banking";
     }
@@ -104,10 +99,6 @@ public class BankingController {
                            RedirectAttributes redirectAttributes,
                            Model model) {
 
-        if (principal == null) {
-
-            return CommonConstants.LOGIN_REDIRECT;
-        }
 
         if (bindingResult.hasErrors()) {
 
@@ -125,7 +116,7 @@ public class BankingController {
             redirectAttributes.addFlashAttribute("not_enough_money", true);
         }
 
-        model.addAttribute("funds", bankingService.getBankAccount(user).getAmount());
+        redirectAttributes.addFlashAttribute("funds", bankingService.getBankAccount(user).getAmount());
 
         return "redirect:/banking";
     }
