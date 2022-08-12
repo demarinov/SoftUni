@@ -4,6 +4,8 @@
 * [Introduction](#introduction)
 * [Tech stack](#tech-stack)
 * [Setup](#setup)
+* [Project pages](#project-pages)
+* [General Requirements](#general-requirements)
 
 ## Introduction
 Create holiday booking web app to view,add, book rooms in hotels.
