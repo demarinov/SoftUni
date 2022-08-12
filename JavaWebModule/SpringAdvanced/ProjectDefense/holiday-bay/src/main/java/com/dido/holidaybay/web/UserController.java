@@ -1,6 +1,9 @@
 package com.dido.holidaybay.web;
 
-import com.dido.holidaybay.model.dto.*;
+import com.dido.holidaybay.model.dto.AdminDto;
+import com.dido.holidaybay.model.dto.UserRegisterDto;
+import com.dido.holidaybay.model.dto.VoucherAdminDto;
+import com.dido.holidaybay.model.dto.VoucherDto;
 import com.dido.holidaybay.model.entity.UserEntity;
 import com.dido.holidaybay.service.UserService;
 import com.dido.holidaybay.service.VoucherService;
@@ -29,16 +32,22 @@ public class UserController {
     private final UserService userService;
     private final VoucherService voucherService;
 
+    private static final String USER_REGISTRATION_MODEL = "userRegistrationModel";
+    private static final String HOME_REDIRECT = "redirect:/";
+    private static final String ADMIN_REDIRECT = "redirect:/users/admin";
+    private static final String ADMIN_MODEL = "adminModel";
+    private static final String VOUCHER_MODEL = "voucherModel";
+
     @GetMapping("/register")
     public String register(Principal principal, Model model) {
 
         if (principal != null) {
 
-            return "redirect:/";
+            return HOME_REDIRECT;
         }
 
-        if (model.getAttribute("userRegistrationModel") == null) {
-            model.addAttribute("userRegistrationModel",
+        if (model.getAttribute(USER_REGISTRATION_MODEL) == null) {
+            model.addAttribute(USER_REGISTRATION_MODEL,
                     UserRegisterDto.builder().build());
         }
 
@@ -53,22 +62,22 @@ public class UserController {
 
         if (principal != null) {
 
-            return "redirect:/";
+            return HOME_REDIRECT;
         }
 
         if (bindingResult.hasErrors()) {
-            redirectAttributes.addFlashAttribute("userRegistrationModel", userRegisterDTO);
+            redirectAttributes.addFlashAttribute(USER_REGISTRATION_MODEL, userRegisterDTO);
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.userRegistrationModel", bindingResult);
 
             return "redirect:/users/register";
         }
 
         if (!userService.registerAndLogin(userRegisterDTO)) {
-            redirectAttributes.addFlashAttribute("userRegistrationModel", userRegisterDTO);
+            redirectAttributes.addFlashAttribute(USER_REGISTRATION_MODEL, userRegisterDTO);
             redirectAttributes.addFlashAttribute("wrong_passwords", true);
             return "redirect:/users/register";
         }
-        return "redirect:/";
+        return HOME_REDIRECT;
     }
 
     @GetMapping("/login")
@@ -76,7 +85,7 @@ public class UserController {
 
         if (principal != null) {
 
-            return "redirect:/";
+            return HOME_REDIRECT;
         }
 
         return "auth-login";
@@ -108,12 +117,12 @@ public class UserController {
     @GetMapping("/admin")
     public String admin(Principal principal, Model model) {
 
-        if (model.getAttribute("adminModel") == null) {
-            model.addAttribute("adminModel", AdminDto.builder().build());
+        if (model.getAttribute(ADMIN_MODEL) == null) {
+            model.addAttribute(ADMIN_MODEL, AdminDto.builder().build());
         }
 
-        if (model.getAttribute("voucherModel") == null) {
-            model.addAttribute("voucherModel", VoucherAdminDto.builder().build());
+        if (model.getAttribute(VOUCHER_MODEL) == null) {
+            model.addAttribute(VOUCHER_MODEL, VoucherAdminDto.builder().build());
         }
 
         List<UserEntity> userDtoList = userService.getAllUsers();
@@ -133,17 +142,17 @@ public class UserController {
 
         if (bindingResult.hasErrors()) {
 
-            redirectAttributes.addFlashAttribute("adminModel", userDto);
+            redirectAttributes.addFlashAttribute(ADMIN_MODEL, userDto);
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.adminModel", bindingResult);
 
-            return "redirect:/users/admin";
+            return ADMIN_REDIRECT;
         }
 
         if (!userService.updateUserRole(userDto.getUserId(), userDto.getRoleType())) {
             redirectAttributes.addFlashAttribute("bad_user_roles", true);
         }
 
-        return "redirect:/users/admin";
+        return ADMIN_REDIRECT;
     }
 
     @PostMapping("/voucher-deactivate")
@@ -151,17 +160,17 @@ public class UserController {
                                   BindingResult bindingResult,
                                   RedirectAttributes redirectAttributes) {
 
-        redirectAttributes.addFlashAttribute("voucherModel", VoucherDto.builder()
+        redirectAttributes.addFlashAttribute(VOUCHER_MODEL, VoucherDto.builder()
                         .id(voucherDto.getVoucherId())
                 .build());
         if (bindingResult.hasErrors()) {
-            redirectAttributes.addFlashAttribute("voucherModel", voucherDto);
+            redirectAttributes.addFlashAttribute(VOUCHER_MODEL, voucherDto);
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.voucherModel", bindingResult);
 
-            return "redirect:/users/admin";
+            return ADMIN_REDIRECT;
         }
 
-        redirectAttributes.addFlashAttribute("voucherModel", VoucherDto.builder()
+        redirectAttributes.addFlashAttribute(VOUCHER_MODEL, VoucherDto.builder()
                 .id(voucherDto.getVoucherId())
                 .build());
         // redirect to voucher controller

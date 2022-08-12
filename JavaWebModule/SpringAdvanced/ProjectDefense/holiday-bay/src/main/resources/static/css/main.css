@@ -11,6 +11,14 @@ body {
     background-color: #464646;
 }
 
+.conn-error {
+    color: white;
+}
+
+.conn-error h1 {
+    color: red;
+}
+
 .navbar .logo {
     max-height: 50px;
     padding-right: 100px;

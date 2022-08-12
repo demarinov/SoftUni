@@ -1,6 +1,5 @@
 package com.dido.holidaybay.web;
 
-import com.dido.holidaybay.constants.CommonConstants;
 import com.dido.holidaybay.model.dto.BookingDto;
 import com.dido.holidaybay.model.dto.VoucherDto;
 import com.dido.holidaybay.model.entity.UserEntity;

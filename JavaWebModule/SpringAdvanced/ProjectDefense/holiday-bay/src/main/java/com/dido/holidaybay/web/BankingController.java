@@ -1,6 +1,5 @@
 package com.dido.holidaybay.web;
 
-import com.dido.holidaybay.constants.CommonConstants;
 import com.dido.holidaybay.model.dto.BankingDto;
 import com.dido.holidaybay.model.dto.DepositDto;
 import com.dido.holidaybay.model.dto.WithdrawDto;

@@ -32,9 +32,6 @@ class UserControllerTests {
     private WebApplicationContext webApplicationContext;
 
     @Autowired
-    private ObjectMapper objectMapper;
-
-    @Autowired
     private UserRepository userRepository;
 
     @Autowired
@@ -85,7 +82,7 @@ class UserControllerTests {
     }
 
     @Test
-    @WithMockUser(username="admin",roles={"USER","ADMIN"})
+    @WithMockUser(username="admin@mail.com",roles={"USER","ADMIN"})
     void testRegisterLogged() throws Exception {
 
         mockMvc.perform(MockMvcRequestBuilders.get("/users/register"))
@@ -134,7 +131,7 @@ class UserControllerTests {
 
 
     @Test
-    @WithMockUser(username="admin",roles={"USER","ADMIN"})
+    @WithMockUser(username="admin@mail.com",roles={"USER","ADMIN"})
     void testRegisterPostWithUserLogged() throws Exception {
 
         mockMvc.perform(MockMvcRequestBuilders.post("/users/register")
@@ -170,7 +167,7 @@ class UserControllerTests {
     }
 
     @Test
-    @WithMockUser(username="admin",roles={"USER","ADMIN"})
+    @WithMockUser(username="admin@mail.com",roles={"USER","ADMIN"})
     void testLoginUserLogged() throws Exception {
 
         mockMvc.perform(MockMvcRequestBuilders.get("/users/login")
@@ -183,7 +180,7 @@ class UserControllerTests {
     }
 
     @Test
-    @WithMockUser(username="admin",roles={"USER","ADMIN"})
+    @WithMockUser(username="admin@mail.com",roles={"USER","ADMIN"})
     void testFailedLogin() throws Exception {
 
         mockMvc.perform(MockMvcRequestBuilders.post("/users/login-error")
@@ -197,7 +194,7 @@ class UserControllerTests {
 
 
     @Test
-    @WithMockUser(username="admin",roles={"USER","ADMIN"})
+    @WithMockUser(username="admin@mail.com",roles={"USER","ADMIN"})
     void testProfile() throws Exception {
 
         mockMvc.perform(MockMvcRequestBuilders.get("/users/profile"))
@@ -208,7 +205,7 @@ class UserControllerTests {
     }
 
     @Test
-    @WithMockUser(username="admin",roles={"USER","ADMIN"})
+    @WithMockUser(username="admin@mail.com",roles={"USER","ADMIN"})
     void testAdmin() throws Exception {
 
         mockMvc.perform(MockMvcRequestBuilders.get("/users/admin"))
@@ -222,7 +219,7 @@ class UserControllerTests {
     }
 
     @Test
-    @WithMockUser(username="admin",roles={"USER","ADMIN"})
+    @WithMockUser(username="admin@mail.com",roles={"USER","ADMIN"})
     void testAdminRoleChange() throws Exception {
 
         mockMvc.perform(MockMvcRequestBuilders.post("/users/change-role")
@@ -236,7 +233,7 @@ class UserControllerTests {
     }
 
     @Test
-    @WithMockUser(username="admin",roles={"USER","ADMIN"})
+    @WithMockUser(username="admin@mail.com",roles={"USER","ADMIN"})
     void testAdminRoleChangeMissingUserId() throws Exception {
 
         mockMvc.perform(MockMvcRequestBuilders.post("/users/change-role")
@@ -250,7 +247,7 @@ class UserControllerTests {
     }
 
     @Test
-    @WithMockUser(username="admin",roles={"USER","ADMIN"})
+    @WithMockUser(username="admin@mail.com",roles={"USER","ADMIN"})
     void testAdminDeactivateVoucher() throws Exception {
 
         mockMvc.perform(MockMvcRequestBuilders.post("/users/voucher-deactivate")
@@ -264,7 +261,7 @@ class UserControllerTests {
     }
 
     @Test
-    @WithMockUser(username="admin",roles={"USER","ADMIN"})
+    @WithMockUser(username="admin@mail.com",roles={"USER","ADMIN"})
     void testAdminDeactivateVoucherMissingData() throws Exception {
 
         mockMvc.perform(MockMvcRequestBuilders.post("/users/voucher-deactivate")

@@ -2,7 +2,6 @@ package com.dido.holidaybay.web;
 
 import com.dido.holidaybay.model.entity.UserEntity;
 import com.dido.holidaybay.repository.UserRepository;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +38,7 @@ class BankingControllerTests {
     }
 
     @Test
-    @WithMockUser(username = "admin", roles = {"USER", "ADMIN"})
+    @WithMockUser(username = "admin@mail.com", roles = {"USER", "ADMIN"})
     void testCashier() throws Exception {
 
         mockMvc.perform(MockMvcRequestBuilders.get("/banking"))
@@ -51,9 +50,9 @@ class BankingControllerTests {
     }
 
     @Test
-    @WithMockUser(username = "admin", roles = {"USER", "ADMIN"})
+    @WithMockUser(username = "admin@mail.com", roles = {"USER", "ADMIN"})
     void testGetFunds() throws Exception {
-        UserEntity user = userRepository.findByUserName("admin").orElse(null);
+        UserEntity user = userRepository.findByUserName("admin@mail.com").orElse(null);
 
         double amount = 0d;
         if (user != null) {
@@ -67,7 +66,7 @@ class BankingControllerTests {
     }
 
     @Test
-    @WithMockUser(username = "admin", roles = {"USER", "ADMIN"})
+    @WithMockUser(username = "admin@mail.com", roles = {"USER", "ADMIN"})
     void testDeposit() throws Exception {
 
         mockMvc.perform(MockMvcRequestBuilders.post("/banking/deposit")
@@ -81,7 +80,7 @@ class BankingControllerTests {
     }
 
     @Test
-    @WithMockUser(username = "admin", roles = {"USER", "ADMIN"})
+    @WithMockUser(username = "admin@mail.com", roles = {"USER", "ADMIN"})
     void testDepositNoParam() throws Exception {
 
         mockMvc.perform(MockMvcRequestBuilders.post("/banking/deposit")
@@ -94,7 +93,7 @@ class BankingControllerTests {
     }
 
     @Test
-    @WithMockUser(username = "admin", roles = {"USER", "ADMIN"})
+    @WithMockUser(username = "admin@mail.com", roles = {"USER", "ADMIN"})
     void testWithdraw() throws Exception {
 
         mockMvc.perform(MockMvcRequestBuilders.post("/banking/withdraw")
@@ -108,7 +107,7 @@ class BankingControllerTests {
     }
 
     @Test
-    @WithMockUser(username = "admin", roles = {"USER", "ADMIN"})
+    @WithMockUser(username = "admin@mail.com", roles = {"USER", "ADMIN"})
     void testWithdrawNoParam() throws Exception {
 
         mockMvc.perform(MockMvcRequestBuilders.post("/banking/withdraw")
@@ -121,7 +120,7 @@ class BankingControllerTests {
     }
 
     @Test
-    @WithMockUser(username = "admin", roles = {"USER", "ADMIN"})
+    @WithMockUser(username = "admin@mail.com", roles = {"USER", "ADMIN"})
     void testWithdrawNegativeAmount() throws Exception {
 
         mockMvc.perform(MockMvcRequestBuilders.post("/banking/withdraw")
@@ -135,7 +134,7 @@ class BankingControllerTests {
     }
 
     @Test
-    @WithMockUser(username = "admin", roles = {"USER", "ADMIN"})
+    @WithMockUser(username = "admin@mail.com", roles = {"USER", "ADMIN"})
     void testWithdrawNotEnoughFunds() throws Exception {
 
         mockMvc.perform(MockMvcRequestBuilders.post("/banking/withdraw")

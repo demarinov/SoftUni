@@ -3,7 +3,6 @@ package com.dido.holidaybay.web;
 import com.dido.holidaybay.model.dto.HotelDto;
 import com.dido.holidaybay.model.dto.RoomDto;
 import com.dido.holidaybay.model.enums.RoomTypeEnum;
-import com.dido.holidaybay.repository.UserRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.SneakyThrows;
 import okhttp3.mockwebserver.Dispatcher;
@@ -42,11 +41,6 @@ class BookingControllerTests {
 
     public static MockWebServer mockBackEnd;
 
-    @Autowired
-    private ObjectMapper objectMapper;
-
-    @Autowired
-    private UserRepository userRepository;
 
     @BeforeAll
     static void setUp() throws IOException {
@@ -116,7 +110,7 @@ class BookingControllerTests {
     }
 
     @Test
-    @WithMockUser(username = "admin", roles = {"USER", "ADMIN"})
+    @WithMockUser(username = "admin@mail.com", roles = {"USER", "ADMIN"})
     void testBooking() throws Exception {
 
         RoomDto roomDto = RoomDto.builder()
@@ -142,7 +136,7 @@ class BookingControllerTests {
     }
 
     @Test
-    @WithMockUser(username = "admin", roles = {"USER", "ADMIN"})
+    @WithMockUser(username = "admin@mail.com", roles = {"USER", "ADMIN"})
     void testAddBooking() throws Exception {
 
         RoomDto roomDto = RoomDto.builder()
@@ -176,7 +170,7 @@ class BookingControllerTests {
     }
 
     @Test
-    @WithMockUser(username = "admin", roles = {"USER", "ADMIN"})
+    @WithMockUser(username = "admin@mail.com", roles = {"USER", "ADMIN"})
     void testAddBookingWrongDate() throws Exception {
 
 
@@ -195,7 +189,7 @@ class BookingControllerTests {
 
 
     @Test
-    @WithMockUser(username = "admin", roles = {"USER", "ADMIN"})
+    @WithMockUser(username = "admin@mail.com", roles = {"USER", "ADMIN"})
     void testAddBookingBigAmount() throws Exception {
 
 
@@ -214,7 +208,7 @@ class BookingControllerTests {
 
 
     @Test
-    @WithMockUser(username = "admin", roles = {"USER", "ADMIN"})
+    @WithMockUser(username = "admin@mail.com", roles = {"USER", "ADMIN"})
     void testBookingsHistory() throws Exception {
 
 

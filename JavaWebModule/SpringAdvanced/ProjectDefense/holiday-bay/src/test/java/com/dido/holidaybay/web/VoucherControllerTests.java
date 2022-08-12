@@ -3,7 +3,6 @@ package com.dido.holidaybay.web;
 import com.dido.holidaybay.model.dto.HotelDto;
 import com.dido.holidaybay.model.dto.RoomDto;
 import com.dido.holidaybay.model.enums.RoomTypeEnum;
-import com.dido.holidaybay.repository.UserRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.SneakyThrows;
 import okhttp3.mockwebserver.Dispatcher;
@@ -42,11 +41,6 @@ class VoucherControllerTests {
 
     public static MockWebServer mockBackEnd;
 
-    @Autowired
-    private ObjectMapper objectMapper;
-
-    @Autowired
-    private UserRepository userRepository;
 
     @BeforeAll
     static void setUp() throws IOException {
@@ -103,7 +97,7 @@ class VoucherControllerTests {
     }
 
     @Test
-    @WithMockUser(username="admin",roles={"USER","ADMIN"})
+    @WithMockUser(username="admin@mail.com",roles={"USER","ADMIN"})
     void testVouchers() throws Exception {
 
         mockMvc.perform(MockMvcRequestBuilders.get("/vouchers/all"))
@@ -113,7 +107,7 @@ class VoucherControllerTests {
     }
 
     @Test
-    @WithMockUser(username="admin",roles={"USER","ADMIN"})
+    @WithMockUser(username="admin@mail.com",roles={"USER","ADMIN"})
     void testCreateVoucher() throws Exception {
 
         mockMvc.perform(MockMvcRequestBuilders.post("/vouchers/create")
@@ -129,7 +123,7 @@ class VoucherControllerTests {
     }
 
     @Test
-    @WithMockUser(username="admin",roles={"USER","ADMIN"})
+    @WithMockUser(username="admin@mail.com",roles={"USER","ADMIN"})
     void testDeactivateVoucher() throws Exception {
 
         mockMvc.perform(MockMvcRequestBuilders.delete("/vouchers/deactivate")

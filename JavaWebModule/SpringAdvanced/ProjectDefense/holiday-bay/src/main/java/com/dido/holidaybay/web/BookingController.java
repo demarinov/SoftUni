@@ -1,10 +1,12 @@
 package com.dido.holidaybay.web;
 
-import com.dido.holidaybay.constants.CommonConstants;
 import com.dido.holidaybay.model.dto.BookingDto;
 import com.dido.holidaybay.model.dto.HotelDto;
 import com.dido.holidaybay.model.entity.UserEntity;
-import com.dido.holidaybay.service.*;
+import com.dido.holidaybay.service.BookingService;
+import com.dido.holidaybay.service.HotelService;
+import com.dido.holidaybay.service.UserService;
+import com.dido.holidaybay.service.VoucherService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
@@ -13,7 +15,10 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;

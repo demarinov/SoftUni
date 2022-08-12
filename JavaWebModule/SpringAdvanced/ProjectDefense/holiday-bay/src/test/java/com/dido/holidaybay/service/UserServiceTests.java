@@ -91,7 +91,7 @@ class UserServiceTests {
 
         userService.init();
 
-        verify(userRepository, times(2)).save(any());
+        verify(userRepository, times(3)).save(any());
         verify(userRoleRepository, times(3)).save(any());
     }
 

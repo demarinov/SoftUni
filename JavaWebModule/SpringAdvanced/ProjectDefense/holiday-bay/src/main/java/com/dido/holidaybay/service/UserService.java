@@ -81,7 +81,27 @@ public class UserService {
 
         userEntity.setBankAccount(bankAccount);
 
+        UserEntity userEntityTwo = UserEntity.builder()
+                .userRoles(roles)
+                .firstName("Root")
+                .lastName("Adminski")
+                .userName("root@mail.com")
+                .bonusEligible(true)
+                .created(LocalDateTime.now())
+                .modified(LocalDateTime.now())
+                .password(passwordEncoder.encode("topsecret"))
+                .build();
+        BankAccount bankAccountTwo = BankAccount.builder()
+                .user(userEntityTwo)
+                .amount(10000)
+                .created(LocalDateTime.now())
+                .modified(LocalDateTime.now())
+                .build();
+
+        userEntityTwo.setBankAccount(bankAccountTwo);
+
         userRepository.save(userEntity);
+        userRepository.save(userEntityTwo);
 
     }
 
