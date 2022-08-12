@@ -1,4 +1,11 @@
 # Getting Started with Holiday Bay Booking App
+
+##Table of contents
+* [Introduction](#introduction)
+* [Tech stack](#tech-stack)
+* [Setup](#setup)
+
+##Introduction
 Create holiday booking web app to view,add, book rooms in hotels.
 It should accept 2 types of users - regular users and admins.
 The app should be able to create coupons or vouchers that can be bought by users and can be used upon hotel checkin.
@@ -7,16 +14,23 @@ Vouchers can be revoked or cancelled by users.
 Expired/cancelled vouchers are deleted after certain amount of time from the system: Ex.1 month.
 User can view popular attractions and watch videos.
 Admins can change user roles.
-...
 
+##Tech stack
+  * frontend - html, js, css, (lit-html/angular)
+  * backend - java, spring boot, thymeleaf, spring-security etc.
+  * db - MySQL
 
-Tech stack: frontend - html, js, css, lit-html/angular
-backend - java, spring boot, thymeleaf, spring-security etc.
-db - MySQL
+##Setup
+  * download holiday-bay and hotel-provider apps and open them with proper IDE for example IntelliJ
+  * download and install mysql workbench then create a database instance
+  * open and run the apps from the installed IDE
+  * open your browser and check http://localhost:9090/
+  * there are already predefined users admin@mail.com and user@mail.com that can be used for login.
 
+##Project pages
 [Project Pages](https://github.com/demarinov/softuni/edit/master/JavaWebModule/SpringAdvanced/ProjectDefense/pics)
 
-General Requirements
+##General Requirements
 
 Your Web application should use the following technologies, frameworks, and development techniques:
 •	The application must be implemented using Spring Framework.
@@ -51,7 +65,7 @@ o	When validating data, show appropriate messages to the user
 •	Schedule jobs that impact the whole application running e.g. once/twice a day.
 •	Use ModelМapper or another mapping library.
 
-### Reference Documentation
+###Reference Documentation
 
 For further reference, please consider the following sections:
 
@@ -68,7 +82,7 @@ For further reference, please consider the following sections:
 * [Thymeleaf](https://docs.spring.io/spring-boot/docs/2.7.2/reference/htmlsingle/#web.servlet.spring-mvc.template-engines)
 * [Spring Boot DevTools](https://docs.spring.io/spring-boot/docs/2.7.2/reference/htmlsingle/#using.devtools)
 
-### Guides
+###Guides
 
 The following guides illustrate how to use some features concretely:
 
