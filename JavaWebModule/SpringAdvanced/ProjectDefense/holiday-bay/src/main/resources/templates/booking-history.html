@@ -24,7 +24,7 @@
             <div class="booking-item"><p class="text-white" th:text="*{id}"></p></div>
             <div class="booking-item"><img class="booking-img" th:src="*{imageUrl}" alt="Hotel image"></div>
             <div class="booking-item"><p class="hotel text-white" th:text="*{roomId}"></p></div>
-            <div class="booking-item"><p class="text-white" th:text="|*{#numbers.formatDecimal(price,1,0)} leva|"></p></div>
+            <div class="booking-item"><p class="text-white" th:text="|*{#numbers.formatDecimal(price,1,0)} dollars|"></p></div>
             <div class="booking-item"><p class="text-white" th:text="*{startDate}"></p></div>
             <div class="booking-item"><p class="text-white" th:text="|*{durationInNights} nights|"></p></div>
             <div class="booking-item"><p class="text-white" th:text="*{active} ? 'Yes' : 'No'"></p></div>

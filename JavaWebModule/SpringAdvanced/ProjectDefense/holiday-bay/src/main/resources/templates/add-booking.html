@@ -9,7 +9,7 @@
     Navbar
 </div>
 
-<div class="container">
+<div class="add-booking-container container">
     <h2 class="text-center text-white">Add Booking</h2>
     <form th:action="@{/booking/add}" th:method="POST" th:object="${bookingModel}"
           class="main-form mx-auto col-md-8 d-flex flex-column justify-content-center">
@@ -35,7 +35,7 @@
             <div class="form-group col-md-6 mb-3">
                 <label for="price" class="text-white font-weight-bold">Price</label>
                 <input id="price" name="price" th:field="*{price}" type="number" class="form-control"
-                       placeholder="Suggested price in leva" readonly/>
+                       placeholder="Suggested price in dollars" readonly/>
             </div>
 
             <div class="form-group col-md-6 mb-3">

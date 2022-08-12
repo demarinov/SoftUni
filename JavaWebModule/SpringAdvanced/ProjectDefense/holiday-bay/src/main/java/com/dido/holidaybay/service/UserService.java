@@ -1,6 +1,5 @@
 package com.dido.holidaybay.service;
 
-import com.dido.holidaybay.model.dto.UserDto;
 import com.dido.holidaybay.model.dto.UserRegisterDto;
 import com.dido.holidaybay.model.entity.BankAccount;
 import com.dido.holidaybay.model.entity.UserEntity;
@@ -22,7 +21,6 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -68,7 +66,7 @@ public class UserService {
                 .userRoles(roles)
                 .firstName("Admin")
                 .lastName("Adminov")
-                .userName("admin")
+                .userName("admin@mail.com")
                 .bonusEligible(true)
                 .created(LocalDateTime.now())
                 .modified(LocalDateTime.now())
@@ -93,7 +91,7 @@ public class UserService {
                 .userRoles(roles)
                 .firstName("User")
                 .lastName("Userov")
-                .userName("user")
+                .userName("user@mail.com")
                 .bonusEligible(true)
                 .created(LocalDateTime.now())
                 .modified(LocalDateTime.now())

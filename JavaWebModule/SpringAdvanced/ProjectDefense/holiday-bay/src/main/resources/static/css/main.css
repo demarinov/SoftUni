@@ -433,3 +433,232 @@ footer div div {
 .video-container h2 {
     margin-bottom: 1em;
 }
+
+.navbar-bay {
+    display: none;
+}
+
+
+@media only screen and (max-width: 992px) {
+    .navbar-bay {
+        display: inline-block;
+    }
+
+    /* vouchers */
+
+    .voucher h4, .voucher h3 {
+        font-size: 20px;
+    }
+
+
+    /* video */
+    .video-container {
+        margin: auto;
+    }
+    .video-container div {
+        flex-flow: column;
+        margin: auto!important;
+    }
+
+    .video-container div iframe {
+        margin: auto;
+        width: 200px;
+    }
+
+    /* hotel details */
+    .hotel-content {
+        flex-flow: column;
+    }
+
+    .hotel-description {
+        font-size: 12px;
+        width: 100px;
+    }
+
+    /* footer */
+    .footer-container {
+        position: relative;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    body {
+        background-color: lightblue;
+        /*background-image: none;*/
+    }
+
+    /* voucher */
+
+    .voucher .voucher-sub-container {
+        display: flex;
+        flex-flow: column!important;
+        font-size: 16px;
+        justify-content: space-between;
+    }
+
+    .voucher-body {
+        height: 10%;
+    }
+
+    .voucher-body * {
+        margin: auto;
+    }
+
+    .voucher-body, .voucher-footer, .voucher-value, .voucher-header {
+        flex-flow: column!important;
+    }
+
+    .voucher-header *, .voucher-body *, .voucher-footer * {
+        font-size: 16px;
+    }
+
+    .barcode-container {
+        position: relative;
+    }
+
+    .voucher-footer .barcode-container svg {
+       width: 50px!important;
+    }
+
+
+    /* attraction */
+    .attraction-do img,
+    .attraction-see img{
+        display: none;
+    }
+
+    .navbar-bay {
+        display: inline-block;
+    }
+
+    /* admin */
+    .admin-panel {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .admin-panel h2,
+    .admin-panel p,
+    .admin-panel legend,
+    .admin-panel label {
+        margin: 0;
+        font-size: 12px;
+        width: 100%;
+    }
+
+    .admin-panel img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .admin-panel form {
+        margin: 0!important;
+        padding: 0!important;
+    }
+
+    .admin-panel input[type="submit"] {
+        margin: 0!important;
+        padding: 0!important;
+        width: 57px;
+        font-size: 12px;
+    }
+
+    /* profile */
+    .profile-card {
+        font-size: 12px;
+    }
+
+    .profile-card .brave {
+        width: 30px!important;
+        padding: 0 !important;
+    }
+
+    .profile-card div img {
+        width: 50px!important;
+    }
+
+    .profile-card button {
+        width: 50px;
+        font-size: 12px;
+        padding: 0!important;
+    }
+
+    /* add-booking  */
+    .add-booking-container input[type="submit"] {
+        width: 150px;
+        font-size: 12px;
+    }
+
+    /* booking page */
+    .booking-container {
+        overflow-x:auto;
+    }
+
+    .booking-item p, .booking-item h5 {
+        font-size: 12px!important;
+    }
+
+    .booking-item .booking-img {
+        width: 20px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    /* hotel-details */
+    .hotel-details {
+        flex-flow: column;
+    }
+
+    .hotel-main {
+        margin: auto;
+    }
+
+    .hotel-content img {
+        width: 100px!important;
+        margin: auto !important;
+    }
+
+    .hotel-main h2 {
+        font-size: 16px;
+    }
+
+    .hotel-description {
+        margin: auto;
+    }
+
+    /* registration */
+    .registration-container form input[type="submit"] {
+        width: 150px;
+        font-size: 14px;
+    }
+
+    .booking-item p, .booking-item h5 {
+        font-size: 4px!important;
+    }
+
+    .booking-item .booking-img {
+        width: 10px;
+    }
+
+    /* hotels */
+    .hotels h2 {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+
+    .voucher-header *, .voucher-body *, .voucher-footer * {
+        font-size: 12px;
+    }
+
+    .voucher-img, .voucher-value {
+        width: 100%;
+    }
+
+    .voucher-body .voucher-value .voucher-val-text {
+        font-size: 12px;
+    }
+}

@@ -16,7 +16,7 @@
         <div class="admin-content-container container-fluid">
             <div class="user-roles-form-container" sec:authorize="hasRole('ADMIN')">
                 <form th:action="@{/users/change-role}" th:method="POST" th:object="${adminModel}"
-                      class="main-form mx-auto col-md-8 d-flex flex-column justify-content-center">
+                      class="container-fluid main-form mx-auto col-md-8 d-flex flex-column justify-content-center">
                     <fieldset>
 
                         <legend class="text-white text-center">User Role Change</legend>

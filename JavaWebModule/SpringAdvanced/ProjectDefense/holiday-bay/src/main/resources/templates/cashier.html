@@ -15,7 +15,7 @@
         <form th:action="@{/banking/deposit}" th:method="POST" th:object="${depositModel}"
               class="main-form mx-auto col-md-9 d-flex flex-column justify-content-center">
             <div class="row justify-content-center">
-                <h2 class="text-center text-white" th:text="|Available funds: ${funds} lv.|">Available funds:</h2>
+                <h2 class="text-center text-white" th:text="|Available funds: ${funds}|">Available funds:</h2>
 
                 <div class="form-group col-md-6 mb-3">
                     <label for="depositAmount" class="text-white font-weight-bold">Deposit Amount</label>
@@ -45,11 +45,15 @@
                 <div class="form-group col-md-6 mb-3">
                     <label for="withdrawAmount" class="text-white font-weight-bold">Withdraw Amount</label>
                     <input id="withdrawAmount" name="withdrawAmount" min="1" th:field="*{withdrawAmount}" type="number" class="form-control"
-                           placeholder="Suggested Amount in leva"/>
+                           placeholder="Suggested Amount in dollars"/>
 
                     <p th:if="${#fields.hasErrors('withdrawAmount')}" class="errors alert alert-danger">
                         Amount is invalid
                     </p>
+                    <p th:if="${not_enough_money}" class="errors alert alert-danger">
+                        Not enough money
+                    </p>
+
                 </div>
 
             </div>
