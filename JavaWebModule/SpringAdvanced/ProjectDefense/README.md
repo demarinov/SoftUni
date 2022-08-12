@@ -14,7 +14,7 @@ Tech stack: frontend - html, js, css, lit-html/angular
 backend - java, spring boot, thymeleaf, spring-security etc.
 db - MySQL
 
-[Info about Project Pages](https://github.com/demarinov/softuni/edit/master/JavaWebModule/SpringAdvanced/ProjectDefense/pics)
+[Project Pages](https://github.com/demarinov/softuni/edit/master/JavaWebModule/SpringAdvanced/ProjectDefense/pics)
 
 General Requirements
 
