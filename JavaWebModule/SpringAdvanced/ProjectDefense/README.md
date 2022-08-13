@@ -23,7 +23,7 @@ Admins can change user roles.
   * db - MySQL
 
 ## Setup
-  * download holiday-bay and hotel-provider apps and open them with proper IDE for example IntelliJ
+  * download holiday-bay app and hotel-provider service and open them with proper IDE for example IntelliJ
   * download and install mysql workbench then create a database instance
   * open and run the apps from the installed IDE
   * open your browser and check http://localhost:9090/
