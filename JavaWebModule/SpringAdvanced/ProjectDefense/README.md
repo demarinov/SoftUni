@@ -35,12 +35,12 @@ Admins can change user roles.
 ## General Requirements
 
 Your Web application should use the following technologies, frameworks, and development techniques:
-•	The application must be implemented using Spring Framework.
-o	The application must have at least 12 web pages (views/components).
-o	The application must have at least 5 independent entity models.
-o	The application must have at least 5 controllers.
-o	The application must have at least 5 services.
-o	The application must have at least 5 repositories.
+* The application must be implemented using Spring Framework.
+**	The application must have at least 12 web pages (views/components).
+**	The application must have at least 5 independent entity models.
+**	The application must have at least 5 controllers.
+**	The application must have at least 5 services.
+**	The application must have at least 5 repositories.
 
 •	Use Thymeleaf template engine or make the Front-End using JavaScript,
 consuming REST services from a Web API.
