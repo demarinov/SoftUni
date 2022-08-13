@@ -52,6 +52,7 @@ public class HotelService {
 
                     hotelDtoSet.add(builder.toString());
                     RoomDto newRoomDto = RoomDto.builder()
+                            .id(roomDto.getId())
                             .isFree(roomDto.isFree())
                             .roomType(roomDto.getRoomType())
                             .price(roomDto.getPrice())
