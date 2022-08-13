@@ -38,7 +38,7 @@ public class HotelController {
 
         model.addAttribute("hotel", hotelDto);
 
-        return "hotel-details";
+        return hotelDto == null ? "redirect:/hotels/all" : "hotel-details";
     }
 
 
