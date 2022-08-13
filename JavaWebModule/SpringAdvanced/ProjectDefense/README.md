@@ -42,30 +42,30 @@ Your Web application should use the following technologies, frameworks, and deve
 *	The application must have at least 5 services.
 *	The application must have at least 5 repositories.
 
-•	Use Thymeleaf template engine or make the Front-End using JavaScript,
+*	Use Thymeleaf template engine or make the Front-End using JavaScript,
 consuming REST services from a Web API.
-•	Use MySQL / Oracle / PostgreSQL / MariaDB as a database.
-•	Use Spring Data to access your database.
-o	Use Hibernate or any other provider as a JPA implementation.
+*	Use MySQL / Oracle / PostgreSQL / MariaDB as a database.
+*	Use Spring Data to access your database.
+*	Use Hibernate or any other provider as a JPA implementation.
 
-•	Implement Responsive Web Page Design based on Bootstrap / Google Material Design.
-•	Use the standard Spring Security for managing users and roles.
-o	Your registered users should have at least these roles: user and administrator.
-o	User roles should be manageable from the application.
-o	Make sure the role management is secured and error-safe.
-o	*Only for retake exam – Users and administrators should be able to edit their usernames.
+*	Implement Responsive Web Page Design based on Bootstrap / Google Material Design.
+*	Use the standard Spring Security for managing users and roles.
+   -	Your registered users should have at least these roles: user and administrator.
+   -	User roles should be manageable from the application.
+   -	Make sure the role management is secured and error-safe.
+   -	*Only for retake exam – Users and administrators should be able to edit their usernames.
 
-•	Use Fetch to asynchronously load and display data somewhere in your application.
-•	Write tests (Unit & Integration) for your logic, services, repository query methods, helpers, etc.
-o	You should have at least 60% coverage on your business logic. / *for retake exam 70% coverage.
+*	Use Fetch to asynchronously load and display data somewhere in your application.
+*	Write tests (Unit & Integration) for your logic, services, repository query methods, helpers, etc.
+   -	You should have at least 60% coverage on your business logic. / *for retake exam 70% coverage.
 
-•	Implement Error Handling and Data Validation to avoid crashes when invalid data is entered
+*	Implement Error Handling and Data Validation to avoid crashes when invalid data is entered
 (both client-side and server-side).
-o	When validating data, show appropriate messages to the user
+   -	When validating data, show appropriate messages to the user
 
-•	Use at least 1 Interceptor. / *for retake exam use at least 2 Interceptors.
-•	Schedule jobs that impact the whole application running e.g. once/twice a day.
-•	Use ModelМapper or another mapping library.
+*	Use at least 1 Interceptor. / *for retake exam use at least 2 Interceptors.
+*	Schedule jobs that impact the whole application running e.g. once/twice a day.
+*	Use ModelМapper or another mapping library.
 
 ### Reference Documentation
 
