@@ -1,4 +1,9 @@
-# Getting Started with Holiday Bay Booking App
+<p>
+ <img src="https://github.com/demarinov/softuni/blob/master/JavaWebModule/SpringAdvanced/ProjectDefense/pics/HolidayBayHome.png"
+  />
+</p>
+
+# Holiday Bay Booking App
 
 ## Table of contents
 * [Introduction](#introduction)
