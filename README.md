@@ -11,7 +11,7 @@ Modules included:
   - Java Web
   - Front End
 
-Technologies used: [Java](https://www.java.com/en/), [Spring](https://spring.io/), [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript), [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML), [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS), [lit-html](https://lit.dev/), [Angular](https://angular.io/), [page.js](https://visionmedia.github.io/page.js/), [Playwright](https://playwright.dev/) etc.
+Technologies used: [Java](https://www.java.com/en/), [Spring](https://spring.io/), [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript), [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML), [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS), [lit-html](https://lit.dev/), [Angular](https://angular.io/), [page.js](https://visionmedia.github.io/page.js/), [Playwright](https://playwright.dev/) and more
 
 https://github.com/demarinov/softuni
 
