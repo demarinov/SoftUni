@@ -1,10 +1,11 @@
-# $$\color{green}{SoftUni}$$
-
 <p align="center">
   <img src="https://purepng.com/public/uploads/large/purepng.com-ninjashinobininjacovert-agentassassinationguerrilla-warfaresamuraiclip-art-1421526960633owjjy.png" alt="Ninja" width="30%" height="30%"/>
 </p>
 
-Java Full Stack Path at SoftUni :rocket: <br/>
+# $$\color{green}{SoftUni}$$
+
+
+Java Full Stack Path :rocket: <br/>
 
 Completed modules:
   - Programming Basics
