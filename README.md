@@ -1,6 +1,6 @@
 # $$\color{green}{SoftUni}$$
 
-Java Full Stack Developer path at SoftUni ...
+Java Full Stack Developer path at SoftUni :rocket:
 
 Modules included:
   - Programming Basics
