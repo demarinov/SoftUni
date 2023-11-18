@@ -7,7 +7,7 @@
 
 ## Java Full Stack Path :rocket: <br/>
 
-### Completed modules :
+### Completed modules 🥇 :
   - [Programming Basics](https://github.com/demarinov/softuni/tree/master/ProgrammingBasics-Java)
   - [Programming Fundamentals](https://github.com/demarinov/softuni/tree/master/ProgrammingFundamentals-Java)
   - [Java Advanced](https://github.com/demarinov/softuni/tree/master/JavaAdvancedModule)
