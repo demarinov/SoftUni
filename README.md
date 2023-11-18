@@ -5,9 +5,9 @@
 # $$\color{green}{SoftUni}$$
 
 
-Java Full Stack Path :rocket: <br/>
+## Java Full Stack Path :rocket: <br/>
 
-Completed modules:
+### Completed modules :
   - Programming Basics
   - Programming Fundamentals
   - Java Advanced
@@ -16,9 +16,11 @@ Completed modules:
   - Java Web
   - Front End
 
+<hr/>
+
+### :hammer_and_wrench: Tech Stack : 
 
 <p>
-  Tech Stack: 
    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="30px" height="30px"/>
    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="30px" height="30px"/>
    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" width="30px" height="30px"/>
@@ -31,6 +33,8 @@ Completed modules:
                             
 </p>
 
+<hr/>
+
 <p align="center">
   <a href="https://softuni.bg/">
      <img src="https://about.softuni.bg/content/images/circle-logos/softuni-logo.png" alt="SoftUni" width="100px" height="100px"/>
@@ -38,5 +42,5 @@ Completed modules:
 </p>
 
 <p>
-  <a href="https://github.com/demarinov/">DM</a>
+  :fire: <a href="https://github.com/demarinov/">DM</a>
 </p>
