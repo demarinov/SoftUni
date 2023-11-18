@@ -1,8 +1,8 @@
 # $$\color{green}{SoftUni}$$
 
-Java Full Stack Developer path at SoftUni :rocket:
+Once upon time there was a ninja who wanted to experience the Java Full Stack Developer path at SoftUni :rocket:
 
-Modules included:
+Without hesitation he conquered the following modules:
   - Programming Basics
   - Programming Fundamentals
   - Java Advanced
@@ -11,7 +11,7 @@ Modules included:
   - Java Web
   - Front End
 
-Technologies used: [Java](https://www.java.com/en/), [Spring](https://spring.io/), [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript), [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML), [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS), [lit-html](https://lit.dev/), [Angular](https://angular.io/), [page.js](https://visionmedia.github.io/page.js/), [Playwright](https://playwright.dev/) and more
+The ninja used many technologies, but the main ones were these: [Java](https://www.java.com/en/), [Spring](https://spring.io/), [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript), [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML), [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS), [lit-html](https://lit.dev/), [Angular](https://angular.io/), [page.js](https://visionmedia.github.io/page.js/), [Playwright](https://playwright.dev/)
 
 https://github.com/demarinov/softuni
 
