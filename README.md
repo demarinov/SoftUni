@@ -8,13 +8,23 @@
 ## Java Full Stack Path :rocket: <br/>
 
 ### Completed modules :
-  - Programming Basics
-  - Programming Fundamentals
-  - Java Advanced
-  - Java DB
-  - JS Advanced
-  - Java Web
-  - Front End
+  - [Programming Basics](https://github.com/demarinov/softuni/tree/master/ProgrammingBasics-Java)
+  - [Programming Fundamentals](https://github.com/demarinov/softuni/tree/master/ProgrammingFundamentals-Java)
+  - [Java Advanced](https://github.com/demarinov/softuni/tree/master/JavaAdvancedModule)
+     - [JAdvanced](https://github.com/demarinov/softuni/tree/master/JavaAdvancedModule/JavaAdvanced)
+     - [Java OOP](https://github.com/demarinov/softuni/tree/master/JavaAdvancedModule/JavaOOP)  
+  - [Java DB](https://github.com/demarinov/softuni/tree/master/JavaDBModule)
+     - [MySQL](https://github.com/demarinov/softuni/tree/master/JavaDBModule/MySQL)
+     - [Spring Data](https://github.com/demarinov/softuni/tree/master/JavaDBModule/SpringData)  
+  - [JS Advanced](https://github.com/demarinov/softuni/tree/master/JSAdvancedModule)
+     - [JSAdvanced](https://github.com/demarinov/softuni/tree/master/JSAdvancedModule/JSAdvanced)
+     - [JSApps](https://github.com/demarinov/softuni/tree/master/JSAdvancedModule/JSApps)  
+  - [Java Web](https://github.com/demarinov/softuni/tree/master/JavaWebModule)
+     - [Spring Fundamentals](https://github.com/demarinov/softuni/tree/master/JavaWebModule/SpringFundamentals)
+     - [Spring Advanced](https://github.com/demarinov/softuni/tree/master/JavaWebModule/SpringAdvanced/ProjectDefense)  
+  - [Front End](https://github.com/demarinov/softuni/tree/master/FrontEndModule)
+     - [Html CSS](https://github.com/demarinov/softuni/tree/master/FrontEndModule/HtmlAndCss)
+     - [Angular](https://github.com/demarinov/softuni/tree/master/FrontEndModule/Angular/ProjectDefense)
 
 ##
 
@@ -32,6 +42,18 @@
    
                             
 </p>
+
+## 
+### 🎥 Projects :
+<div align="center">
+  <a href="https://github.com/demarinov/softuni/tree/master/FrontEndModule/Angular/ProjectDefense">
+    <img src="https://github.com/demarinov/softuni/blob/master/FrontEndModule/Angular/ProjectDefense/pics/ArtMain.png" width="400px" height="300px"/>
+  </a>
+  &nbsp; &nbsp;
+  <a href="https://github.com/demarinov/softuni/tree/master/JavaWebModule/SpringAdvanced/ProjectDefense">
+    <img src="https://github.com/demarinov/softuni/blob/master/JavaWebModule/SpringAdvanced/ProjectDefense/pics/HolidayBayHome.png" width="400px" height="300px"/>
+  </a>
+</div>
 
 ##
 
