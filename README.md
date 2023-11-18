@@ -16,7 +16,7 @@
   - Java Web
   - Front End
 
-<hr/>
+##
 
 ### :hammer_and_wrench: Tech Stack : 
 
@@ -33,7 +33,7 @@
                             
 </p>
 
-<hr/>
+##
 
 <p align="center">
   <a href="https://softuni.bg/">
