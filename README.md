@@ -12,12 +12,30 @@ Completed modules:
   - Programming Fundamentals
   - Java Advanced
   - Java DB
-  - JSAdvanced
+  - JS Advanced
   - Java Web
   - Front End
 
-Tech Stack: [Java](https://www.java.com/en/) [Spring](https://spring.io/) [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) [lit-html](https://lit.dev/) [Angular](https://angular.io/) [page.js](https://visionmedia.github.io/page.js/) [Playwright](https://playwright.dev/)
 
+<p>
+  Tech Stack: 
+   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="30px" height="30px"/>
+   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="30px" height="30px"/>
+   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" width="30px" height="30px"/>
+   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="30px" height="30px"/>
+   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="30px" height="30px"/>
+   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" width="30px" height="30px"/>
+   <img src="https://coryrylan.com/assets/images/posts/types/lit-800x800.png" width="30px" height="30px"/>
+   <img src="https://image.pngaaa.com/84/5809084-middle.png" width="30px" height="30px"/>
+   
+                            
+</p>
+
+<p align="center">
+  <a href="https://softuni.bg/">
+     <img src="https://about.softuni.bg/content/images/circle-logos/softuni-logo.png" alt="SoftUni" width="100px" height="100px"/>
+  </a>
+</p>
 
 <p>
   <a href="https://github.com/demarinov/">DM</a>
