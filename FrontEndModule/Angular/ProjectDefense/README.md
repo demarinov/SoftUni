@@ -22,3 +22,4 @@
   - install mongoDB Compass Community client
   - import the json collections from mongodb_collections folder
 
+:fire: [DM](https://github.com/demarinov/)
