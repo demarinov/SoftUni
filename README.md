@@ -13,6 +13,6 @@ Without hesitation he conquered the following modules:
 
 The ninja used many technologies, but the main ones were these: [Java](https://www.java.com/en/), [Spring](https://spring.io/), [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript), [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML), [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS), [lit-html](https://lit.dev/), [Angular](https://angular.io/), [page.js](https://visionmedia.github.io/page.js/), [Playwright](https://playwright.dev/)
 
-https://github.com/demarinov/
+[DM](https://github.com/demarinov/)
 
 ![NinjaLogo](https://purepng.com/public/uploads/large/purepng.com-ninjashinobininjacovert-agentassassinationguerrilla-warfaresamuraiclip-art-1421526960633owjjy.png)
