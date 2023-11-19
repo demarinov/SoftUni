@@ -7,10 +7,13 @@
 
 ## Table of contents
 * [Introduction](#introduction)
-* [Tech stack](#tech-stack)
+* [General Requirements](#general-requirements)
+* [Tech Stack](#tech-stack)
 * [Setup](#setup)
 * [Project pages](#project-pages)
-* [General Requirements](#general-requirements)
+* [Reference Documentation](#reference-documentation)
+* [Guides](#guides)
+
 
 ## Introduction
 The aim of this project is to create holiday booking web app to view,add, book rooms in hotels.
@@ -101,7 +104,7 @@ consuming REST services from a Web API.
 
 [See More](https://github.com/demarinov/softuni/edit/master/JavaWebModule/SpringAdvanced/ProjectDefense/pics)
 
-### Reference Documentation
+## Reference Documentation
 
 For further reference, please consider the following sections:
 
@@ -118,7 +121,7 @@ For further reference, please consider the following sections:
 * [Thymeleaf](https://docs.spring.io/spring-boot/docs/2.7.2/reference/htmlsingle/#web.servlet.spring-mvc.template-engines)
 * [Spring Boot DevTools](https://docs.spring.io/spring-boot/docs/2.7.2/reference/htmlsingle/#using.devtools)
 
-### Guides
+## Guides
 
 The following guides illustrate how to use some features concretely:
 
