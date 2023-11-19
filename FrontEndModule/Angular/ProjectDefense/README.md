@@ -11,6 +11,9 @@
  * Backend Rest service
     * Handles JWT authentication, users, artworks.
   
+## Design
+![Design](https://github.com/demarinov/softuni/blob/master/FrontEndModule/Angular/ProjectDefense/pics/ArtWork.drawio.png)
+  
 ## Project
 <p align="center">
  <img src="https://github.com/demarinov/softuni/blob/master/FrontEndModule/Angular/ProjectDefense/pics/ArtRegister.png" width="300px" height="200px"/>
