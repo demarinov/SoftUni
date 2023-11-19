@@ -7,25 +7,26 @@
 
 ## Java Full Stack Path :rocket: <br/>
 
-### Completed modules :
-  - [Programming Basics](https://github.com/demarinov/softuni/tree/master/ProgrammingBasics-Java) 🥇
-  - [Programming Fundamentals](https://github.com/demarinov/softuni/tree/master/ProgrammingFundamentals-Java) 🥇
+### Completed Modules :
+  - [Programming Basics](https://github.com/demarinov/softuni/tree/master/ProgrammingBasics-Java) 
+  - [Programming Fundamentals](https://github.com/demarinov/softuni/tree/master/ProgrammingFundamentals-Java) 
   - [Java Advanced](https://github.com/demarinov/softuni/tree/master/JavaAdvancedModule)
-     - [JAdvanced](https://github.com/demarinov/softuni/tree/master/JavaAdvancedModule/JavaAdvanced) 🥇
-     - [Java OOP](https://github.com/demarinov/softuni/tree/master/JavaAdvancedModule/JavaOOP) 🥇
+     - [JAdvanced](https://github.com/demarinov/softuni/tree/master/JavaAdvancedModule/JavaAdvanced) 
+     - [Java OOP](https://github.com/demarinov/softuni/tree/master/JavaAdvancedModule/JavaOOP) 
   - [Java DB](https://github.com/demarinov/softuni/tree/master/JavaDBModule)
-     - [MySQL](https://github.com/demarinov/softuni/tree/master/JavaDBModule/MySQL) 🥇
-     - [Spring Data](https://github.com/demarinov/softuni/tree/master/JavaDBModule/SpringData) 🥇
+     - [MySQL](https://github.com/demarinov/softuni/tree/master/JavaDBModule/MySQL) 
+     - [Spring Data](https://github.com/demarinov/softuni/tree/master/JavaDBModule/SpringData) 
   - [JS Advanced](https://github.com/demarinov/softuni/tree/master/JSAdvancedModule)
-     - [JSAdvanced](https://github.com/demarinov/softuni/tree/master/JSAdvancedModule/JSAdvanced) 🥇
-     - [JSApps](https://github.com/demarinov/softuni/tree/master/JSAdvancedModule/JSApps) 🥇  
+     - [JSAdvanced](https://github.com/demarinov/softuni/tree/master/JSAdvancedModule/JSAdvanced) 
+     - [JSApps](https://github.com/demarinov/softuni/tree/master/JSAdvancedModule/JSApps)   
   - [Java Web](https://github.com/demarinov/softuni/tree/master/JavaWebModule)
-     - [Spring Fundamentals](https://github.com/demarinov/softuni/tree/master/JavaWebModule/SpringFundamentals) 🥇
-     - [Spring Advanced](https://github.com/demarinov/softuni/tree/master/JavaWebModule/SpringAdvanced/ProjectDefense) 🥇
+     - [Spring Fundamentals](https://github.com/demarinov/softuni/tree/master/JavaWebModule/SpringFundamentals) 
+     - [Spring Advanced](https://github.com/demarinov/softuni/tree/master/JavaWebModule/SpringAdvanced/ProjectDefense) 
   - [Front End](https://github.com/demarinov/softuni/tree/master/FrontEndModule)
-     - [Html CSS](https://github.com/demarinov/softuni/tree/master/FrontEndModule/HtmlAndCss) 🥇
-     - [Angular](https://github.com/demarinov/softuni/tree/master/FrontEndModule/Angular/ProjectDefense) 🥇
+     - [Html CSS](https://github.com/demarinov/softuni/tree/master/FrontEndModule/HtmlAndCss) 
+     - [Angular](https://github.com/demarinov/softuni/tree/master/FrontEndModule/Angular/ProjectDefense) 
 
+### Achievements : 🥇🥇
 ##
 
 ### :hammer_and_wrench: Tech Stack : 
