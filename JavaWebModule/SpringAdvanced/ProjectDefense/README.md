@@ -84,8 +84,22 @@ consuming REST services from a Web API.
   * there are already predefined users admin@mail.com and user@mail.com that can be used for login.
 
 ## Project pages
-[Project Pages](https://github.com/demarinov/softuni/edit/master/JavaWebModule/SpringAdvanced/ProjectDefense/pics)
 
+<p align="center">
+ <img src="https://github.com/demarinov/softuni/blob/master/JavaWebModule/SpringAdvanced/ProjectDefense/pics/HolidayBayHotels.png" width="300px" height="200px"/>
+ &nbsp; &nbsp; &nbsp;
+ <img src="https://github.com/demarinov/softuni/blob/master/JavaWebModule/SpringAdvanced/ProjectDefense/pics/HolidayBayHotelDetails.png" width="300px" height="200px"/>
+</p>
+
+<br/>
+
+<p align="center">
+ <img src="https://github.com/demarinov/softuni/blob/master/JavaWebModule/SpringAdvanced/ProjectDefense/pics/HolidayBayCashier.png" width="300px" height="200px"/>
+ &nbsp; &nbsp; &nbsp;
+ <img src="https://github.com/demarinov/softuni/blob/master/JavaWebModule/SpringAdvanced/ProjectDefense/pics/HolidayBayVouchers.png" width="300px" height="200px"/>
+</p>
+
+[See More](https://github.com/demarinov/softuni/edit/master/JavaWebModule/SpringAdvanced/ProjectDefense/pics)
 
 ### Reference Documentation
 
