@@ -26,7 +26,7 @@
      - [Html CSS](https://github.com/demarinov/softuni/tree/master/FrontEndModule/HtmlAndCss) 
      - [Angular](https://github.com/demarinov/softuni/tree/master/FrontEndModule/Angular/ProjectDefense) 
 
-### Achievements : 🥇🥇
+### Achievements : 🥇🥇🥇🥇🥇🥇
 ##
 
 ### :hammer_and_wrench: Tech Stack : 
