@@ -8,6 +8,7 @@
 ## Table of contents
 * [Introduction](#introduction)
 * [General Requirements](#general-requirements)
+* [Design](#design)
 * [Tech Stack](#tech-stack)
 * [Setup](#setup)
 * [Project pages](#project-pages)
@@ -59,6 +60,9 @@ consuming REST services from a Web API.
 *	Use at least 1 Interceptor. / *for retake exam use at least 2 Interceptors.
 *	Schedule jobs that impact the whole application running e.g. once/twice a day.
 *	Use ModelМapper or another mapping library.
+
+## Design
+![Design](https://github.com/demarinov/softuni/blob/master/JavaWebModule/SpringAdvanced/ProjectDefense/pics/Holiday.drawio.png)
 
 ## 🛠️ Tech stack
   * frontend
