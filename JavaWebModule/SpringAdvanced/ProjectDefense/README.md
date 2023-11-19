@@ -60,7 +60,7 @@ consuming REST services from a Web API.
 *	Schedule jobs that impact the whole application running e.g. once/twice a day.
 *	Use ModelМapper or another mapping library.
 
-## Tech stack
+## 🛠️ Tech stack
   * frontend
     <p>
      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="30px" height="30px"/>
@@ -104,7 +104,7 @@ consuming REST services from a Web API.
 
 [See More](https://github.com/demarinov/softuni/edit/master/JavaWebModule/SpringAdvanced/ProjectDefense/pics)
 
-## Reference Documentation
+## 📖 Reference Documentation
 
 For further reference, please consider the following sections:
 
@@ -121,7 +121,7 @@ For further reference, please consider the following sections:
 * [Thymeleaf](https://docs.spring.io/spring-boot/docs/2.7.2/reference/htmlsingle/#web.servlet.spring-mvc.template-engines)
 * [Spring Boot DevTools](https://docs.spring.io/spring-boot/docs/2.7.2/reference/htmlsingle/#using.devtools)
 
-## Guides
+## 📘 Guides
 
 The following guides illustrate how to use some features concretely:
 
