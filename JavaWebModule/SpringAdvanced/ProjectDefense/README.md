@@ -13,7 +13,7 @@
 * [General Requirements](#general-requirements)
 
 ## Introduction
-Create holiday booking web app to view,add, book rooms in hotels.
+The aim of this project is to create holiday booking web app to view,add, book rooms in hotels.
 It should accept 2 types of users - regular users and admins.
 The app should be able to create coupons or vouchers that can be bought by users and can be used upon hotel checkin.
 Each user can view his/her own vouchers only.
@@ -22,24 +22,9 @@ Expired/cancelled vouchers are deleted after certain amount of time from the sys
 User can view popular attractions and watch videos.
 Admins can change user roles.
 
-## Tech stack
-  * frontend - html, js, css, (lit-html/angular)
-  * backend - java, spring boot, thymeleaf, spring-security etc.
-  * db - MySQL
-
-## Setup
-  * download holiday-bay app and hotel-provider service and open them with proper IDE for example IntelliJ
-  * download and install mysql workbench then create a database instance
-  * open and run the apps from the installed IDE
-  * open your browser and check http://localhost:9090/
-  * there are already predefined users admin@mail.com and user@mail.com that can be used for login.
-
-## Project pages
-[Project Pages](https://github.com/demarinov/softuni/edit/master/JavaWebModule/SpringAdvanced/ProjectDefense/pics)
-
 ## General Requirements
 
-Your Web application should use the following technologies, frameworks, and development techniques:
+The Web application should use the following technologies, frameworks, and development techniques:
 * The application must be implemented using Spring Framework.
 *	The application must have at least 12 web pages (views/components).
 *	The application must have at least 5 independent entity models.
@@ -71,6 +56,36 @@ consuming REST services from a Web API.
 *	Use at least 1 Interceptor. / *for retake exam use at least 2 Interceptors.
 *	Schedule jobs that impact the whole application running e.g. once/twice a day.
 *	Use ModelМapper or another mapping library.
+
+## Tech stack
+  * frontend
+    <p>
+     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="30px" height="30px"/>
+     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="30px" height="30px"/>
+     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="30px" height="30px"/>
+     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" width="30px" height="30px"/>
+    </p>
+  * backend
+    <p>
+     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="30px" height="30px"/>
+     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" width="30px" height="30px"/>
+     <img src="https://blog.softtek.com/hubfs/thymeleaf.png" width="30px" height="30px"/>
+    </p>
+  * db
+    <p>
+     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" width="30px" height="30px"/>
+    </p>
+
+## Setup
+  * download holiday-bay app and hotel-provider service and open them with proper IDE for example IntelliJ
+  * download and install mysql workbench then create a database instance
+  * open and run the apps from the installed IDE
+  * open your browser and check http://localhost:9090/
+  * there are already predefined users admin@mail.com and user@mail.com that can be used for login.
+
+## Project pages
+[Project Pages](https://github.com/demarinov/softuni/edit/master/JavaWebModule/SpringAdvanced/ProjectDefense/pics)
+
 
 ### Reference Documentation
 
