@@ -6,6 +6,8 @@
 
 ## Intro
 The projects described here cover topics related to Http Protocol, Spring framework, Spring Boot, Spring Security, Spring Unit Testing, Template engines like Thymeleaf, Aspect Oriented Programming.
+<br/>
+[Project Defense](https://github.com/demarinov/softuni/tree/master/JavaWebModule/SpringAdvanced/ProjectDefense)
 
 
 [<<Back: Java DB](https://github.com/demarinov/softuni/tree/master/JavaDBModule)
