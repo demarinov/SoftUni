@@ -7,6 +7,7 @@
 ## Intro
 The problems described here cover more aspects of Java programming language like arrays, lists, dictionaries, bitwise operations, methods, objects, regular expressions and text processing.
 
-[Next: Java Advanced](https://github.com/demarinov/softuni/tree/master/JavaAdvancedModule)
+[<<Back: Programming Basics](https://github.com/demarinov/softuni/tree/master/ProgrammingBasics-Java)
+[>>Next: Java Advanced](https://github.com/demarinov/softuni/tree/master/JavaAdvancedModule)
 
 :fire: [DM](https://github.com/demarinov)
