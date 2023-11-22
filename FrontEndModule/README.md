@@ -9,5 +9,7 @@ The projects described here cover topics related to web pages, html, css, flexbo
 
 
 [<<Back: JS Advanced](https://github.com/demarinov/softuni/tree/master/JSAdvancedModule)
+&nbsp;
+[>>Next: Angular Project](https://github.com/demarinov/softuni/tree/master/FrontEndModule/Angular/ProjectDefense)
 
 :fire: [DM](https://github.com/demarinov)
