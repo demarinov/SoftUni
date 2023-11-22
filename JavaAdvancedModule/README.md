@@ -8,6 +8,8 @@
 The problems described here cover advanced topics of Java programming language like basic algorithms, classes, functional programming, generics, stacks, queues, multi-arrays, sets&maps, streams and files.
 Along with that the OOP principles like Abstraction, Encapsulation, Polymorphism, Inheritance are also introduced.
 
-[Next: Java DB](https://github.com/demarinov/softuni/tree/master/JavaDBModule)
+[<<Back: Java Fundamentals](https://github.com/demarinov/softuni/tree/master/ProgrammingFundamentals-Java)
+&nbsp; &nbsp;
+[>>Next: Java DB](https://github.com/demarinov/softuni/tree/master/JavaDBModule)
 
 :fire: [DM](https://github.com/demarinov)
