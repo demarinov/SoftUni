@@ -10,7 +10,7 @@ This includes working with MySQL queries, statements, functions, procedures, tri
 
 
 [<<Back: Java Advanced](https://github.com/demarinov/softuni/tree/master/JavaAdvancedModule)
-&nbsp; &nbsp;
+&nbsp;
 [>>Next: Java Web](https://github.com/demarinov/softuni/tree/master/JavaWebModule)
 
 :fire: [DM](https://github.com/demarinov)
